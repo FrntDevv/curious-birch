@@ -1,0 +1,107 @@
+$popup-bonus-table-cell-height: 21px;
+$table-bonus-image-width: 257px;
+$table-bonus-image-height: 159px;
+$table-bonus-lights-width: 257px;
+$table-bonus-lights-height: 176px;
+$popup-bonus-table-cell-bg: #034036;
+$small-free-spins-width: 257px;
+$small-free-spins-height: 230px;
+$small-deposit-100-width: 259px;
+$small-deposit-100-height: 234px;
+
+.popup-bonus-table-block {
+  width: $aside-width;
+  @extend %basic-table-block;
+  margin-top: 4px;
+  .bonus-tablehead {
+    padding-top: 22px;
+    @extend %basic-tablehead;
+  }
+  .table-bonus-image-container {
+    width: $table-bonus-image-width;
+    height: $table-bonus-image-height;
+    position: relative;
+    margin-left: 22px;
+    margin-top: 2px;
+    .table-bonus-image {
+      width: $table-bonus-image-width;
+      height: $table-bonus-image-height;
+      z-index: 2;
+      position: absolute;
+      left: 0;
+      top: -45px;
+      background: url(.././pic/popup/small-bonuses-sprite/small-bonuses-sprite.png) no-repeat 0 0;
+    }
+    &.free-spins {
+      .table-bonus-image {
+        width: $small-free-spins-width;
+        height: $small-free-spins-height;
+      }
+      &:hover .table-bonus-image {
+        background-position: 0 -230px;
+      }
+    }
+    &.deposit-100 {
+      .table-bonus-image {
+        top: -47px;
+        width: $small-deposit-100-width;
+        height: $small-deposit-100-height;
+        background-position: -257px 0;
+      }
+      &:hover .table-bonus-image {
+        background-position: -257px -234px;
+      }
+    }
+    .table-bonus-lights {
+      z-index: 1;
+      width: $table-bonus-lights-width;
+      height: $table-bonus-lights-height;
+      position: absolute;
+      left: -5px;
+      top: 0;
+      background: url(.././pic/popup/table-bonus-lights.png) no-repeat 0 0;
+    }
+  }
+  .popup-bonus-table {
+    z-index: 5;
+    width: $aside-width;
+    display: block;
+    position: relative;
+    border: 0;
+    thead {
+      tr {
+        background: $popup-bonus-table-cell-bg;
+        position: relative;
+        display: block;
+        float: left;
+        th {
+          font: {
+            weight: 400;
+          }
+          @extend %basic-table-cells;
+          color: $basic-thead-color;
+          @include text-shadow(0 1px 0 rgba(0, 0, 0, .75));
+          height: $popup-bonus-table-cell-height;
+          line-height: $popup-bonus-table-cell-height;
+        }
+      }
+    }
+    tbody {
+      tr {
+        position: relative;
+        display: block;
+        float: left;
+        &:nth-child(even) {
+          background: $popup-bonus-table-cell-bg;
+        }
+        td {
+          @extend %basic-table-cells;
+          @extend %basic-currency-cell;
+          height: $popup-bonus-table-cell-height;
+          line-height: $popup-bonus-table-cell-height;
+        }
+        @extend %current-user-row;
+      }
+    }
+  }
+}

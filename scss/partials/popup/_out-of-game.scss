@@ -1,0 +1,86 @@
+$to-lobby-btn-height: 42px;
+$to-lobby-btn-padding: 27px;
+$to-lobby-btn-bg: #42485b;
+$to-lobby-btn-shadow: #5a5a5a;
+$back-icon-width: 17px;
+$back-icon-height: 19px;
+
+%come-back-btn {
+  position: relative;
+  z-index: 4;
+  display: inline-block;
+  padding-left: 45px;
+  padding-right: 29px;
+  span {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 1px;
+      left: -20px;
+      width: $back-icon-width;
+      height: $back-icon-height;
+      background: url("../pic/sprite/sprite.png") no-repeat -129px -348px;
+    }
+  }
+}
+
+%to-lobby-btn {
+  height: $to-lobby-btn-height;
+  line-height: $to-lobby-btn-height;
+  position: relative;
+  z-index: 4;
+  display: inline-block;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 18px;
+    weight: bold;
+  }
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  background: $to-lobby-btn-bg;
+  @include  linear-gradient(to bottom, rgb(147,149,149) 0%,rgb(115,120,120) 2%,
+          rgb(98,102,103) 5%,rgb(82,86,93) 17%,rgb(67,75,88) 29%,rgb(62,71,88) 37%,
+          rgb(61,70,91) 56%,rgb(58,66,85) 66%,rgb(48,54,69) 76%,rgb(16,19,25) 93%,
+          rgb(12,16,21) 95%,rgb(35,36,40) 98%,rgb(80,81,83) 100%);
+  padding-left: $to-lobby-btn-padding;
+  padding-right: $to-lobby-btn-padding;
+  @include border-radius(3px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $to-lobby-btn-shadow, inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  @extend %base-text-in-ref;
+}
+
+.popup.out-of-game {
+  .popup-head {
+    margin-top: 47px;
+    margin-bottom: 24px;
+  }
+  .small-game-list {
+    margin: 0 auto;
+    .game-item {
+      background-color: transparent;
+    }
+    .frame {
+      text-align: left;
+    }
+  }
+  .inline-container {
+    margin-top: 30px;
+  }
+  .come-back-btn {
+    @extend %default-popup-btn;
+    @extend %come-back-btn;
+    margin-right: 14px;
+  }
+  .to-lobby-btn {
+    @extend %to-lobby-btn;
+  }
+}

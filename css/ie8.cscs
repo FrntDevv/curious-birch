@@ -1,0 +1,30 @@
+.btn-reg .reg {
+  behavior: url(css/PIE.htc); }
+.btn-reg .reg-time {
+  behavior: url(css/PIE.htc); }
+.btn-reg:hover .reg-time {
+  behavior: url(css/PIE.htc); }
+
+.btn-ent .ent {
+  behavior: url(css/PIE.htc); }
+.btn-ent:hover .ent {
+  behavior: url(css/PIE.htc); }
+
+.game-category-list li:hover {
+  behavior: url(css/PIE.htc); }
+.game-category-list li.select {
+  behavior: url(css/PIE.htc); }
+
+.grad-left-line,
+.grad-right-line,
+.game-item,
+.main-play-btn,
+.demo-btn,
+input[type="search"] {
+  behavior: url(css/PIE.htc); }
+
+.desc-arrows {
+  top: 145px; }
+
+.asc-arrows {
+  bottom: 25px; }

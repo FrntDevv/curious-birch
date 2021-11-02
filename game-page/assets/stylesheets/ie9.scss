@@ -1,0 +1,113 @@
+$shadow-rgba-color: rgba(0,0,0,0.2);
+$btn-height: 44px;
+$btn-width: 180px;
+$cashier-icon-width: 24px;
+$exit-icon-width: 24px;
+$refresh-icon-width: 25px;
+$help-icon-width: 20px;
+$battery-charge-width: 160px;
+$text-in-charge-color: rgb(67,255,248);
+$no-wait-shadow: rgb(5,91,66);
+
+@mixin border-box() {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+%base-button {
+  width: $btn-width;
+  height: $btn-height;
+  line-height: $btn-height;
+  @include border-box;
+}
+
+.left-column {
+  text-align: center;
+}
+
+.right-column {
+  text-align: center;
+}
+
+.shadow {
+  display: block !important;
+  position: absolute !important;
+  left: 0;
+  top: 3px;
+  z-index: 2;
+  color: $shadow-rgba-color;
+}
+
+.btn-cashier {
+  .shadow {
+    padding-left: $cashier-icon-width + 10;
+    @extend %base-button;
+  }
+}
+
+.btn-exit {
+  .shadow {
+    padding-left: $exit-icon-width + 13;
+    @extend %base-button;
+  }
+}
+
+.btn-refresh {
+  .shadow {
+    padding-left: $refresh-icon-width + 13;
+    @extend %base-button;
+  }
+}
+
+.btn-help {
+  .shadow {
+    left: -1px;
+    top: 2px;
+    padding-left: $help-icon-width + 13;
+    @extend %base-button;
+  }
+}
+
+.battery-charge {
+  .full-charge {
+    .text-in-battery {
+      .shadow {
+        width: $battery-charge-width;
+        z-index: -1;
+        top: 2px;
+      }
+    }
+  }
+}
+
+.charge-now {
+  .shadow {
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: -1;
+    top: 2px;
+  }
+}
+
+.text-charge {
+  .shadow {
+    z-index: -1;
+    top: -5px;
+    left: -5px;
+    filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=5);
+    color: $text-in-charge-color;
+  }
+}
+
+.no-wait {
+  .shadow {
+    z-index: -1;
+    top: -5px;
+    left: 8px;
+    filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=5);
+    color: $no-wait-shadow;
+  }
+}
+
+

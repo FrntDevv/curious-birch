@@ -1,0 +1,3 @@
+@-moz-document url-prefix() {
+  .btn-cashier span:before {
+    top: -2px; } }

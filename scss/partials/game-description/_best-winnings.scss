@@ -1,0 +1,87 @@
+$game-label-width: 64px;
+$game-label-height: 60px;
+$best-winnings-bg: rgb(46,46,56);
+$best-winnings-table-bg: #2d2d3d;
+$best-winnings-1-col-width: 28px;
+
+.best-winnings {
+  text-align: center;
+  position: relative;
+  @include box-shadow(0 0 7px 1px rgb(0,0,0), 0 0 $standard-shadow-size 0 rgba(255,255,255,.5) inset);
+  background: $best-winnings-bg;
+  @include linear-gradient(to bottom, rgb(46,46,56) 0%,rgb(39,39,49) 23%,rgb(32,32,44) 100%);
+  .main-play-btn {
+    margin: 30px 0;
+    display: inline-block;
+  }
+  .game-label {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $game-label-width;
+    height: $game-label-height;
+    background: url(.././pic/game-description/game-label.png) no-repeat 0 0;
+    z-index: 2;
+  }
+  .tablehead {
+    padding: 30px 0;
+    @extend %basic-tablehead;
+    width: $aside-width - 100;
+    .head {
+      display: block;
+      text: {
+        transform: uppercase;
+      }
+    }
+  }
+}
+
+.best-winnings-table {
+  padding-top: 26px;
+  display: block;
+  width: $aside-width - 2;
+  margin-left: 1px;
+  position: relative;
+  border: 0;
+  thead {
+    tr {
+      position: relative;
+      background: $best-winnings-table-bg;
+      display: block;
+      float: left;
+      height: $basic-table-cell-height;
+      line-height: $basic-table-cell-height;
+      th {
+        font: {
+          weight: 400;
+        }
+        @extend %basic-table-cells;
+        &:first-child {
+          width: $best-winnings-1-col-width;
+        }
+        color: $basic-thead-color;
+        @include text-shadow(0 1px 0 rgba(0, 0, 0, .75));
+      }
+    }
+  }
+  tbody {
+    tr {
+      position: relative;
+      display: block;
+      float: left;
+      height: $basic-table-cell-height;
+      line-height: $basic-table-cell-height;
+      &:nth-child(even) {
+        background: $best-winnings-table-bg;
+      }
+      td {
+        @extend %basic-table-cells;
+        &:first-child {
+          width: $best-winnings-1-col-width;
+        }
+        @extend %basic-currency-cell;
+      }
+      @extend %current-user-row;
+    }
+  }
+}

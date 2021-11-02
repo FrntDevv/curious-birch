@@ -1,0 +1,125 @@
+$popup-bonus-image-width: 478px;
+$popup-bonus-image-height: 337px;
+$popup-bonus-lights-width: 539px;
+$popup-bonus-lights-height: 466px;
+$big-free-spins-width: 478px;
+$big-free-spins-height: 419px;
+$big-free-spins-general-width: 460px;
+$big-free-spins-general-height: 416px;
+$big-free-franks-width: 456px;
+$big-free-franks-height: 412px;
+$big-double-franks-width: 420px;
+$big-double-franks-height: 427px;
+$big-extra-return-width: 447px;
+$big-extra-return-height: 406px;
+$big-deposit-100-width: 437px;
+$big-deposit-100-height: 407px;
+
+.popup.bonus-activated {
+  .popup-middle-head {
+    margin-top: 33px;
+    z-index: 5;
+  }
+  .popup-bonus-image-container {
+    margin-top: 10px;
+    position: relative;
+    width: $popup-bonus-image-width;
+    height: $popup-bonus-image-height;
+    margin-left: 297px;
+    .popup-bonus-image {
+      background: url(.././pic/popup/big-bonuses-sprite/big-bonuses-sprite.png) no-repeat 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $popup-bonus-image-width;
+      height: $popup-bonus-image-height;
+      z-index: 2;
+    }
+    &.free-spins {
+      .popup-bonus-image {
+        top: -48px;
+        left: -3px;
+        width: $big-free-spins-width;
+        height: $big-free-spins-height;
+        background-position: -2220px 0;
+      }
+      &:hover .popup-bonus-image {
+        background-position: -2220px -419px;
+      }
+    }
+    &.free-spins-general {
+      .popup-bonus-image {
+        top: -44px;
+        left: 1px;
+        width: $big-free-spins-general-width;
+        height: $big-free-spins-general-height;
+        background-position: -437px 0;
+      }
+      &:hover .popup-bonus-image {
+        background-position: -437px -416px;
+      }
+    }
+    &.deposit-100 {
+      .popup-bonus-image {
+        top: -37px;
+        left: 10px;
+        width: $big-deposit-100-width;
+        height: $big-deposit-100-width;
+      }
+      &:hover .popup-bonus-image {
+        background-position: 0 -407px;
+      }
+    }
+    &.free-franks {
+      .popup-bonus-image {
+        top: -40px;
+        left: 4px;
+        width: $big-free-franks-width;
+        height: $big-free-franks-height;
+        background-position: -1764px 0;
+      }
+      &:hover .popup-bonus-image {
+        background-position: -1764px -412px;
+      }
+    }
+    &.double-franks {
+      .popup-bonus-image {
+        top: -56px;
+        left: 15px;
+        width: $big-double-franks-width;
+        height: $big-double-franks-height;
+        background-position: -897px 0;
+      }
+      &:hover .popup-bonus-image {
+        background-position: -897px -427px;
+      }
+    }
+    &.extra-return {
+      .popup-bonus-image {
+        top: -38px;
+        left: 10px;
+        width: $big-extra-return-width;
+        height: $big-extra-return-height;
+        background-position: -1317px -0;
+      }
+      &:hover .popup-bonus-image {
+        background-position: -1317px -406px;
+      }
+    }
+    .popup-bonus-lights {
+      z-index: 1;
+      background: url(.././pic/popup/bonus-lights.png) no-repeat 0 0;
+      position: absolute;
+      top: -54px;
+      left: -72px;
+      width: $popup-bonus-lights-width;
+      height: $popup-bonus-lights-height;
+    }
+  }
+  .ok-btn {
+    z-index: 5;
+    font-size: 18px;
+    display: block;
+    margin: 0 auto;
+  }
+}

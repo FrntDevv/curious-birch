@@ -1,0 +1,104 @@
+$user-status-height: 175px;
+$user-status-color: rgb(239, 186, 81);
+$title-light-width: 638px;
+$title-light-height: 10px;
+$user-status-image-height: 161px;
+$gold-status-image-width: 618px;
+$silver-status-image-width: 618px;
+$bronze-status-image-width: 528px;
+$paper-status-image-width: 635px;
+$dark-status-image-width: 548px;
+$dark-status-image-height: 300px;
+$platinum-status-image-width: 608px;
+
+%user-pic {
+  height: $user-status-height;
+  float: left;
+  position: relative;
+}
+
+.profile {
+  padding-top: 27px;
+  padding-bottom: 20px;
+}
+
+.cabinet-section {
+  .user-status {
+    width: $modal-wrapper-width;
+    position: relative;
+  }
+}
+
+.user-status-image {
+  height: $user-status-image-height;
+  margin: 0 auto;
+  position: relative;
+  top: -13px;
+  &.gold {
+    width: $gold-status-image-width;
+    background: url(".././pic/status/gold.png") no-repeat 0 0;
+  }
+  &.silver {
+    width: $silver-status-image-width;
+    background: url(".././pic/status/silver.png") no-repeat 0 0;
+  }
+  &.bronze {
+    width: $bronze-status-image-width;
+    background: url(".././pic/status/bronze.png") no-repeat 0 0;
+  }
+  &.paper {
+    width: $paper-status-image-width;
+    background: url(".././pic/status/paper.png") no-repeat 0 0;
+  }
+  &.dark {
+    @include size($dark-status-image-width,$dark-status-image-height);
+    background: url(".././pic/status/dark.png") no-repeat 0 0;
+  }
+  &.platinum {
+    width: $platinum-status-image-width;
+    background: url(".././pic/status/platinum.png") no-repeat 0 0;
+  }
+}
+
+  .status {
+    top: -35px;
+    position: relative;
+    z-index: 2;
+    color: $user-status-color;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 12px;
+    }
+    text-transform: uppercase;
+  }
+
+.reg-date {
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  top: -27px;
+  font: {
+    family: "Roboto", sans-serif;
+    weight: 300;
+    size: 12px;
+  }
+  color: $base-body-color;
+  span {
+    font: {
+      family: "Roboto", sans-serif;
+      weight: bold;
+    }
+  }
+}
+
+
+.cabinet-section {
+  .title-light {
+    top: -5px;
+    position: relative;
+    margin: 0 auto;
+    width: $title-light-width;
+    height: $title-light-height;
+    background: url(".././pic/cabinet/title-light.png") no-repeat 0 0;
+  }
+}

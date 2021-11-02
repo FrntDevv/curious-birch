@@ -1,0 +1,168 @@
+// Fonts
+
+@font-face {
+  font-family: "futura_condensedplain";
+  src: url("../fonts/futura/futura-webfont.eot");
+  src: url("../fonts/futura/futura-webfont.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/futura/futura-webfont.woff2") format("woff2"),
+  url("../fonts/futura/futura-webfont.woff") format("woff"),
+  url("../fonts/futura/futura-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tahoma";
+  src: url("../fonts/tahoma/tahoma.ttf");
+  src: url("../fonts/tahoma/tahoma.eot"),
+  url("../fonts/tahoma/tahoma.woff") format("woff"),
+  url("../fonts/tahoma/tahoma.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tahoma-Bold";
+  src: url("../fonts/tahoma-bold/tahoma-bold.ttf");
+  src: url("../fonts/tahoma-bold/tahoma-bold.eot"),
+  url("../fonts/tahoma-bold/tahoma-bold.woff") format("woff"),
+  url("../fonts/tahoma-bold/tahoma-bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "MyriadProRegular";
+    src: url("../fonts/myriad-pro-regular/myriadproregular.eot");
+    src: url("../fonts/myriad-pro-regular/myriadproregular.eot?#iefix")format("embedded-opentype"),
+    url("../fonts/myriad-pro-regular/myriadproregular.woff") format("woff"),
+    url("../fonts/myriad-pro-regular/myriadproregular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+  font-family: "swiss_721heavy";
+  src: url("../fonts/swiss-721/swiss_721_heavy-webfont.eot");
+  src: url("../fonts/swiss-721/swiss_721_heavy-webfont.eot?#iefix") format("embedded-opentype"),
+  url("../fonts/swiss-721/swiss_721_heavy-webfont.woff2") format("woff2"),
+  url("../fonts/swiss-721/swiss_721_heavy-webfont.woff") format("woff"),
+  url("../fonts/swiss-721/swiss_721_heavy-webfont.ttf") format("truetype"),
+  url("../fonts/swiss-721/swiss_721_heavy-webfont.svg#swiss_721heavy") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Disable outlines of input
+
+button {
+  border: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline-width: 0;
+  background: 0;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+input {
+  outline: 0;
+  outline-width: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+// Modules and variables
+
+@import "modules/base-declaration";
+@import "modules/colors";
+
+// Partials
+
+@import "partials/base";
+@import "partials/buttons";
+@import "partials/slider";
+@import "partials/header-layout";
+@import "partials/user-status";
+@import "partials/profile-box";
+@import "partials/social-box";
+@import "partials/navigation";
+@import "partials/main-menu";
+@import "partials/content-layout_left";
+@import "partials/game-list";
+@import "partials/banner";
+@import "partials/track";
+@import "partials/side-popup";
+@import "partials/tournament";
+@import "partials/content-layout_right";
+@import "partials/jackpot";
+@import "partials/payment-list";
+@import "partials/copyright";
+@import "partials/table-info";
+@import "partials/footer-layout";
+@import "partials/tournaments-page/tournament-layout";
+@import "partials/tournaments-page/tournament-box";
+@import "partials/tournaments-page/tournament-name-box";
+@import "partials/tournaments-page/best-players";
+@import "partials/tournaments-page/popup";
+@import "partials/tournaments-page/game/tournament-game-layout";
+@import "partials/tournaments-page/game/tournament-banner";
+@import "partials/tournaments-page/game/game-list";
+@import "partials/tournaments-page/game/rules";
+@import "partials/tournaments-page/game/prizes-table";
+@import "partials/tournaments-page/game/leaders-table-in-game";
+@import "partials/tournaments-page/game/result-table";
+@import "partials/tournaments-page/game/stands";
+@import "partials/bonuses-page/bonuses-layout";
+@import "partials/bonuses-page/bonuses-cards";
+@import "partials/bonuses-page/bonus-winners-table";
+@import "partials/payment-systems/payment-layout";
+@import "partials/payment-systems/payment-list";
+@import "partials/payment-systems/payment-info";
+@import "partials/bonuses-page/bonus-features";
+@import "partials/bonuses-page/bonus-box";
+@import "partials/bonuses-page/current-winners-table";
+@import "partials/game-description/game-box";
+@import "partials/game-description/game-description-layout";
+@import "partials/game-description/best-winnings";
+@import "partials/cabinet/cabinet-layout";
+@import "partials/cabinet/tabs";
+@import "partials/cabinet/cashier/cashier";
+@import "partials/cabinet/profile/user-status";
+@import "partials/cabinet/profile/contact-box";
+@import "partials/cabinet/profile/profile-info-lines";
+@import "partials/cabinet/profile/change-password";
+@import "partials/cabinet/profile/account-info";
+@import "partials/cabinet/profile/exchange-section";
+@import "partials/cabinet/bonuses/cabinet-bonuses";
+@import "partials/cabinet/bonuses/bonus-game-list";
+@import "partials/popup/popup-layout";
+@import "partials/popup/authorization/authorization-form";
+@import "partials/popup/authorization/enter-social";
+@import "partials/popup/low-balance";
+@import "partials/popup/tournament-win";
+@import "partials/popup/popup-bonus-table";
+@import "partials/popup/activation";
+@import "partials/popup/modal-cashier";
+@import "partials/popup/bonus-is-activated";
+@import "partials/popup/select-game";
+@import "partials/popup/popup-bonus-description";
+@import "partials/popup/out-of-game";
+@import "partials/popup/multiplier";
+@import "partials/popup/confirm-e-mail";
+@import "partials/popup/popup-user-status";
+@import "partials/popup/select-bonus";
+@import "partials/popup/restore-password";
+@import "partials/popup/cashback";
+@import "partials/popup/registration-form";
+@import "partials/popup/connection-error";
+@import "partials/popup/deactivation";
+@import "partials/popup/change-password";
+@import "partials/error-page";
+@import "partials/locale/ru";
+@import "partials/locale/en";
+@import "partials/locale/es";
+@import "partials/redirect";
+@import "partials/landing";

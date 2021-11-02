@@ -1,0 +1,61 @@
+// search
+$search-height: 34px;
+$search-submit-width: 50px;
+$search-submit-height: 34px;
+$search-bg: #131a21;
+
+.right-content {
+  margin-top: 40px;
+  float: right;
+  position: relative;
+  margin-right: 59px;
+  z-index: 3;
+  width: $aside-width;
+  display: block;
+  height: 100%;
+}
+
+.search-form {
+  position: relative;
+  width: $aside-width;
+  display: block;
+  height: $search-height;
+  @include border-box;
+}
+
+input.search {
+  width: $aside-width;
+  display: block;
+  height: $search-height;
+  @include border-box;
+  background: $search-bg;
+  @include border-top-left-radius(3px);
+  @include border-bottom-left-radius(3px);
+  @include placeholder(rgba(255,255,255,0.2));
+  @include box-shadow(inset 2px 3.464px 3.84px 0.16px rgba(0,0,0,.5));
+  font: {
+    family: "Tahoma", sans-serif;
+    size: 12px;
+  }
+  line-height: 1.5;
+  padding: 0 60px 0 10px;
+  border: 1px solid $search-border;
+}
+
+input.submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $search-submit-width;
+  height: $search-submit-height;
+  display: block;
+  z-index: 3;
+  border: 0;
+  @include border-box;
+  @include border-radius(3px);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0 0 4px 0 rgba(255, 255, 255,.3));
+  background: url(../pic/sprite/sprite.png) no-repeat -85px -30px $search-submit-bg;
+  &:hover {
+    @include box-shadow(0 0 7px 1px rgba(94,94,94,0.7),inset 0 0 4px 0 rgba(255,255,255,0.5));
+  }
+}

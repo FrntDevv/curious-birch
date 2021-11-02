@@ -1,0 +1,35 @@
+$bonus-box-width: 288px;
+$bonus-box-height: 208px;
+$bonus-background-width: 311px;
+$bonus-background-height: 178px;
+$bonus-picture-width: 226px;
+$bonus-picture-height: 188px;
+
+.bonus-box {
+  position: relative;
+  float: right;
+  width: $bonus-box-width;
+  height: $bonus-box-height;
+  .bonus-background {
+    position: absolute;
+    width: $bonus-background-width;
+    height: $bonus-background-height;
+    top: 12px;
+    left: -20px;
+    background: url(.././pic/bonuses/bonus-background.png) no-repeat 0 0;
+  }
+  .bonus-picture {
+    position: absolute;
+    z-index: 2;
+    top: 7px;
+    left: 37px;
+    width: $bonus-picture-width;
+    height: $bonus-picture-height;
+  }
+  .active-btn {
+    z-index: 2;
+    position: absolute;
+    bottom: -3px;
+    right: 68px;
+  }
+}

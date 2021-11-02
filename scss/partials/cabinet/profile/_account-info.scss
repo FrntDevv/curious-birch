@@ -1,0 +1,177 @@
+$account-info-container-width: 514px;
+$account-details-list-1-ch-width: 165px;
+$account-details-list-2-ch-width: 180px;
+$account-details-list-3-ch-width: 169px;
+$account-details-list-height: 44px;
+$edit-btn-padding: 27px;
+$small-edit-btn-padding: 21px;
+$edit-btn-shadow: #d7a12a;
+$edit-btn-bg: #e39b00;
+$edit-btn-height: 29px;
+$user-information-height: 155px;
+$user-left-section-width: 318px;
+$user-form-field-height: 38px;
+$user-name-field-width: 140px;
+$skype-field-width: 170px;
+$label-sign: rgb(169, 169, 169);
+
+%edit-btn {
+  display: inline-block;
+  position: relative;
+  padding-left: $edit-btn-padding;
+  padding-right: $edit-btn-padding;
+  height: $edit-btn-height;
+  line-height: $edit-btn-height;
+  @include border-box();
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  background: $edit-btn-bg;
+  @include linear-gradient(to bottom,
+          rgb(255,221,97) 0%,
+          rgb(255,209,46) 4%,
+          rgb(255,200,0) 7%,
+          rgb(255,165,0) 32%,
+          rgb(252,159,0) 39%,
+          rgb(249,156,0) 54%,
+          rgb(255,157,0) 71%,
+          rgb(255,148,0) 93%,
+          rgb(255,155,0) 96%,
+          rgb(255,173,56) 100%);
+  @include border-radius(2px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $edit-btn-shadow, inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 12px;
+    weight: bold;
+  }
+  @extend %base-text-in-ref;
+}
+
+%send-edit-btn {
+  padding-left: $small-edit-btn-padding;
+  padding-right: $small-edit-btn-padding;
+}
+
+.account-info-container {
+  position: relative;
+  width: $account-info-container-width;
+  margin: 50px auto 0;
+  text-align: center;
+  font: {
+    family: "Roboto", sans-serif;
+    weight: 300;
+    size: 12px;
+  }
+}
+
+.account-details-list {
+  @include border-radius(4px);
+  @include box-shadow(0 0 3px 0 rgb(0,0,0));
+  width: $account-info-container-width;
+  height: $account-details-list-height;
+  line-height: $account-details-list-height + 2;
+  background: url(.././pic/cabinet/profile-data-bg.png) no-repeat 0 0;
+  li {
+    display: inline-block;
+    .account-detail {
+      margin-left: 3px;
+    }
+    &:first-child {
+      width: $account-details-list-1-ch-width;
+    }
+    &:nth-child(2) {
+      width: $account-details-list-2-ch-width;
+    }
+    &:last-child {
+      width: $account-details-list-3-ch-width;
+    }
+  }
+}
+
+.edit-btn {
+  @extend %edit-btn;
+  margin-top: 14px;
+}
+
+.user-information {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  padding-top: 29px;
+  width: $account-info-container-width;
+  height: $user-information-height;
+  @include border-radius(4px);
+  @include box-shadow(0 0 3px 0 rgb(0,0,0));
+  @include border-box();
+  background: url(.././pic/cabinet/edit-form-bg.png) no-repeat 0 0;
+  text-align: left;
+  .left-section {
+    float: left;
+    margin: 0 19px 0 16px;
+    width: $user-left-section-width;
+    input.form-field {
+      font-size: 12px;
+      height: $user-form-field-height;
+      line-height: $user-form-field-height;
+      &.user-name {
+        width: $user-name-field-width;
+      }
+      &.skype {
+        width: $skype-field-width;
+      }
+    }
+    .sign {
+      display: inline-block;
+      color: $label-sign;
+      &.date-of-birth {
+        padding-top: 15px;
+        padding-bottom: 3px;
+      }
+    }
+    .input-container {
+      .sign {
+        position: absolute;
+        top: -18px;
+        left: 0;
+      }
+      &:first-child {
+        float: left;
+      }
+      &:last-child {
+        float: right;
+      }
+    }
+  }
+  .right-section {
+    float: left;
+    text-align: center;
+    .gender-container {
+      height: $user-form-field-height;
+      line-height: $user-form-field-height - 2;
+      input[type="radio"] + label {
+        margin-left: 31px;
+      }
+      input[type="radio"] + label span {
+        top: -4px;
+        left: -23px;
+      }
+    }
+    .send-edit-btn {
+      margin-top: 32px;
+      display: inline-block;
+      @extend %edit-btn;
+      @extend %send-edit-btn;
+    }
+  }
+  &.active {
+    display: block;
+  }
+}

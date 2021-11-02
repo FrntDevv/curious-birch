@@ -1,0 +1,177 @@
+$battery-height: 49px;
+$battery-block-width: 199px;
+$battery-block-height: 110px;
+$charge-description-width: 180px;
+$popup-call-width: 18px;
+$popup-call-height: 18px;
+$battery-charge-width: 160px;
+$green-light-width: 39px;
+$green-light-height: 83px;
+$text-in-battery-color: rgb(200,255,215);
+
+.battery {
+  position: absolute;
+  bottom: 0;
+  left: 1px;
+  width: $battery-block-width;
+  height: $battery-block-height;
+  background: url(../images/blank-battery.png) no-repeat 0 0;
+}
+
+.charge-description {
+  width: $charge-description-width;
+  margin: 0 auto;
+  font:
+  {
+    size: 13px;
+    family: "Roboto", sans-serif;
+  }
+  color: $base-body-color;
+  text:{
+    transform: uppercase;
+  }
+  @include text-shadow(0px 0px 10px rgb(67,255,248));
+  .text-charge {
+    position: relative;
+    z-index: 3;
+    float: left;
+  }
+  .popup-call {
+    width: $popup-call-width;
+    height: $popup-call-height;
+    position: relative;
+    z-index: 4;
+    top: -1px;
+    background: url(../images/sprite.png) no-repeat -236px -267px;
+    &:hover {
+      cursor: pointer;
+      background-position: -257px -267px;
+    }
+    float: right;
+  }
+}
+@-webkit-keyframes fade-in-fade-out {
+0% {
+	opacity: 0;
+}
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fade-in-fade-out {
+0% {
+	opacity: 0;
+}
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fade-in-fade-out {
+0% {
+	opacity: 0;
+}
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-fade-out {
+0% {
+	opacity: 0;
+}
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.battery-charge {
+  position: absolute;
+  top: 31px;
+  left: ($column-width - $battery-charge-width) / 2;
+  width: $battery-charge-width;
+  height: $battery-height;
+  .min-charge {
+    display: none;
+    position: absolute;
+    top: -1px;
+    left: -2px;
+    height: $battery-height + 1;
+    right: 25%;
+    background: url("../images/red-line.png") repeat-x 0 0;
+    @include animation(fade-in-fade-out,2s,infinite,linear,none);
+  }
+  .green {
+    display: none;
+    position: absolute;
+    top: -1px;
+    left: -2px;
+    height: $battery-height + 1;
+    right: 25%;
+    background: url("../images/green-line.png") repeat-x 0 0;
+    .green-light {
+      position: absolute;
+      width: $green-light-width;
+      height: $green-light-height;
+      right: -20px;
+      top: -17px;
+      background: url(../images/green-line-with-lights.png) no-repeat 0 0;
+      @include animation(fade-in-fade-out,4s,1,linear,forwards);
+    }
+  }
+  .full-charge {
+    position: absolute;
+    top: -31px;
+    left: -20px;
+    width: $battery-block-width;
+    height: $battery-block-height;
+    z-index: 2;
+    background: url("../images/full-charge.png") no-repeat 0 0;
+    .text-in-battery {
+      display: block;
+      position: relative;
+      z-index: 4;
+      margin-top: 31px;
+      margin-left: 20px;
+      height: $battery-height;
+      line-height: $battery-height - 3;
+      width: $battery-charge-width;
+      text:
+      {
+        transform: uppercase;
+        align: center;
+        decoration: none;
+      }
+      font: {
+        family: "Open Sans Condensed", sans-serif;
+        size: 21px;
+        weight: 700;
+      }
+      color: $text-in-battery-color;
+      @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+    }
+    .shadow-charge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: $battery-block-width;
+      height: $battery-block-height;
+      z-index: 3;
+      background: url("../images/lights-full-charge.png") no-repeat 0 0;
+      @include animation(fade-in-fade-out,2s,infinite,linear,none);
+    }
+  }
+}

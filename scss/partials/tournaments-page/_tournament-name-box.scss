@@ -1,0 +1,28 @@
+$tourn-label-width: 64px;
+$tourn-label-height: 60px;
+
+.tournament-name-box {
+  position: relative;
+  padding-left: 20px;
+  width: $aside-width - 2;
+  background: url(.././pic/tournaments/gradient-box.png) no-repeat 0 0;
+  @include border-box();
+  @include box-shadow(0 0 7.36px 0.64px rgba(0, 0, 0, 0.004), inset 0 0 1.94px 0.06px rgba(255,255,255,.5));
+  padding-top: 12px;
+  padding-bottom: 18px;
+  margin: 18px auto 0;
+  .tournament-section-name {
+    margin-top: 0;
+    max-width: 240px;
+  }
+}
+
+.tourn-label {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: $tourn-label-width;
+  height: $tourn-label-height;
+  background: url(.././pic/tournaments/tournament-label.png) no-repeat 0 0;
+}
+

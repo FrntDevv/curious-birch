@@ -1,0 +1,430 @@
+$nav-hover-color: rgb(46, 94, 135);
+$profile-hover-color: rgb(133, 133, 133);
+$shadow-color: rgb(0,0,0);
+$header-grad-color: rgb(18, 18, 18);
+$track-popup-color: rgb(13,17,22);
+$base-color: rgb(255,255,255);
+$get-more-color: #788072;
+$win-place-bg: rgb(158, 146, 139);
+$current-user-bg: rgb(38, 92, 64);
+$layout-width: 1100px;
+$footer-bg: rgb(20,19,25);
+$footer-bg: rgb(20,19,25);
+
+.window-overlay {
+  background: url(.././pic/overlay.png) repeat 0 0;
+}
+
+.more-information {
+  .get-more-information {
+    color: $get-more-color;
+  }
+  .all-prizes {
+    color: $get-more-color;
+  }
+}
+
+.shadow {
+  color: $shadow-color;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+}
+
+.popup-game-name {
+  a {
+    color: $base-color;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+  }
+}
+
+.btn-reg {
+  .reg {
+    margin-left: 12px;
+  }
+  .reg-time {
+    margin-right: 12px;
+    padding-top: 20px;
+  }
+}
+
+.main-menu-list {
+  li {
+    a {
+      padding-left: 37px;
+      padding-right: 38px;
+    }
+  }
+}
+
+.header-grad {
+  background: $header-grad-color;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=85);
+}
+
+.track-popup {
+  background: $track-popup-color;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=97);
+}
+
+
+.social-box {
+  .ent-soc {
+    margin-left: 5px;
+    margin-right: 3px;
+  }
+  .select-language {
+    position: absolute;
+    top: 0;
+    right: 0;
+    &:hover {
+      background: $profile-hover-color;
+    }
+  }
+}
+
+.cashbox {
+  behavior: url(../css/PIE.htc);
+  &:hover {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.take-part-btn {
+  behavior: url(../css/PIE.htc);
+  &:hover {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.big-game-list {
+  .game-item {
+    margin-right: 22px;
+  }
+}
+
+.main-menu-list {
+  li {
+    &.active {
+      a {
+        z-index: 2;
+        background: $nav-hover-color;
+      }
+    }
+    a:hover {
+      z-index: 2;
+      background: $nav-hover-color;
+    }
+  }
+}
+
+input[type="text"] {
+  padding-top: 10px;
+}
+
+.desc-arrows {
+  top: 145px;
+}
+
+.asc-arrows {
+  bottom: 25px;
+}
+
+.alarm-count {
+  behavior: url(../css/PIE.htc);
+}
+
+.tournament-box {
+  behavior: url(../css/PIE.htc);
+}
+
+.tournament-img-container {
+  behavior: url(../css/PIE.htc);
+}
+
+.tournament-img-box {
+  behavior: url(../css/PIE.htc);
+}
+
+.tournament-leaders {
+  .leader {
+    background: $win-place-bg;
+    behavior: url(../css/PIE.htc);
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=15);
+    .login {
+      behavior: url(../css/PIE.htc);
+      filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+    }
+    &.current-user {
+      filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+      background: $current-user-bg !important;
+      &.current-user-hover {
+        filter:progid:DXImageTransform.Microsoft.Alpha(opacity=80);
+      }
+    }
+  }
+}
+
+.lead-players-table {
+  thead {
+    tr {
+      th {
+        &:nth-child(4) {
+          color: $base-color;
+        }
+      }
+    }
+  }
+}
+
+.track {
+  a.img-ref {
+    &:before {
+      behavior: url(../css/PIE.htc);
+    }
+  }
+}
+
+.foot-img-shadow {
+  &:before {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.tournament-name-box {
+  behavior: url(../css/PIE.htc);
+}
+
+.best-players {
+  behavior: url(../css/PIE.htc);
+}
+
+.game-img-shadow {
+  &:before {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.rules-of-tournament {
+  .text-box {
+    behavior: url(../css/PIE.htc);
+    color: $base-color;
+  }
+}
+
+.rules {
+  td {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.best-players-table {
+  thead {
+    tr {
+      th {
+        &:nth-child(4) {
+          color: $base-color !important;
+        }
+      }
+    }
+  }
+}
+
+.result-table {
+  behavior: url(../css/PIE.htc);
+  thead {
+    tr {
+      th {
+        color: $base-color;
+      }
+    }
+  }
+}
+
+.stand {
+  behavior: url(../css/PIE.htc);
+  .count-of-franks-in-medal {
+    .count {
+      display: block;
+    }
+  }
+}
+
+  .game-footer {
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 100px;
+    background: $footer-bg;
+    width: 100%;
+    min-width: $layout-width;
+    display: block;
+  }
+
+  text {
+    display: none;
+  }
+
+  svg {
+    display: none;
+  }
+
+.bonus-cards {
+  li {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.bonus-header {
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+}
+
+.bonus-description {
+  color: $base-color;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+}
+
+.get-bonus {
+  .get-more-information {
+    color: $base-color;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+  }
+}
+
+.payment-info {
+  .payment {
+    .background-logo {
+      behavior: url(../css/PIE.htc);
+    }
+  }
+}
+
+.payment-box-bg {
+  behavior: url(../css/PIE.htc);
+}
+
+.bonus-description-box {
+  behavior: url(../css/PIE.htc);
+}
+
+.tabs-container {
+  .tab {
+    .shadow {
+      behavior: url(../css/PIE.htc);
+    }
+  }
+}
+
+.cabinet {
+  .cabinet-section {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.phone {
+  .background {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.mail {
+  .background {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.profile-info-lines {
+  .profile-info-line {
+    .text-block {
+      behavior: url(../css/PIE.htc);
+    }
+  }
+}
+
+.account-details-list {
+  behavior: url(../css/PIE.htc);
+}
+
+.user-information {
+  behavior: url(../css/PIE.htc);
+}
+
+.exchange-course {
+  behavior: url(../css/PIE.htc);
+}
+
+.auth-form {
+  background: url(../pic/popup/old-ie-form-bg.png) repeat 0 0;
+}
+
+.enter-social-block {
+  .social-list {
+    a {
+      background: url(../pic/popup/old-ie-form-bg.png) repeat 0 0;
+      &.select {
+        behavior: url(../css/PIE.htc);
+      }
+    }
+  }
+}
+
+.popup {
+  background: url(.././pic/overlay.png) repeat 0 0;
+  behavior: url(../css/PIE.htc);
+}
+
+.popup.activation {
+  .enter-phone-number {
+    background: url(../pic/popup/old-ie-form-bg.png) repeat 0 0;
+  }
+}
+
+.multiplier-box {
+  background: url(../pic/popup/old-ie-form-bg.png) repeat 0 0;
+}
+
+.popup.popup-bonus-description {
+  .bonus-description-block {
+    .popup-get-bonus-btn {
+      .green-light {
+        behavior: url(../css/PIE.htc);
+      }
+    }
+  }
+}
+
+.popup.registration {
+  .presents-bonuses-list {
+    li {
+      .presents-description {
+        .description {
+          filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+        }
+      }
+    }
+  }
+  .registration-form {
+    .captcha-block {
+      .enter-captcha {
+        behavior: url(../css/PIE.htc);
+        background: $shadow-color;
+      }
+    }
+  }
+}
+
+.error-page {
+  header {
+    behavior: url(../css/PIE.htc);
+  }
+}
+
+.landing-block {
+  header {
+    behavior: url(../css/PIE.htc);
+  }
+  .present-block {
+    .present-header {
+      .present-head {
+        display: block;
+      }
+    }
+  }
+}

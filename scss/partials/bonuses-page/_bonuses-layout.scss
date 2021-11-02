@@ -1,0 +1,39 @@
+$left-sec-width: 660px;
+
+.bonus {
+  .left-content {
+    margin-left: 59px;
+    width: $left-sec-width;
+    margin-top: 0;
+  }
+  .main-header {
+    margin-bottom: 15px;
+    &:before {
+      bottom: 4px;
+    }
+  }
+  .right-content {
+    margin-top: 0;
+  }
+}
+
+.bonus-description {
+  .left-content {
+    margin-left: 59px;
+  }
+  .active-btn.big {
+    margin: 28px auto 0;
+  }
+}
+
+.bonus-content-box {
+  margin-bottom: 20px;
+  h3 {
+    margin: 22px 0 17px;
+  }
+  ul {
+    li:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,227 @@
+// tournament
+$arrow-in-table-width: 7px;
+$arrow-in-table-height: 8px;
+$tournament-first-col-width: 20px;
+$tournament-second-col-width: 119px;
+$tournament-width: 194px;
+$tournament-name: rgb(245,245,245);
+$tournament-name-width: 180px;
+$tournament-img-height: 119px;
+$tournament-color-name: #ffbc07;
+$prize-pool-text: #5ee2e7;
+$middle-prize-pool-height: 25px;
+$middle-time-counter-height: 65px;
+$letter-color: rgb(253,255,192);
+$time-description: rgb(255,238,187);
+$tourn-cell-color: rgb(142,129,173);
+$current-user: rgb(82,202,93);
+$tourn-cell-bg: rgb(49,49,63);
+$tourn-thead-color: rgb(106, 106, 121);
+$rating-cell-height: 20px;
+
+.tournament-section {
+  margin-top: 23px;
+  .rating {
+    width: $tournament-width;
+    margin: 10px auto 0;
+  }
+  .box-tournament {
+    position: relative;
+    width: $tournament-width;
+    display: block;
+    @include border-box;
+    margin: 0 auto;
+    @include border-radius(3px);
+  }
+
+  .tournament-name {
+    display: block;
+    width: $tournament-name-width;
+    margin: 0 auto 10px;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 14px;
+    }
+    line-height: 1.25;
+    text: {
+      align: center;
+      decoration: underline;
+    }
+    color: $tournament-name;
+  }
+
+  .img-in-tournament {
+    display: none;
+    position: relative;
+    width: $tournament-width;
+    height: $tournament-img-height;
+  }
+
+  .tournament-img {
+    width: $tournament-width;
+    height: $tournament-img-height;
+    display: block;
+  }
+
+  .prize-pool {
+    margin-top: 2px;
+    display: block;
+    width: $tournament-width;
+    height: $middle-prize-pool-height;
+    line-height: $middle-prize-pool-height;
+    @include border-box;
+    text-align: center;
+    @include text-shadow(0 0 5px rgb(21,22,22));
+    background: url("../images/shadow-prise.png") no-repeat 1px 0;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 12px;
+    }
+    color: $prize-pool-text;
+    .color-sum {
+      font-weight: bold;
+      color: $tournament-color-name;
+    }
+  }
+
+  .time-counter {
+    display: block;
+    position: relative;
+    width: $tournament-width;
+    height: $middle-time-counter-height;
+  }
+  .counter {
+    position: relative;
+    display: block;
+    text:
+    {
+      align: center;
+      transform: uppercase;
+    }
+    width: $tournament-width;
+    margin-top: 2px;
+    font: {
+      family: "Roboto Condensed", sans-serif;
+      size: 24px;
+      weight: bold;
+    }
+    color: $base-body-color;
+    .count {
+      position: relative;
+      display: inline-block;
+      margin-right: 10px;
+      p {
+        position: absolute;
+        display: block;
+        top: -2px;
+        right: -8px;
+      }
+      .letter {
+        position: absolute;
+        display: block;
+        bottom: -15px;
+        left: 10px;
+        font: {
+          size: 8px;
+          weight: normal;
+        }
+        color: $letter-color;
+        line-height: 2.25;
+      }
+    }
+  }
+
+
+  .time-description {
+    position: relative;
+    padding-top: 7px;
+    font: {
+      family: "Roboto Condensed", sans-serif;
+      size: 11px;
+    }
+    text:
+    {
+      align: center;
+      transform: uppercase;
+    }
+    color: $time-description;
+    line-height: 1.636;
+  }
+
+  .tournament-rating {
+    position: relative;
+    border: 0;
+    width: $tournament-width !important;
+    @include border-box;
+    tr {
+      width: $tournament-width;
+      height: $rating-cell-height;
+      line-height: $rating-cell-height;
+      @include border-box;
+      font: {
+        family: "Tahoma", sans-serif;
+        size: 11px;
+      }
+      color: $base-body-color;
+      th:first-child,
+      td:first-child {
+        width: $tournament-first-col-width;
+        text-align: right;
+      }
+      th:nth-child(2),
+      td:nth-child(2) {
+        @include border-box;
+        width: $tournament-second-col-width;
+        padding-left: 9px;
+        padding-right: 9px;
+        text-align: left;
+      }
+      th:nth-child(3),
+      td:nth-child(3) {
+        @include border-box;
+        padding-right: 12px;
+        text-align: right;
+      }
+      td:nth-child(3) {
+        color: $tourn-cell-color;
+      }
+      &.current-user {
+        color: $current-user;
+        td {
+          .arrow-in-table {
+            width: $arrow-in-table-width;
+            height: $arrow-in-table-height;
+            margin-left: 10px;
+            background: url(../images/sprite.png) no-repeat -315px -125px;
+          }
+        }
+      }
+      &:nth-child(even) {
+        background: $tourn-cell-bg;
+      }
+    }
+
+    thead {
+      font: {
+        family: "Tahoma", sans-serif;
+        size: 11px;
+      }
+      tr {
+        color: $tourn-thead-color !important;
+        background: $tourn-cell-bg;
+      }
+      @include text-shadow(0 1px 0 rgb(0,0,0));
+    }
+    td.qualification {
+      @include border-box;
+      padding-right: 7px;
+      text-align: right;
+      span {
+        position: relative;
+        right: 0;
+        color: $tourn-cell-color;
+      }
+    }
+  }
+
+}

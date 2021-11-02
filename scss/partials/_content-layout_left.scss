@@ -1,0 +1,131 @@
+// top grad
+$top-grad-width: 411px;
+$top-grad-height: 568px;
+
+// bottom grad
+$bottom-grad-width: 411px;
+$bottom-grad-height: 416px;
+
+// gradients
+$head-cont-grad-height: 295px;
+$foot-cont-grad-height: 154px;
+$grad-line-width: 411px;
+
+$min-body-height-add: 500px;
+
+body {
+  min-height: $top-grad-height + $bottom-grad-height + $min-body-height-add;
+}
+
+.content {
+  width: 100%;
+  min-width: $layout-width;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-pos-point {
+  position: relative !important;
+  background-color: $content-bg;
+}
+
+%top-grad {
+  position: absolute;
+  top: 0;
+  width: $top-grad-width;
+  height: $top-grad-height;
+  z-index: 10;
+}
+
+.left-top-cont-grad {
+  @extend %top-grad;
+  left: -411px;
+  background: url("../pic/top-grad-left.png") no-repeat 0 0;
+}
+
+.right-top-cont-grad {
+  @extend %top-grad;
+  right: -411px;
+  background: url("../pic/top-grad-right.png") no-repeat 0 0;
+}
+
+%bottom-grad {
+  position: absolute;
+  bottom: 0;
+  width: $bottom-grad-width;
+  height: $bottom-grad-height;
+  z-index: 11;
+}
+
+.left-bottom-cont-grad {
+  @extend %bottom-grad;
+  left: -411px;
+  background: url("../pic/bottom-grad-left.png") no-repeat 0 0;
+}
+
+.right-bottom-cont-grad {
+  @extend %bottom-grad;
+  right: -411px;
+  background: url("../pic/bottom-grad-right.png") no-repeat 0 0;
+}
+
+.head-cont-grad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $layout-width;
+  height: $head-cont-grad-height;
+  background: url("../pic/head-cont-grad.png") no-repeat 0 0;
+}
+
+.foot-cont-grad {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: $layout-width;
+  height: $foot-cont-grad-height;
+  background: url("../pic/foot-cont-grad.png") no-repeat 0 0;
+}
+
+%grad-line {
+  position: absolute;
+  width: $grad-line-width;
+  top: $top-grad-height;
+  bottom: $bottom-grad-height;
+}
+
+.grad-left-line {
+  @extend %grad-line;
+  left: -411px;
+  background: url("../pic/left-line.png") repeat-y 0 0;
+}
+
+.grad-right-line {
+  @extend %grad-line;
+  right: -411px;
+  background: url("../pic/right-line.png") repeat-y 0 0;
+}
+
+.left-content {
+  width: $left-content-width;
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  margin-top: 40px;
+  margin-bottom: 250px;
+  .content-header {
+    width: $left-content-width;
+    margin: 20px 0 15px 59px;
+    &:before {
+      top: -5px;
+      left: -70px;
+      position: absolute;
+      display: block;
+      content: "";
+      width: 779px;
+      height: 10px;
+      background: url(.././pic/short-title-light.png) no-repeat 0 0;
+    }
+  }
+}
+

@@ -1,0 +1,273 @@
+div.fancy-select {
+	position: relative;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	color: #000;
+}
+
+div.fancy-select.birth-date {
+	font-size: 12px;
+	font-family: 'Roboto Light', sans-serif;
+}
+
+div.fancy-select.disabled {
+	opacity: 0.5;
+}
+
+div.fancy-select div.trigger {
+	cursor: pointer;
+	padding-top: 15px;
+	padding-left: 15px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+	background: transparent;
+	width: 53px;
+	height: 46px;
+	transition: all 240ms ease-out;
+	-webkit-transition: all 240ms ease-out;
+	-moz-transition: all 240ms ease-out;
+	-ms-transition: all 240ms ease-out;
+	-o-transition: all 240ms ease-out;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+}
+
+div.fancy-select.birth-date div.trigger {
+	padding-top: 0;
+	padding-left: 13px;
+	line-height: 38px;
+	cursor: pointer;
+	height: 38px;
+	width: 130px;
+	color: #000;
+	border: 1px solid rgb(15, 14, 19);
+	background: rgb(252, 252, 252);
+}
+
+.trigger:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    border-top-color: #fff;
+    top: 48%;
+    right: 7px;
+}
+
+div.fancy-select.birth-date .trigger:after {
+	border: 0;
+	top: 1px;
+	right: 0;
+	width: 16px;
+	height: 36px;
+	background: url(.././pic/cabinet/select.png) no-repeat 0 0;
+}
+
+div.fancy-select div.trigger.open {
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+	background: transparent;
+    width: 53px;
+    height: 46px;
+	overflow: hidden;
+}
+
+div.fancy-select.birth-date div.trigger.open {
+	padding-top: 0;
+	padding-left: 13px;
+	line-height: 38px;
+	cursor: pointer;
+	height: 38px;
+	width: 130px;
+	color: #000;
+	border: 1px solid rgb(15, 14, 19);
+	background: rgb(252, 252, 252);
+	box-shadow: none;
+}
+
+div.fancy-select ul.options {
+	list-style: none;
+	margin: 0;
+	position: absolute;
+	top: 40px;
+	left: 0;
+	visibility: hidden;
+	opacity: 0;
+	z-index: 50;
+	max-height: 200px;
+	overflow: auto;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+	min-width: 53px;
+
+	transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+}
+
+
+
+div.fancy-select ul.options.open {
+    z-index: 60;
+	overflow: hidden;
+	visibility: visible;
+	top: 70px;
+	opacity: 1;
+
+	/* have to use a non-visibility transition to prevent this iOS issue (bug?): */
+	/*http://stackoverflow.com/questions/10736478/css-animation-visibility-visible-works-on-chrome-and-safari-but-not-on-ios*/
+	transition: opacity 300ms ease-out, top 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, top 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, top 300ms ease-out;
+}
+
+div.fancy-select.birth-date ul.options.open {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+div.fancy-select ul.options.overflowing {
+	overflow: hidden;
+	top: auto;
+	bottom: 40px;
+
+	transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.fancy-select.birth-date ul.options.overflowing {
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+div.fancy-select ul.options.overflowing.open {
+	top: auto;
+	bottom: 50px;
+
+	transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-webkit-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-moz-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-ms-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+	-o-transition: opacity 300ms ease-out, bottom 300ms ease-out;
+}
+
+div.fancy-select ul.options li {
+    z-index: 50;
+	-webkit-box-sizing: border-box;
+  	-moz-box-sizing: border-box;
+  	box-sizing: border-box;
+	cursor: pointer;
+	padding-top: 14px;
+	padding-bottom: 14px;
+	padding-left: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+	background: #fff;
+	border-bottom: 1px solid #b1b8bd;
+    width: 53px;
+    height: 46px;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: all 150ms ease-out;
+	-webkit-transition: all 150ms ease-out;
+	-moz-transition: all 150ms ease-out;
+	-ms-transition: all 150ms ease-out;
+	-o-transition: all 150ms ease-out;
+}
+
+div.fancy-select.birth-date ul.options li {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	cursor: pointer;
+	padding: 1px 0 0 13px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+	color: #000;
+	border-bottom: 1px solid rgb(15, 14, 19);
+	background: rgb(252, 252, 252);
+	height: 30px;
+	line-height: 30px;
+	width: 130px;
+}
+
+div.fancy-select ul.options li.selected {
+    z-index: 50;
+	position: relative;
+	background: #fff;
+	color: #000;
+}
+
+div.fancy-select ul.options li.hover {
+    z-index: 50;
+	position: relative;
+    background: rgb(133,133,133);
+}
+
+/* Set width */
+
+div.fancy-select.birth-date-day div.trigger {
+	width: 60px !important;
+}
+
+div.fancy-select.birth-date-day div.trigger.open {
+	width: 60px !important;
+}
+
+div.fancy-select.birth-date-day ul.options {
+	min-width: 60px;
+}
+
+div.fancy-select.birth-date-day ul.options li {
+	width: 60px;
+}
+
+div.fancy-select.birth-date-month div.trigger {
+	width: 89px !important;
+}
+
+div.fancy-select.birth-date-month div.trigger.open {
+	width: 89px !important;
+}
+
+div.fancy-select.birth-date-month ul.options {
+	min-width: 89px;
+}
+
+div.fancy-select.birth-date-month ul.options li {
+	width: 89px;
+}
+
+div.fancy-select.birth-date-year div.trigger {
+	width: 74px !important;
+}
+
+div.fancy-select.birth-date-year div.trigger.open {
+	width: 74px !important;
+}
+
+div.fancy-select.birth-date-year ul.options {
+	min-width: 74px;
+}
+
+div.fancy-select.birth-date-year ul.options li {
+	width: 74px;
+}
+

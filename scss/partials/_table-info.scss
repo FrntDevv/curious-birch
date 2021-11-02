@@ -1,0 +1,77 @@
+// information table
+$table-info-width: 700px;
+$table-info-border: #3f3126;
+$table-info-img-width: 160px;
+$table-info-img-height: 92px;
+$table-info-play-btn-width: 170px;
+$table-info-play-btn-height: 41px;
+
+.table-info {
+  width: $table-info-width;
+  display: block;
+}
+
+.games-info {
+  width: $table-info-width;
+  border: 0;
+  tr {
+    border-top: 1px solid $table-info-border;
+    border-bottom: 1px solid $table-info-border;
+  }
+  td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    vertical-align: middle;
+  }
+  td.desc {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 35px;
+  }
+  .track-desc {
+    overflow: hidden;
+    white-space: normal;
+  }
+}
+
+.foot-img-shadow {
+  position: relative;
+  max-width: 100%;
+  float: left;
+  &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      @include box-shadow(0 0 $standard-shadow-size 0 $content-img-box-shadow inset);
+  }
+}
+
+.foot-img {
+  float: left;
+  width: $table-info-img-width;
+  height: $table-info-img-height;
+}
+
+a.games-play-btn {
+  position: relative;
+  right: 0;
+  display: block;
+  @extend %button-base-font;
+  @extend %base-text-in-ref;
+  @include border-box;
+  text-align: center;
+  padding-top: 12px;
+  width: $table-info-play-btn-width;
+  height: $table-info-play-btn-height;
+  @include text-shadow(0 $standard-shadow-size 0 rgba(0,0,0,.46));
+  background: url("../pic/play-button.png") no-repeat 0 -41px;
+  z-index: 5;
+  &:hover {
+    position: relative;
+    z-index: 5;
+    background-position: 0 0;
+  }
+}

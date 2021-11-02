@@ -1,0 +1,145 @@
+$registration-description-line-width: 1050px;
+$present-bonus-width: 261px;
+$present-bonus-height: 277px;
+$present-bonus-image-width: 336px;
+$present-bonus-image-height: 342px;
+$free-spins-width: 270px;
+$enter-color: rgb(0, 160, 219);
+
+.popup.registration {
+  .popup-main-head {
+    .already-registered {
+      position: absolute;
+      top: -2px;
+      right: 99px;
+      .popup-description {
+        float: left;
+        top: 40px;
+        margin-right: 15px;
+      }
+      a.link {
+        color: $enter-color;
+        font: {
+          weight: 100;
+          size: 24px;
+        }
+      }
+    }
+  }
+  .popup-head {
+    margin-top: 104px;
+    margin-bottom: 16px;
+  }
+  .description-line {
+    width: $registration-description-line-width;
+    margin: 0 auto;
+  }
+  .presents-bonuses-list {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 55px;
+    li {
+      position: relative;
+      display: inline-block;
+      width: $present-bonus-width;
+      .present-picture {
+        width: $present-bonus-width;
+        height: $present-bonus-height;
+        &:before {
+        width: $present-bonus-image-width;
+        height: $present-bonus-image-height;
+        content: "";
+        display: block;
+        position: absolute;
+        background: url(../pic/popup/bonuses-sprite/bonuses-sprite.png) no-repeat 0 0;
+        }
+        position: relative;
+        z-index: 2;
+      }
+      .presents-description {
+        position: absolute;
+        z-index: 1;
+        top: 240px;
+        left: 0;
+        right: 0;
+        color: $base-body-color;
+        .name {
+          text-transform: uppercase;
+          font-size: 14px;
+        }
+        .description {
+          margin: 8px auto 0;
+          max-width: 180px;
+          font-size: 13px;
+          opacity: .5;
+          line-height: 1.2;
+        }
+      }
+      list-style: none;
+      margin-right: 14px;
+
+      &.free-spins {
+        width: $free-spins-width;
+        .present-picture {
+        width: $free-spins-width;
+          &:before {
+          position: absolute;
+          content: "";
+          width: $present-bonus-image-width + 5;
+          background-position: -1009px 0;
+          top: -36px;
+          left: -35.5px;
+          }
+          &:hover:before {
+          background-position: -1009px -342px;
+          }
+        }
+      }
+      &.free-franks {
+         .present-picture {
+         &:before {
+          width: $present-bonus-image-width;
+          background-position: 0 0;
+          top: -36px;
+          left: -37.5px;
+          }
+          &:hover:before {
+          background-position: 0 -342px;
+          }
+        }
+      }
+      &.double-franks {
+        width: $present-bonus-width + 1;
+        .present-picture {
+        width: $present-bonus-width + 1;
+        &:before {
+          width: $present-bonus-image-width + 1;
+          height: $present-bonus-image-height - 1;
+          background-position: -672px 0;
+          top: -35.5px;
+          left: -37.5px;
+          }
+           &:hover:before {
+          background-position: -672px -341px;
+          }
+        }
+      }
+      &.extra-return {
+        .present-picture {
+        	&:before {
+          height: $present-bonus-image-height - 1;
+          background-position: -336px 0;
+          top: -35.5px;
+          left: -37.5px;
+          }
+          &:hover:before {
+          background-position: -336px -341px;
+          }
+        }
+      }
+      &:nth-child(4n) {
+        margin-right: 0;
+      }
+    }
+  }
+}

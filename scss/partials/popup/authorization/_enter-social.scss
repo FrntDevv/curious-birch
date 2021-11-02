@@ -1,0 +1,70 @@
+$social-list-item-size: 77px;
+$social-list-select-bg: rgba(55, 51, 68, .5);
+$social-popup-description-width: 300px;
+
+%social-button {
+  display: block;
+  @include border-box();
+  width: $social-list-item-size;
+  height: $social-list-item-size;
+  border: 1px solid $popup-form-border;
+  &.select {
+    @include box-shadow(inset 0 0 13px 0 rgba(#000, .7));
+  }
+  background: url(.././pic/popup/sprite/sprite.png) no-repeat $popup-form-bg;
+}
+
+.enter-social-block {
+  max-width: 800px;
+  margin: 0 auto;
+  .popup-head {
+    margin: 20px 0 !important;
+  }
+  .social-list {
+    float: none;
+    margin-top: 0;
+    height: $social-list-item-size;
+    display: inline-block;
+    li {
+      width: $social-list-item-size;
+      height: $social-list-item-size;
+      display: inline-block;
+      margin-right: 2px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    a.btn-vk {
+      @extend %social-button;
+      background-position: -154px -77px;
+    }
+    a.btn-fb {
+      @extend %social-button;
+      background-position: 0 0;
+    }
+    a.btn-tw {
+      @extend %social-button;
+      background-position: -154px 0;
+    }
+    a.btn-gm {
+      @extend %social-button;
+      background-position: -77px 0;
+    }
+    a.btn-ok {
+      @extend %social-button;
+      background-position: -77px -77px;
+    }
+    a.btn-ml {
+      @extend %social-button;
+      background-position: 0 -77px;
+    }
+    a.btn-ya {
+      @extend %social-button;
+      background-position: 0 -154px;
+    }
+  }
+  .popup-description {
+    width: $social-popup-description-width;
+    margin: 14px auto 0;
+  }
+}

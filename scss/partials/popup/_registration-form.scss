@@ -1,0 +1,296 @@
+$registration-form-width: 800px;
+$greeting-bonus-width: 190px;
+$greeting-bonus-height: 192px;
+$middle-form-block-width: 315px;
+$currency-list-item-width: 50px;
+$currency-list-item-height: 44px;
+$currency-image-rub-width: 42px;
+$currency-image-rub-height: 44px;
+$currency-image-usd-width: 35px;
+$currency-image-usd-height: 45px;
+$currency-image-eur-width: 36px;
+$currency-image-eur-height: 44px;
+$accept-conditions-block-width: 150px;
+$currency-list-item-width: 70px;
+$vertical-registration-form-width: 375px;
+$vertical-accept-conditions-block-width: 230px;
+
+.popup.registration {
+  .select-greeting-bonus {
+    float: left;
+    margin-left: 25px;
+    position: relative;
+    width: $greeting-bonus-width;
+    height: $greeting-bonus-height;
+    .bonus-image {
+      position: absolute;
+      width: $greeting-bonus-width;
+      height: $greeting-bonus-height;
+      background: url(../pic/popup/small-gold.png) no-repeat 0 0;
+      top: 0;
+      left: 0;
+    }
+    .link {
+      position: relative;
+      z-index: 2;
+      margin-top: 161px;
+      display: inline-block;
+      font: {
+        family: "Tahoma", sans-serif;
+      }
+      color: $base-body-color;
+    }
+  }
+  .registration-form {
+    background: $popup-form-bg;
+    @include border-box();
+    border: 1px solid $popup-form-border;
+    width: $registration-form-width;
+    margin: 18px auto 0;
+    .middle-block {
+      float: left;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      margin-left: 25px;
+      width: $middle-form-block-width;
+    }
+      .input-container {
+        &:first-child {
+          margin-bottom: 30px;
+        }
+      }
+      .input-block {
+        margin-bottom: 32px;
+      }
+    .submit-form-btn {
+      width: 100%;
+      @extend %default-popup-btn;
+      margin-top: 20px;
+    }
+    .select-currency-block {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -9px;
+        height: 1px;
+        left: 0;
+        right: 0;
+        background: $popup-lines;
+      }
+      .block-name {
+        margin-bottom: 17px;
+      }
+      .currency-list {
+        height: $currency-list-item-height;
+        .error {
+          color: $error-text-color;
+          font-size: 12px;
+        }
+        li {
+          list-style: none;
+          display: block;
+          float: left;
+          width: $currency-list-item-width;
+          height: $currency-list-item-height;
+          &:last-child {
+            margin-right: 0;
+          }
+          input[type="radio"] + label {
+            position: relative;
+            background: url(../pic/popup/currency/sprite.png) no-repeat 0 0;
+            float: left;
+            height: $currency-list-item-height;
+          }
+          input[type="radio"] + label span {
+            left: -21px;
+            top: 12px;
+          }
+          &:hover {
+            input[type="radio"] + label {
+              cursor: pointer;
+            }
+          }
+          &.rub {
+            margin-right: 60px;
+            input[type="radio"] + label {
+              width: $currency-image-rub-width;
+              height: $currency-image-rub-height;
+              background-position: -142px 0;
+              top: -6px;
+              cursor: pointer;
+              margin-left: 20px;
+            }
+            input[type="radio"] + label span {
+
+            }
+            input[type="radio"]:checked + label {
+              background-position: -184px 0;
+            }
+            &:hover {
+              input[type="radio"] + label {
+                background-position: -184px 0;
+              }
+            }
+            &:before {
+              display: none;
+            }
+          }
+          &.usd {
+            margin-right: 45px;
+            input[type="radio"] + label {
+              width: $currency-image-usd-width;
+              height: $currency-image-usd-height;
+              top: -7px;
+              margin-left: 22px;
+            }
+            &:hover {
+              input[type="radio"] + label {
+                background-position: -35px 0;
+              }
+            }
+            input[type="radio"] + label span {
+              left: -23px;
+            }
+            input[type="radio"]:checked + label {
+              background-position: -35px 0;
+            }
+          }
+          &.eur {
+            input[type="radio"] + label {
+              width: $currency-image-eur-width;
+              height: $currency-image-eur-height;
+              background-position: -70px 0;
+              margin-left: 35px;
+              top: -7px;
+            }
+            &:hover {
+              input[type="radio"] + label {
+                background-position: -106px 0;
+              }
+            }
+            input[type="radio"] + label span {
+              left: -23px;
+            }
+            input[type="radio"]:checked + label {
+              background-position: -106px 0;
+            }
+          }
+        }
+      }
+    }
+
+    .accept-conditions-block {
+      float: left;
+      padding-top: 30px;
+      text-align: left;
+      width: $accept-conditions-block-width;
+      margin-left: 61px;
+      position: relative;
+      .error {
+        color: $error-text-color;
+        position: absolute;
+        left: 0;
+        bottom: -30px;
+      }
+      .popup-description {
+        input[type="checkbox"] + label span {
+          top: 3px;
+          right: 14px;
+        }
+        margin-bottom: 32px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &.without-captcha {
+      margin-top: 60px;
+      .select-currency-block {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+  .enter-social-block {
+    margin-top: 23px;
+  }
+}
+
+.popup.registration.second-layout {
+  .registration-form {
+    margin-top: 173px;
+    &.without-captcha {
+      margin-top: 197px;
+    }
+    &.with-mail {
+      margin-top: 123px;
+    }
+    &.without-captcha.with-mail {
+      margin-top: 163px;
+    }
+  }
+}
+
+.popup.registration.vertical-layout {
+  .registration-form {
+    padding: 30px 29px;
+    width: $vertical-registration-form-width;
+    margin-top: 104px;
+    .submit-form-btn {
+      margin-top: 0;
+    }
+    .captcha-block {
+      margin-top: 30px;
+    }
+    .inline-container {
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        display: block;
+        bottom: -22px;
+        height: 1px;
+        left: 0;
+        right: 0;
+        background: $popup-lines;
+      }
+    }
+    .accept-conditions-block {
+      float: none;
+      padding-top: 0;
+      margin-top: 50px;
+      margin-left: 43px;
+      width: $vertical-accept-conditions-block-width;
+      .popup-description {
+        margin-bottom: 26px;
+        &:last-child {
+          margin-bottom: 26px;
+        }
+          input[type="checkbox"] + label span {
+            top: 2px;
+            right: 14px;
+          }
+      }
+    }
+    &.without-captcha {
+      margin-top: 139px;
+      .select-currency-block {
+        &:before {
+          display: block;
+        }
+      }
+      .accept-conditions-block {
+        margin-top: 34px;
+      }
+    }
+    &.with-mail {
+      margin-top: 65px;
+    }
+    &.without-captcha.with-mail {
+      margin-top: 109px;
+    }
+  }
+}

@@ -1,0 +1,165 @@
+$bonus-picture-width: 195px;
+$bonus-picture-height: 174px;
+$standard-bonus-card-height: 178px;
+$bonus-card-height-with-play-block: 431px;
+$default-bonus-bg: rgb(28,6,49);
+$free-franks-bg: rgb(28,25,10);
+$free-spins-bg: rgb(52,5,12);
+$cabinet-bonus-width: 669px;
+$bonus-btn-height: 38px;
+$bonus-play-btn-width: 107px;
+$bonus-activate-btn-width: 174px;
+$bonus-right-section-width: 390px;
+$bonus-time-counter-height: 42px;
+$bonus-time-counter-width: 200px;
+$bonus-time-counter-color: rgb(255, 60, 0);
+
+.cabinet-section.bonuses {
+  padding-top: 20px;
+  padding-bottom: 17px;
+}
+
+.cabinet-bonus {
+  position: relative;
+  width: $cabinet-bonus-width;
+  margin: 0 auto 10px;
+  @include border-radius(2px);
+  .cabinet-bonus-container {
+    height: $standard-bonus-card-height;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  .bonus-btn {
+    position: absolute;
+    right: 26px;
+    top: 114px;
+    height: $bonus-btn-height;
+    line-height: $bonus-btn-height;
+    color: $base-body-color;
+    @include text-shadow(0 2px 0 rgba(#000,.46));
+    z-index: 2;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 15px;
+      weight: bold;
+    }
+    text: {
+      transform: uppercase;
+      decoration: none;
+      align: center;
+    }
+    &.activate {
+      width: $bonus-activate-btn-width;
+      background: url(.././pic/cabinet/bonus-activate-btn.png) no-repeat 0 -38px;
+      &:hover {
+        background-position: 0 0;
+      }
+    }
+    &.play {
+      width: $bonus-play-btn-width;
+      background: url(.././pic/cabinet/bonus-play-btn.png) no-repeat 0 -38px;
+      &:hover {
+        background-position: 0 0;
+      }
+    }
+  }
+  @include box-shadow(0 0 7px 1px rgb(0, 0, 0), inset 0 0 2px 0 rgba(255,255,255,.34));
+  .bonus-picture {
+    width: $bonus-picture-width;
+    height: $bonus-picture-height;
+    float: left;
+    margin-left: 3px;
+  }
+  &.deposit-conditions {
+    background: url(.././pic/cabinet/deposit-conditions.png) no-repeat 0 0;
+    height: $standard-bonus-card-height;
+    .bonus-picture {
+      background: url(.././pic/cabinet/violet-bonus-pic.png) no-repeat 0 -174px;
+      &:hover {
+        background-position: 0 0;
+      }
+    }
+  }
+  &.free-franks {
+    background: url(.././pic/cabinet/free-franks.png) no-repeat 0 0;
+    height: $standard-bonus-card-height;
+    .bonus-picture {
+      background: url(.././pic/cabinet/gold-bonus-pic.png) no-repeat 0 -174px;
+      &:hover {
+        background-position: 0 0;
+      }
+    }
+  }
+  &.free-spins {
+    background: url(.././pic/cabinet/free-spins.png) no-repeat 0 0;
+    height: $standard-bonus-card-height;
+    overflow: hidden;
+    .bonus-picture {
+      background: url(.././pic/cabinet/red-bonus-pic.png) no-repeat 0 -174px;
+      &:hover {
+        background-position: 0 0;
+      }
+    }
+  }
+  &.hidden-block-active {
+    height: $bonus-card-height-with-play-block;
+  }
+  .right-section {
+    margin-left: 5px;
+    position: relative;
+    @include border-box();
+    .middle-head {
+      margin-bottom: 5px;
+    }
+    p {
+      line-height: 1.5;
+      color: $base-body-color;
+      margin-bottom: 7px;
+      font: {
+        family: "Roboto", sans-serif;
+        weight: 300;
+        size: 12px;
+      }
+    }
+    text-align: left;
+    float: left;
+    padding-top: 28px;
+    padding-bottom: 75px;
+    width: $bonus-right-section-width;
+  }
+  .time-counter {
+    text-align: left;
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    height: $bonus-time-counter-height;
+    width: $bonus-time-counter-width;
+  }
+  .time-description {
+    letter-spacing: 0.4px;
+    font-weight: 400;
+    padding-top: 0;
+    padding-bottom: 0;
+    text-align: left;
+  }
+  .counter {
+    text-align: left;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    font-size: 24px;
+    color: $bonus-time-counter-color;
+    .count {
+      margin-right: 12px;
+      p {
+        font-size: 24px;
+        color: $bonus-time-counter-color;
+        position: absolute;
+        display: block;
+        top: -4px;
+        right: -11px;
+      }
+    }
+  }
+
+}

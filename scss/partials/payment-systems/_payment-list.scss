@@ -1,0 +1,189 @@
+$payment-width: 243px;
+$payment-height: 133px;
+$p-alfa-width: 125px;
+$p-alfa-height: 35px;
+$p-visa-width: 112px;
+$p-visa-height: 50px;
+$p-skrill-width: 96px;
+$p-skrill-height: 56px;
+$p-yandex-width: 120px;
+$p-yandex-height: 50px;
+$p-liqpay-width: 129px;
+$p-liqpay-height: 26px;
+$p-webmoney-width: 125px;
+$p-webmoney-height: 32px;
+$p-wallet-one-width: 58px;
+$p-wallet-one-height: 50px;
+$p-qiwi-width: 125px;
+$p-qiwi-height: 48px;
+$p-privat-24-width: 126px;
+$p-privat-24-height: 24px;
+$p-interkassa-width: 128px;
+$p-interkassa-height: 33px;
+$p-mail-money-width: 151px;
+$p-mail-money-height: 19px;
+$p-moneta-width: 125px;
+$p-moneta-height: 47px;
+$payment-passive-bg: rgb(0,45,51);
+$payment-hover-bg: rgb(0,34,42);
+$payment-active-bg: #18191a;
+
+.payment-systems {
+  width: $full-page-wrapper-width + 1;
+  margin-bottom: 3px;
+  height: $payment-height;
+  .payment {
+    z-index: 2;
+    @include border-radius(5px);
+      background: $payment-passive-bg;
+      @include linear-gradient(to bottom,
+              rgba(0,45,51,1) 0%,
+              rgba(0,34,42,1) 43%,
+              rgba(1,31,38,1) 50%,
+              rgba(5,28,37,1) 54%,
+              rgba(1,28,37,1) 57%,
+              rgba(7,26,36,1) 62%,
+              rgba(7,26,34,1) 64%,
+              rgba(3,26,34,1) 65%,
+              rgba(6,25,34,1) 66%,
+              rgba(7,24,32,1) 73%,
+              rgba(11,22,32,1) 73%,
+              rgba(7,22,32,1) 74%,
+              rgba(10,20,29,1) 79%,
+              rgba(10,19,28,1) 85%,
+              rgba(7,19,28,1) 85%,
+              rgba(9,18,26,1) 92%,
+              rgba(12,17,26,1) 92%,
+              rgba(12,16,25,1) 100%);
+      @include box-shadow(0 0 7px 1px rgb(0, 0, 0),
+              inset 0 0 2px 0 rgba(255, 255, 255, .5));
+
+    &:hover {
+      cursor: pointer;
+        background: $payment-hover-bg;
+      @include linear-gradient(to bottom,
+              rgba(0,45,51,1) 0%,
+              rgba(0,34,42,1) 43%,
+              rgba(1,31,38,1) 50%,
+              rgba(5,28,37,1) 54%,
+              rgba(1,28,37,1) 57%,
+              rgba(7,26,36,1) 62%,
+              rgba(7,26,34,1) 64%,
+              rgba(3,26,34,1) 65%,
+              rgba(6,25,34,1) 66%,
+              rgba(7,24,32,1) 73%,
+              rgba(11,22,32,1) 73%,
+              rgba(7,22,32,1) 74%,
+              rgba(10,20,29,1) 79%,
+              rgba(10,19,28,1) 85%,
+              rgba(7,19,28,1) 85%,
+              rgba(9,18,26,1) 92%,
+              rgba(12,17,26,1) 92%,
+              rgba(12,16,25,1) 100%);
+        @include box-shadow(0 0 6px 0 rgb(0, 0, 0),
+                inset 0 0 47px 2px rgba(100, 165, 231, .27),
+                inset 0 0 1px 0 rgba(255, 255, 192, .39));
+    }
+    &.active {
+        background: $payment-active-bg;
+        @include linear-gradient(to top, #15171f, #0c212b 52%, #091c25);
+        @include box-shadow(inset 0 0 13px rgba(0,0,0,.59));
+    }
+    list-style: none;
+    margin-right: 3px;
+    margin-bottom: 3px;
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.payment {
+  display: inline-block;
+  position: relative;
+  width: $payment-width;
+  height: $payment-height;
+  .background-logo {
+    display: block;
+    @include border-radius(5px);
+    position: absolute;
+    width: $payment-width;
+    height: $payment-height;
+    top: 0;
+    left: 0;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  &.alfa {
+    .background-logo {
+      background-image: url(../pic/payment/alfa.png);
+      @include background-size($p-alfa-width $p-alfa-height);
+    }
+  }
+  &.visa {
+    .background-logo {
+      background-image: url(../pic/payment/visa.png);
+      @include background-size($p-visa-width $p-visa-height);
+    }
+  }
+  &.skrill {
+    .background-logo {
+      background-image: url(../pic/payment/skrill.png);
+      @include background-size($p-skrill-width $p-skrill-height);
+    }
+  }
+  &.yandex {
+    .background-logo {
+      background-image: url(../pic/payment/yandex.png);
+      @include background-size($p-yandex-width $p-yandex-height);
+    }
+  }
+  &.liqpay {
+    .background-logo {
+      background-image: url(../pic/payment/liqpay.png);
+      @include background-size($p-liqpay-width $p-liqpay-height);
+    }
+  }
+  &.webmoney {
+    .background-logo {
+      background-image: url(../pic/payment/webmoney.png);
+      @include background-size($p-webmoney-width $p-webmoney-height);
+    }
+  }
+  &.wallet-one {
+    .background-logo {
+      background-image: url(../pic/payment/wallet-one.png);
+      @include background-size($p-wallet-one-width $p-wallet-one-height);
+    }
+  }
+  &.qiwi {
+    .background-logo {
+      background-image: url(../pic/payment/qiwi.png);
+      @include background-size($p-qiwi-width $p-qiwi-height);
+    }
+  }
+  &.privat-24 {
+    .background-logo {
+      background-image: url(../pic/payment/privat-24.png);
+      @include background-size($p-privat-24-width $p-privat-24-height);
+    }
+  }
+  &.interkassa {
+    .background-logo {
+      background-image: url(../pic/payment/interkassa.png);
+      @include background-size($p-interkassa-width $p-interkassa-height);
+    }
+  }
+  &.mail-money {
+    .background-logo {
+      background-image: url(../pic/payment/mail-money.png);
+      @include background-size($p-mail-money-width $p-mail-money-height);
+    }
+  }
+  &.moneta {
+    .background-logo {
+      background-image: url(../pic/payment/moneta.png);
+      @include background-size($p-moneta-width $p-moneta-height);
+    }
+  }
+}

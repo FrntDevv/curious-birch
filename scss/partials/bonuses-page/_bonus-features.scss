@@ -1,0 +1,79 @@
+$bonus-features-width: 360px;
+$features-1-col-width: 240px;
+$features-2-col-width: 120px;
+$features-cell-height: 38px;
+$features-1-col-bg: rgb(0,45,52);
+$features-no-col-bg: rgb(12,16,25);
+$features-yes-col-bg: rgb(12,23,30);
+
+.bonus-features {
+  float: left;
+  width: $bonus-features-width;
+  .big-head {
+    padding-bottom: 17px;
+    @extend %big-head-short;
+  }
+}
+
+.features-table {
+  display: block;
+  width: $bonus-features-width;
+  tr {
+    display: block;
+    font: {
+      family: "Tahoma", sans-serif;
+      size: 13px;
+    }
+    color: $base-body-color;
+    @include text-shadow(0 0 5px rgba(21,22,22,.7));
+  }
+  td {
+    @include border-box();
+    display: block;
+    float: left;
+    height: $features-cell-height;
+    line-height: $features-cell-height;
+    @include box-shadow(0 0 7px 1px rgb(0, 0, 0),
+            inset 0 0 2px 0 rgba(255, 255, 255, .5));
+    &:first-child {
+      text: {
+        align: left;
+      }
+      padding-left: 14px;
+      width: $features-1-col-width;
+      background: $features-1-col-bg;
+      @include linear-gradient(to bottom,
+              rgb(0,45,52) 0%,
+              rgb(0,39,47) 27%,
+              rgb(0,32,39) 49%,
+              rgb(5,26,36) 62%,
+              rgb(3,26,34) 65%,
+              rgb(10,16,25) 100%);
+    }
+    &:last-child {
+      text: {
+        align: right;
+      }
+      padding-right: 14px;
+      width: $features-2-col-width;;
+    }
+    &.yes {
+      background: $features-yes-col-bg;
+      @include linear-gradient(to bottom,
+              rgb(12,23,30) 0%,
+              rgb(7,36,38) 32%,
+              rgb(0,44,42) 49%,
+              rgb(0,56,49) 73%,
+              rgb(0,80,64) 100%);
+    }
+    &.no {
+      background: $features-no-col-bg;
+      @include linear-gradient(to bottom,
+              rgb(12,16,25) 0%,
+              rgb(14,14,23) 22%,
+              rgb(20,16,21) 35%,
+              rgb(59,28,24) 86%,
+              rgb(66,32,25) 100%);
+    }
+  }
+}

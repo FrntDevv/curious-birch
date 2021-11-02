@@ -1,0 +1,76 @@
+$profile-game-item-width: 178px;
+$profile-game-img-height: 102px;
+$profile-game-item-height: 163px;
+$bonus-game-list-width: 557px;
+$bonus-list-wrapper-width: 620px;
+$small-info-btn-size: 26px;
+
+.cabinet-bonus {
+  .play-hidden-block {
+    padding-top: 2px;
+    .middle-head {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .bonus-list-wrapper {
+      width: $bonus-list-wrapper-width;
+      margin: 0 auto;
+    }
+  }
+  .bonus-game-list {
+    text-align: left;
+    width: $bonus-game-list-width;
+      .frame {
+        width: $profile-game-item-width !important;
+        background: transparent;
+      }
+      .hover-game {
+        width: $profile-game-item-width !important;
+        height: $profile-game-img-height;
+        .info-btn {
+          bottom: 7px;
+          right: 7px;
+          width: $small-info-btn-size;
+          height: $small-info-btn-size;
+          background: url(../pic/cabinet/sprite/sprite.png) no-repeat 0 -31px;
+          &:hover {
+            background-position: -31px 0;
+          }
+
+        }
+        .btn-block {
+         .main-play-btn {
+           padding-left: 18px;
+           padding-right: 18px;
+         }
+        }
+        &.play-btn-only {
+          .btn-block {
+            padding-top: ($profile-game-img-height - $main-play-btn-height)/2;
+          }
+        }
+      }
+      .hot-game {
+        .frame {
+          .now-playing {
+            opacity: 1 !important;
+          }
+        }
+      }
+      .game-item {
+        width: $profile-game-item-width !important;
+        height: $profile-game-item-height;
+        margin-right: 11px;
+        background: transparent;
+      }
+      .game-img-shadow {
+        width: $profile-game-item-width !important;
+        height: $profile-game-img-height;
+      }
+      .game-img {
+        width: $profile-game-item-width !important;
+        height: $profile-game-img-height;
+      }
+  }
+}

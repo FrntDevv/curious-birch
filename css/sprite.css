@@ -1,0 +1,431 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-alfa-click {
+  background-image: url(sprite.png);
+  background-position: -255px 0px;
+  width: 26px;
+  height: 38px;
+}
+.icon-arrow-in-table {
+  background-image: url(sprite.png);
+  background-position: -315px -125px;
+  width: 7px;
+  height: 8px;
+}
+.icon-arrow-nav {
+  background-image: url(sprite.png);
+  background-position: -315px -75px;
+  width: 20px;
+  height: 20px;
+}
+.icon-blue-light {
+  background-image: url(sprite.png);
+  background-position: -255px -43px;
+  width: 23px;
+  height: 25px;
+}
+.icon-btn-search {
+  background-image: url(sprite.png);
+  background-position: -85px -30px;
+  width: 50px;
+  height: 34px;
+}
+.icon-cards-hover {
+  background-image: url(sprite.png);
+  background-position: -140px -30px;
+  width: 23px;
+  height: 23px;
+}
+.icon-cards-passive {
+  background-image: url(sprite.png);
+  background-position: -255px -103px;
+  width: 23px;
+  height: 23px;
+}
+.icon-cards-select {
+  background-image: url(sprite.png);
+  background-position: -141px -70px;
+  width: 23px;
+  height: 23px;
+}
+.icon-close-icon-hover {
+  background-image: url(sprite.png);
+  background-position: -170px -80px;
+  width: 33px;
+  height: 33px;
+}
+.icon-close-icon {
+  background-image: url(sprite.png);
+  background-position: -170px -42px;
+  width: 33px;
+  height: 33px;
+}
+.icon-hot-hover {
+  background-image: url(sprite.png);
+  background-position: 0px -70px;
+  width: 42px;
+  height: 40px;
+}
+.icon-hot-select {
+  background-image: url(sprite.png);
+  background-position: -47px -70px;
+  width: 42px;
+  height: 40px;
+}
+.icon-hot {
+  background-image: url(sprite.png);
+  background-position: -94px -70px;
+  width: 42px;
+  height: 40px;
+}
+.icon-info-hover {
+  background-image: url(sprite.png);
+  background-position: -37px -199px;
+  width: 32px;
+  height: 32px;
+}
+.icon-info {
+  background-image: url(sprite.png);
+  background-position: 0px -199px;
+  width: 32px;
+  height: 32px;
+}
+.icon-interkassa {
+  background-image: url(sprite.png);
+  background-position: -170px -118px;
+  width: 27px;
+  height: 40px;
+}
+.icon-jackpots-hover {
+  background-image: url(sprite.png);
+  background-position: -286px -213px;
+  width: 21px;
+  height: 22px;
+}
+.icon-jackpots-passive {
+  background-image: url(sprite.png);
+  background-position: -185px -166px;
+  width: 21px;
+  height: 22px;
+}
+.icon-jackpots-select {
+  background-image: url(sprite.png);
+  background-position: -286px -240px;
+  width: 21px;
+  height: 22px;
+}
+.icon-liqpay {
+  background-image: url(sprite.png);
+  background-position: -170px 0px;
+  width: 37px;
+  height: 37px;
+}
+.icon-maestro {
+  background-image: url(sprite.png);
+  background-position: -96px -115px;
+  width: 50px;
+  height: 30px;
+}
+.icon-mail-money {
+  background-image: url(sprite.png);
+  background-position: -212px -40px;
+  width: 38px;
+  height: 35px;
+}
+.icon-mastercard {
+  background-image: url(sprite.png);
+  background-position: -41px -115px;
+  width: 50px;
+  height: 30px;
+}
+.icon-moneta {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 80px;
+  height: 33px;
+}
+.icon-others-hover {
+  background-image: url(sprite.png);
+  background-position: -286px -132px;
+  width: 22px;
+  height: 22px;
+}
+.icon-others-passive {
+  background-image: url(sprite.png);
+  background-position: -286px -159px;
+  width: 22px;
+  height: 22px;
+}
+.icon-others-select {
+  background-image: url(sprite.png);
+  background-position: -286px -186px;
+  width: 22px;
+  height: 22px;
+}
+.icon-popular-hover {
+  background-image: url(sprite.png);
+  background-position: -165px -236px;
+  width: 24px;
+  height: 22px;
+}
+.icon-popular-passive {
+  background-image: url(sprite.png);
+  background-position: -223px -236px;
+  width: 24px;
+  height: 22px;
+}
+.icon-popular-select {
+  background-image: url(sprite.png);
+  background-position: -286px 0px;
+  width: 24px;
+  height: 22px;
+}
+.icon-privat-24 {
+  background-image: url(sprite.png);
+  background-position: -74px -199px;
+  width: 30px;
+  height: 32px;
+}
+.icon-qiwi {
+  background-image: url(sprite.png);
+  background-position: -212px -124px;
+  width: 35px;
+  height: 35px;
+}
+.icon-settings {
+  background-image: url(sprite.png);
+  background-position: 0px -115px;
+  width: 36px;
+  height: 46px;
+}
+.icon-skrill {
+  background-image: url(sprite.png);
+  background-position: 0px -38px;
+  width: 80px;
+  height: 27px;
+}
+.icon-slider-blank {
+  background-image: url(sprite.png);
+  background-position: -50px -269px;
+  width: 20px;
+  height: 21px;
+}
+.icon-slider-hover {
+  background-image: url(sprite.png);
+  background-position: -25px -269px;
+  width: 20px;
+  height: 21px;
+}
+.icon-slider-select {
+  background-image: url(sprite.png);
+  background-position: 0px -269px;
+  width: 20px;
+  height: 21px;
+}
+.icon-slots-hover {
+  background-image: url(sprite.png);
+  background-position: -194px -236px;
+  width: 24px;
+  height: 22px;
+}
+.icon-slots-passive {
+  background-image: url(sprite.png);
+  background-position: -252px -236px;
+  width: 24px;
+  height: 22px;
+}
+.icon-slots-select {
+  background-image: url(sprite.png);
+  background-position: -286px -27px;
+  width: 24px;
+  height: 22px;
+}
+.icon-soc-fb-h {
+  background-image: url(sprite.png);
+  background-position: -132px -236px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-fb-p {
+  background-image: url(sprite.png);
+  background-position: -99px -236px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-gm-h {
+  background-image: url(sprite.png);
+  background-position: -66px -236px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-gm-p {
+  background-image: url(sprite.png);
+  background-position: -33px -236px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-ml-h {
+  background-image: url(sprite.png);
+  background-position: 0px -236px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-ml-p {
+  background-image: url(sprite.png);
+  background-position: -152px -166px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-ok-h {
+  background-image: url(sprite.png);
+  background-position: -119px -166px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-ok-p {
+  background-image: url(sprite.png);
+  background-position: -86px -166px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-tw-h {
+  background-image: url(sprite.png);
+  background-position: -53px -166px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-tw-p {
+  background-image: url(sprite.png);
+  background-position: -142px -199px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-vk-h {
+  background-image: url(sprite.png);
+  background-position: -109px -199px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-vk-p {
+  background-image: url(sprite.png);
+  background-position: -212px -164px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-ya-h {
+  background-image: url(sprite.png);
+  background-position: -175px -199px;
+  width: 28px;
+  height: 28px;
+}
+.icon-soc-ya-p {
+  background-image: url(sprite.png);
+  background-position: -208px -199px;
+  width: 28px;
+  height: 28px;
+}
+.icon-star {
+  background-image: url(sprite.png);
+  background-position: -315px -100px;
+  width: 20px;
+  height: 20px;
+}
+.icon-tables-hover {
+  background-image: url(sprite.png);
+  background-position: -255px -159px;
+  width: 23px;
+  height: 23px;
+}
+.icon-tables-passive {
+  background-image: url(sprite.png);
+  background-position: -255px -131px;
+  width: 23px;
+  height: 23px;
+}
+.icon-tables-select {
+  background-image: url(sprite.png);
+  background-position: -255px -187px;
+  width: 23px;
+  height: 23px;
+}
+.icon-take-part-mark {
+  background-image: url(sprite.png);
+  background-position: -75px -269px;
+  width: 22px;
+  height: 19px;
+}
+.icon-user-full-star {
+  background-image: url(sprite.png);
+  background-position: -315px -50px;
+  width: 20px;
+  height: 20px;
+}
+.icon-user-half-star {
+  background-image: url(sprite.png);
+  background-position: -315px -25px;
+  width: 20px;
+  height: 20px;
+}
+.icon-user-no-star {
+  background-image: url(sprite.png);
+  background-position: -315px 0px;
+  width: 20px;
+  height: 20px;
+}
+.icon-videopokers-hover {
+  background-image: url(sprite.png);
+  background-position: -286px -106px;
+  width: 24px;
+  height: 21px;
+}
+.icon-videopokers-passive {
+  background-image: url(sprite.png);
+  background-position: -286px -54px;
+  width: 24px;
+  height: 21px;
+}
+.icon-videopokers-select {
+  background-image: url(sprite.png);
+  background-position: -286px -80px;
+  width: 24px;
+  height: 21px;
+}
+.icon-visa {
+  background-image: url(sprite.png);
+  background-position: -85px 0px;
+  width: 80px;
+  height: 25px;
+}
+.icon-w1 {
+  background-image: url(sprite.png);
+  background-position: 0px -166px;
+  width: 48px;
+  height: 28px;
+}
+.icon-webmoney {
+  background-image: url(sprite.png);
+  background-position: -212px 0px;
+  width: 38px;
+  height: 35px;
+}
+.icon-yandex-money {
+  background-image: url(sprite.png);
+  background-position: -212px -80px;
+  width: 34px;
+  height: 39px;
+}
+.icon-yellow-light {
+  background-image: url(sprite.png);
+  background-position: -255px -73px;
+  width: 23px;
+  height: 25px;
+}

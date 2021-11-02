@@ -1,0 +1,88 @@
+$tourn-game-item-width: 187px;
+$tourn-game-item-height: 169px;
+$tourn-game-img-height: 107px;
+$tourn-game-item-margin-right: 12px;
+$tourn-frame-height: 62px;
+$play-btn-padding: 25px;
+$info-height: 28px;
+$info-width: 28px;
+$game-list-width: 980px;
+
+.tournament-game {
+
+  .small-game-list {
+    .info-btn {
+      bottom: 3px;
+      right: 3px;
+      height: $info-height;
+      width: $info-width;
+      background: url(.././pic/sprite/sprite.png) no-repeat -196px -308px;
+      &:hover {
+        background-position: -168px -308px;
+      }
+    }
+    .main-play-btn {
+      padding-left: $play-btn-padding;
+      padding-right: $play-btn-padding;
+      font: {
+        size: 16px;
+      }
+    }
+    margin: 0 auto 6px;
+    width: $game-list-width;
+    .game-item {
+      width: $tourn-game-item-width;
+      height: $tourn-game-item-height;
+      margin-right: $tourn-game-item-margin-right;
+      .hover-game {
+        width: $tourn-game-item-width;
+        height: $tourn-game-img-height;
+        &.play-btn-only {
+          .btn-block {
+            padding-top: ($tourn-game-img-height - $main-play-btn-height)/2;
+          }
+        }
+      }
+      &:nth-child(3n) {
+        margin-right: $tourn-game-item-margin-right;
+      }
+      &:nth-child(5n) {
+        margin-right: 0;
+      }
+      .game-img-shadow {
+        width: $tourn-game-item-width;
+        height: $tourn-game-img-height;
+        .game-img {
+          width: $tourn-game-item-width - 1;
+          height: $tourn-game-img-height - 1;
+        }
+      }
+      .frame {
+        width: $tourn-game-item-width;
+        height: $tourn-frame-height;
+        .game-name {
+          padding-top: 9px;
+          font: {
+            size: 12px;
+          }
+        }
+        .now-playing {
+          padding-top: 10px;
+          font: {
+            size: 10px;
+            weight: 400;
+          }
+        }
+      }
+      &.hot {
+        .frame {
+          .now-playing {
+            opacity: 0.4;
+            color: $base-body-color;
+          }
+        }
+      }
+    }
+  }
+
+}

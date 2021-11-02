@@ -1,0 +1,55 @@
+$letter-mark-width: 74px;
+$letter-mark-height: 60px;
+$letter-further-btn-padding: 30px;
+$cross-error-width: 118px;
+$cross-error-height: 119px;
+
+.popup.confirm-e-mail {
+  .popup-head {
+    margin-top: 50px;
+    margin-bottom: 52px;
+    &.second-layout {
+      margin-bottom: 19px;
+    }
+  }
+  .popup-middle-head {
+    margin-bottom: 34px;
+    &.second-layout {
+      margin: 49px auto 0;
+      width: 75%;
+    }
+  }
+  .cross-error {
+    margin: 44px auto 0;
+    @include size($cross-error-width,$cross-error-height);
+    background: url(../pic/popup/cross-error.png) no-repeat 0 0;
+    left: 2px;
+    position: relative;
+  }
+  .letter {
+    .mark {
+      position: absolute;
+      right: -46px;
+      top: -18px;
+      width: $letter-mark-width;
+      height: $letter-mark-height;
+      background: url(../pic/popup/letter-mark.png) no-repeat 0 0;
+    }
+  }
+  .ok-btn {
+    margin: 60px auto 0;
+    &.second-layout {
+      margin-top: 55px;
+    }
+  }
+  .further-btn {
+    margin-top: 35px;
+    display: inline-block;
+    font-size: 16px;
+    padding-left: $letter-further-btn-padding;
+    padding-right: $letter-further-btn-padding;
+    height: $bonus-submit-form-btn-height;
+    line-height: $bonus-submit-form-btn-height;
+    width: auto;
+  }
+}

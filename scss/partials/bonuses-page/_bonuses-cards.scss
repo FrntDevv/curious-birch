@@ -1,0 +1,272 @@
+$bonus-card-width: 320px;
+$bonus-card-height: 415px;
+$bonus-frame-height: 230px;
+$bonus-img-height: 185px;
+$bonus-card-bg: rgb(20, 23, 31);
+$bonus-hot-card-bg: rgb(10,16,25);
+$padding-frame: 20px;
+$bonus-text-color: rgba(255,255,255,.7);
+$get-bonus-btn-padding: 25px;
+$get-bonus-btn-height: 36px;
+$get-bonus-btn-bg: #00b85c;
+$get-bonus-btn-shadow: #8ec182;
+$offer-frame-width: 370px;
+$offer-frame-height: 129px;
+$bonus-offer-img-height: 172px;
+$countdown-text-color: rgb(255, 238, 187);
+$timer-text-color: rgb(255, 60, 0);
+$count-block-width: 17px;
+$count-block-height: 24px;
+$count-block-bg: rgb(5,6,12);
+$countdown-text-auth-color: rgb(35, 31, 32);
+
+%get-bonus-btn {
+  padding-left: $get-bonus-btn-padding;
+  padding-right: $get-bonus-btn-padding;
+  position: relative;
+  display: block;
+  height: $get-bonus-btn-height;
+  line-height: $get-bonus-btn-height;
+  @include border-box;
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  background: $get-bonus-btn-bg;
+  @include linear-gradient(to bottom,
+          rgb(147,216,136) 0%,
+          rgb(111,205,105) 3%,
+          rgb(85,198,89) 6%,
+          rgb(59,195,88) 11%,
+          rgb(39,193,88) 14%,
+          rgb(0,191,89) 17%,
+          rgb(0,184,89) 34%,
+          rgb(0,184,92) 49%,
+          rgb(0,182,90) 66%,
+          rgb(0,174,83) 77%,
+          rgb(0,153,70) 94%,
+          rgb(0,159,86) 97%,
+          rgb(0,177,120) 100%);
+   //       #52c75f, #00b85c 50%, #00ab5e);
+  @include border-radius(3px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0 -2px 10px 0 rgba(255,255,255,.37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $get-bonus-btn-shadow, inset 0 -2px 10px 0 rgba(255,255,255,.37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 16px;
+    weight: bold;
+  }
+  @extend %base-text-in-ref;
+}
+
+.bonus-cards {
+  width: $left-sec-width;
+ li {
+   .bonus-description {
+     line-height: 1.25;
+     font: {
+       family: "Roboto", sans-serif;
+       weight: 300;
+       size: 12px;
+     }
+     text: {
+       align: left;
+     }
+     color: $bonus-text-color;
+   }
+   position: relative;
+   &:nth-child(even) {
+     margin-left: 20px;
+   }
+   margin-bottom: 15px;
+   display: inline-block;
+   @include box-shadow(0 0 7px 1px rgb(0,0,0), 0 0 $standard-shadow-size 0 rgba(255,255,255,.3) inset);
+   list-style: none;
+   width: $bonus-card-width;
+   height: $bonus-card-height;
+   background: $bonus-card-bg;
+   &.hot-card {
+     background: $bonus-hot-card-bg;
+     @include linear-gradient(to bottom,
+             rgb(10,16,25) 0%,
+             rgb(10,16,25) 52%,
+             rgb(25,19,24) 69%,
+             rgb(59,28,25) 92%,
+             rgb(67,32,25) 100%);
+   }
+   .bonus-img-shadow {
+     position: relative;
+     max-width: 100%;
+     float: left;
+     &:before {
+       content: "";
+       position: absolute;
+       top: 0;
+       bottom: 0;
+       left: 0;
+       right: 0;
+       @include box-shadow(0 0 $standard-shadow-size 0 $content-img-box-shadow inset);
+     }
+     width: $bonus-card-width;
+     height: $bonus-img-height;
+   }
+   .bonus-img {
+     float: left;
+     display: block;
+     @include border-box;
+     width: $bonus-card-width;
+     height: $bonus-img-height;
+   }
+   .frame {
+     position: relative;
+     float: left;
+     width: $bonus-card-width;
+     height: $bonus-frame-height;
+     @include border-box;
+     padding: $padding-frame;
+   }
+   &.offer {
+     .bonus-img-shadow {
+       height: $bonus-offer-img-height;
+     }
+     .bonus-img {
+       height: $bonus-offer-img-height;
+     }
+     .offer-frame {
+       position: absolute;
+       top: 87px;
+       left: -23px;
+       width: $offer-frame-width;
+       height: $offer-frame-height;
+       background: url(../pic/bonuses/offer-frame.png) no-repeat 0 0;
+     }
+     .frame {
+       margin-top: 15px;
+     }
+   }
+   &.center-item {
+     display: block;
+     margin: 0 auto 15px;
+   }
+ }
+}
+
+.bonus-header {
+  font: {
+    family: "Roboto Condensed", sans-serif;
+    size: 14px;
+    weight: bold;
+  }
+  text: {
+    transform: uppercase;
+    align: left;
+  }
+  opacity: 0.5;
+  color: $base-body-color;
+  @extend %text-overflow;
+  margin-bottom: 10px;
+}
+
+
+.get-bonus {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  right: 20px;
+  .get-bonus-btn {
+    float: left;
+    @extend %get-bonus-btn;
+  }
+  .get-more-information {
+    padding-top: 8px;
+    color: $bonus-text-color;
+    font: {
+      size: 12px;
+      family: "Tahoma", sans-serif;
+    }
+    text: {
+      decoration: underline;
+    }
+    margin-right: 27px;
+    float: right;
+  }
+  .arrow-nav {
+    position: absolute;
+    right: -5px;
+    width: $arrow-nav-width;
+    height: $arrow-nav-height;
+    top: 2px;
+    background: url(../pic/sprite/sprite.png) no-repeat -92px -312px;
+    &:hover {
+      background-position: -120px -312px;
+    }
+  }
+}
+
+.countdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  .countdown-text {
+    float: left;
+    margin-left: 11px;
+    padding-top: 6px;
+    color: $countdown-text-color;
+    &.auth {
+      color: $countdown-text-auth-color;
+    }
+    font: {
+      family: "Roboto Condensed", sans-serif;
+      size: 11px;
+    }
+    text: {
+      transform: uppercase;
+      align: left;
+    }
+  }
+  .timer {
+  	margin-top: 1px;
+    float: right;
+    color: $timer-text-color;
+    font: {
+      family: "Roboto Condensed", sans-serif;
+      size: 17px;
+      weight: bold;
+    }
+    text: {
+      transform: uppercase;
+      align: center;
+    }
+    .count {
+      float: left;
+      &.seconds {
+        .count-block {
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .count-block {
+      float: left;
+      margin-right: 1px;
+      width: $count-block-width;
+      height: $count-block-height;
+      line-height: $count-block-height + 1;
+      @include box-shadow(inset 0 0 2px 0 rgba(255,255,255,.3));
+      background: $count-block-bg;
+      @include linear-gradient(to bottom,
+              rgb(5,6,12) 0%,
+              rgb(5,6,12) 22%,
+              rgb(10,9,12) 39%,
+              rgb(27,14,14) 61%,
+              rgb(63,28,21) 100%);
+    }
+  }
+}

@@ -1,0 +1,545 @@
+$landing-header-h: 42px;
+$landing-w: 302px;
+$present-icon-size: 22px;
+$control-button-w: 24px;
+$control-button-h: 20px;
+$minimize-w: 19px;
+$minimize-h: 7px;
+$open-w: 14px;
+$open-h: 13px;
+$close-size: 17px;
+$present-block-h: 534px;
+$present-header-color: rgb(255, 168, 13);
+$get-btn-w: 215px;
+$get-btn-h: 81px;
+$get-btn-pic-w: 301px;
+$get-btn-pic-h: 140px;
+$present-desc: rgb(255, 210, 122);
+$landing-counter-color: rgb(255, 210, 42);
+$ellipse-count-size: 22px;
+$ellipse-count-color: rgb(32, 35, 45);
+
+@keyframes get-btn {
+  0% {
+    background: url(.././pic/landing/start-btn.png) no-repeat 0 0;
+    @include transform(none);
+  }
+  50% {
+    background: url(.././pic/landing/end-btn.png) no-repeat 0 0;
+    @include transform(scale(1.1));
+    @include blur(0);
+    @include transform(scale3d(1.1,1.1,1.1));
+  }
+  100% {
+    background: url(.././pic/landing/start-btn.png) no-repeat 0 0;
+    @include transform(none);
+  }
+}
+
+@keyframes get-no-bg-change {
+  0% {
+    @include transform(none);
+  }
+  50% {
+    @include transform(scale(1.1));
+    @include blur(0);
+    @include transform(scale3d(1.1,1.1,1.1));
+  }
+  100% {
+    @include transform(none);
+  }
+}
+
+@keyframes text-transform {
+  0% {
+    font-size: 30px;
+  }
+  50% {
+    font-size: 33px;
+  }
+  100% {
+    font-size: 30px;
+  }
+}
+
+%disable-animation {
+  -webkit-animation-name: none;
+  -moz-animation-name: none;
+  -o-animation-name: none;
+  animation-name: none;
+}
+
+.landing-block {
+  position: fixed;
+  z-index: 14;
+  bottom: 2px;
+  right: 54px;
+  text-align: center;
+  width: $landing-w;
+  .present-block {
+    display: none;
+    position: relative;
+    padding-top: 28px;
+    margin-top: 2px;
+    @include size($landing-w, $present-block-h);
+    @include border-box();
+    &:before {
+      position: absolute;
+      @include size($landing-w, $present-block-h);
+      content: "";
+      top: 0;
+      left: 0;
+      background: url(.././pic/landing/present-texture.png) no-repeat center 0;
+    }
+    .present-header {
+      position: relative;
+      color: $present-header-color;
+      text-align: center;
+      font: {
+        weight: 900;
+        size: 39px;
+      }
+      text-transform: uppercase;
+      @include text-shadow(0 3px 0 rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.15));
+      svg {
+        text-anchor: middle;
+      }
+      .present-head {
+        display: none;
+        line-height: 1;
+      }
+    }
+    .get-present {
+      position: absolute;
+      top: 310px;
+      width: 100%;
+      .get-btn-block {
+        margin: 0 auto 29px;
+        @include size($get-btn-w, $get-btn-h);
+        position: relative;
+        .get-btn-container {
+          position: relative;
+          z-index: 3;
+          -webkit-perspective: 1000;
+        }
+        .get-btn {
+          -webkit-backface-visibility: hidden;
+          display: block;
+          @include size($get-btn-w, $get-btn-h);
+          line-height: $get-btn-h + 1;
+          color: $base-body-color;
+          text: {
+            transform: uppercase;
+            decoration: none;
+          }
+          font: {
+            weight: 900;
+            size: 30px;
+          }
+          @include text-shadow(0 3px 0 rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.15));
+          position: relative;
+          z-index: 3;
+          @include animation(text-transform, 2s, infinite, linear, none);
+          -webkit-font-smoothing: subpixel-antialiased;
+          -webkit-transform: translate3d(0,0,0);
+        }
+        .get-btn-bg {
+          @include size($get-btn-pic-w, $get-btn-pic-h);
+          content: "";
+          position: absolute;
+          top: -29px;
+          left: -47px;
+          @include animation(get-btn, 2s, infinite, linear, none);
+        }
+       /* .get-btn-bg {
+          @include size($get-btn-pic-w, $get-btn-pic-h);
+          content: "";
+          position: absolute;
+          top: -29px;
+          left: -47px;
+          @include animation(get-no-bg-change, 2s, infinite, linear, none);
+          background: url(.././pic/landing/start-btn.png) no-repeat 0 0;
+        }
+        .change-bg {
+          @include size($get-btn-pic-w, $get-btn-pic-h);
+          content: "";
+          position: absolute;
+          top: -29px;
+          left: -47px;
+          z-index: 2;
+          @include animation(get-bg-change, 2s, infinite, linear, none);
+          background: url(.././pic/landing/end-btn.png) no-repeat 0 0;
+        }*/
+      }
+      .present-description {
+        line-height: 1.133;
+        letter-spacing: 0.5px;
+        @include border-box();
+        padding: 0 30px;
+        color: $present-desc;
+        text-transform: uppercase;
+        font: {
+          weight: 400;
+          size: 16px;
+        }
+        @include text-shadow(0 3px 0 rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.15));
+      }
+      .counter {
+        font: {
+          family: "swiss_721heavy";
+          size: 51px;
+        }
+        color: $landing-counter-color;
+        @include text-shadow(0 4px 0 rgb(199, 16, 2), 0 0 5px rgba(166, 20, 5, 0.7));
+        .minutes {
+          display: inline-block;
+          margin-right: 15px;
+        }
+        .seconds {
+          margin-left: 15px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .header {
+    @include size($landing-w, $landing-header-h);
+    line-height: $landing-header-h + 1;
+    position: relative;
+    background: url(.././pic/landing/header-texture.png) no-repeat 0 0;
+    @include box-shadow(0 0 7px 1px rgb(0, 0, 0), inset 0 0 2px 0 rgba(255, 255, 255, 0.34));
+    .your-presents {
+      float: left;
+      @include border-box();
+      color: $base-body-color;
+      text-transform: uppercase;
+      font: {
+        weight: 400;
+        size: 13px;
+      }
+      @include text-shadow(0 3px 0 rgba(0, 0, 0, 0.2), 0 0 4px rgba(0, 0, 0, 0.15));
+      position: relative;
+      padding-left: 41px;
+      &:before {
+        content: "";
+        position: absolute;
+        @include size($present-icon-size, $present-icon-size);
+        background: url(.././pic/landing/sprite.png) no-repeat 0 -43px;
+        top: 10px;
+        left: 9px;
+      }
+      span {
+        display: inline-block;
+        margin-left: 5px;
+        position: relative;
+        font: {
+          weight: 700;
+          size: 14px;
+        }
+        .count {
+          &:before {
+            display: none;
+          }
+          left: -1px;
+          margin-left: 0;
+          @include text-shadow(none);
+          position: relative;
+          z-index: 2;
+          width: $ellipse-count-size - 4;
+        }
+        color: $ellipse-count-color;
+        @include size($ellipse-count-size, $ellipse-count-size);
+        &:before {
+          @include border-radius(50%);
+          content: "";
+          position: absolute;
+          @include size($ellipse-count-size, $ellipse-count-size);
+          background: $base-body-color;
+          top: 10px;
+          left: 0;
+        }
+      }
+    }
+    .control-buttons {
+      float: right;
+      list-style: none;
+      margin-right: 5px;
+      li {
+        display: inline-block;
+        position: relative;
+        @include size($control-button-w, $control-button-h);
+        &:before {
+          content: "";
+          position: absolute;
+          background: url(.././pic/landing/sprite.png) no-repeat 0 0;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+        &.minimize {
+          &:before {
+            @include size($minimize-w, $minimize-h);
+            bottom: -2px;
+            left: -1px;
+          }
+        }
+        &.open {
+          &:before {
+            @include size($open-w, $open-h);
+            bottom: -1px;
+            left: 4px;
+            background-position: 0px -9px;
+          }
+        }
+        &.close {
+          &:before {
+            @include size($close-size, $close-size);
+            background-position: 0px -24px;
+            bottom: -2px;
+            left: 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.landing {
+  .game-category-list li.hot .cat-game-icon {
+    @extend %disable-animation;
+  }
+  .small-game-list + .big-game-list {
+    margin-top: 4px;
+  }
+  .countdown {
+    position: relative;
+    .count {
+      margin-right: -6px;
+      &.days {
+        margin-right: 7px;
+      }
+    }
+    .seperator {
+      position: relative;
+      display: inline-block;
+      top: -2px;
+      right: -6px;
+    }
+    .letter {
+      position: relative;
+      display: inline-block;
+      bottom: -20px;
+      left: -14px;
+      font: {
+        size: 11px;
+        weight: normal;
+      }
+      color: $letter-color;
+      line-height: 2.25;
+    }
+    .count.days ~ .letter {
+      left: -29px;
+    }
+    .count.hours ~ .letter {
+      left: -24px;
+    }
+    .count.minutes ~ .letter {
+      left: -26px;
+    }
+    .count.seconds ~ .letter {
+      left: -13px;
+    }
+  }
+  .content-wrap {
+    margin-left: 59px;
+    width: 100%;
+  }
+  header {
+    overflow: hidden;
+  }
+  .carousel-wrap {
+    position: absolute;
+    left: 50%;
+    margin-left: -960px;
+    top: 0;
+    height: 404px;
+    width: 100%;
+    .slider-wrapper {
+      height: 334px;
+    }
+    .banners-wrap {
+      position: absolute;
+      width: 1920px;
+      height: 334px;
+      bottom: 0;
+      a.banner-ref {
+        top: 66px;
+      }
+      .main-btn {
+        top: 150px;
+      }
+      .desc-arrows {
+        top: 65px;
+      }
+      .asc-arrows {
+        bottom: 15px;
+      }
+      &.arrows-wrap {
+        z-index: 1;
+      }
+      .slider {
+        height: 334px;
+      }
+      .slider .item {
+        width: 1920px;
+        height: 334px;
+        opacity: 0;
+        .slider-img-container {
+          height: 334px;
+        }
+        .slider-img {
+          width: 1920px;
+          height: 334px;
+        }
+        &:first-child {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .jackpot-name {
+    background: url(.././pic/landing/jackpot.png) no-repeat 0 0;
+    height: 38px;
+  }
+  .banner-img .label-wrapper .label-popular {
+    background: url(.././pic/landing/popular-label.png) no-repeat 0 0;
+  }
+  .main-menu {
+    left: 269px;
+  }
+  .banner-img .label-wrapper {
+    position: absolute;
+    z-index: 2;
+    left: -9px;
+    top: -9.5px;
+    width: 48px;
+    height: 139px;
+  }
+  .table-info ul.win-table {
+    list-style: none;
+    height: 536px;
+    overflow: hidden;
+  }
+  .track a.img-ref {
+    margin-left: 10px;
+  }
+  svg{
+    height: 130px;
+    width: 304px;
+  }
+}
+
+.landing.ru {
+  .main-menu-list {
+    li {
+      a {
+        padding-left: 50px;
+        padding-right: 51px;
+      }
+    }
+  }
+  .banner-img .label-wrapper .label-popular {
+    background: url(.././pic/landing/popular-label.png) no-repeat -48px 0;
+  }
+  .jackpot-name {
+    height: 30px;
+    margin-bottom: 18px;
+    background-position: 0 -38px;
+  }
+}
+
+.landing.en {
+  .game-category-list li a.cat-name {
+    padding: 50px 40px 14px 40px;
+  }
+  .main-menu-list li a {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+  .social-box .social-list {
+    margin-left: 70px;
+  }
+}
+
+@keyframes get-bg-change {
+  0% {
+    opacity: 0;
+    @include transform(none);
+  }
+  50% {
+    opacity: 1;
+    @include transform(scale(1.1));
+    @include blur(0);
+    @include transform(scale3d(1.1,1.1,1.1));
+  }
+  100% {
+    opacity: 0;
+    @include transform(none);
+  }
+}
+
+@-moz-document url-prefix() {
+  .landing-block {
+    .header .your-presents span .count {
+      left: 0;
+    }
+    .present-block {
+      .get-present {
+        .get-btn-block {
+          .get-btn-bg {
+            @include animation(get-no-bg-change, 2s, infinite, linear, none);
+            background: url(.././pic/landing/start-btn.png) no-repeat 0 0;
+          }
+          .change-bg {
+            @include size($get-btn-pic-w, $get-btn-pic-h);
+            content: "";
+            position: absolute;
+            top: -29px;
+            left: -47px;
+            z-index: 2;
+            @include animation(get-bg-change, 2s, infinite, linear, none);
+            background: url(.././pic/landing/end-btn.png) no-repeat 0 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .landing-block {
+    .header .your-presents span .count {
+      left: 0;
+    }
+    .present-block {
+      .get-present {
+        .get-btn-block {
+          .get-btn-bg {
+            @include animation(get-no-bg-change, 2s, infinite, linear, none);
+            background: url(.././pic/landing/start-btn.png) no-repeat 0 0;
+          }
+          .change-bg {
+            @include size($get-btn-pic-w, $get-btn-pic-h);
+            content: "";
+            position: absolute;
+            top: -29px;
+            left: -47px;
+            z-index: 2;
+            @include animation(get-bg-change, 2s, infinite, linear, none);
+            background: url(.././pic/landing/end-btn.png) no-repeat 0 0;
+          }
+        }
+      }
+    }
+  }
+}

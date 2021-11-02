@@ -1,0 +1,183 @@
+$contact-box-width: 317px;
+$contact-line-height: 25px;
+$contact-box-height: 44px;
+$contact-box-bg: rgb(0,45,52);
+$send-mail-height: 73px;
+$send-mail-color: rgb(94, 93, 93);
+$contact-icon-width: 25px;
+$input-container-width: 130px;
+$confirm-btn-width: 130px;
+$confirm-btn-height: 26px;
+$enter-phone-height: 158px;
+$contact-text-padding-top: 5px;
+$confirmed-account-color: #00910b;
+
+%confirm-btn {
+  width: $confirm-btn-width;
+  height: $confirm-btn-height;
+  line-height: $confirm-btn-height;
+  display: block;
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0 -2px 10px 0 rgba(255,255,255,.37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $confirm-btn-shadow, inset 0 -2px 10px 0 rgba(255,255,255,.37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 12px;
+    weight: bold;
+  }
+  @include text-shadow(0 2px 0 rgba(#000,.2));
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  @extend %base-text-in-ref;
+  background: url(.././pic/cabinet/confirm-btn.png) no-repeat 0 0;
+}
+
+.contact-box {
+  position: relative;
+  margin-top: 43px;
+  font: {
+    family: "Roboto", sans-serif;
+    weight: 300;
+    size: 12px;
+  }
+  @include box-shadow(0 0 3px 0 rgb(0, 0, 0));
+  height: $contact-box-height;
+  background: url(.././pic/cabinet/contact-bg.png) no-repeat 0 0;
+  .contact-line {
+  	display: inline-block;
+    position: relative;
+    height: $contact-line-height;
+    z-index: 3;
+    text-align: left;
+    .icon {
+      float: left;
+      width: $contact-icon-width;
+      height: $contact-line-height;
+    }
+    .contact-data {
+      float: left;
+      margin-left: 7px;
+      padding-top: $contact-text-padding-top;
+      color: $base-body-color;
+      .not-set {
+        position: relative;
+        top: 1px;
+        width: $not-set-size - 1;
+        height: $not-set-size;
+        background: url(.././pic/cabinet/sprite/sprite.png) no-repeat 0 -57px;
+      }
+    }
+    a.link {
+      padding-top: $contact-text-padding-top;
+      float: left;
+      margin-left: 9px;
+      display: block;
+    }
+  }
+}
+
+.mail {
+  position: relative;
+  float: left;
+  width: $contact-box-width;
+  height: $contact-box-height;
+  .contact-line {
+    .icon {
+      background: url(.././pic/cabinet/sprite/sprite.png) no-repeat -26px -31px;
+    }
+    margin-top: 10px;
+  }
+  .send-mail {
+    @include box-shadow(0 0 3px 0 rgb(0, 0, 0));
+    background: url(.././pic/cabinet/send-mail-bg.png) no-repeat 0 0;
+    display: none;
+    &.active {
+      display: block;
+    }
+    padding-top: 42px;
+    z-index: 2;
+    color: $send-mail-color;
+    height: $send-mail-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $contact-box-width;
+    @include border-box();
+  }
+}
+
+.phone {
+  position: relative;
+  float: right;
+  width: $contact-box-width;
+  height: $contact-box-height;
+  .contact-line {
+    margin-top: 10px;
+    .icon {
+      background: url(.././pic/cabinet/sprite/sprite.png) no-repeat -57px 0px;
+      height: $contact-line-height - 1;
+    }
+  }
+}
+
+.enter-phone {
+  z-index: 2;
+  height: $enter-phone-height;
+  @include box-shadow(0 0 3px 0 rgb(0, 0, 0));
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $contact-box-width;
+  @include border-box();
+  background: url(../pic/cabinet/set-phone-bg.png) no-repeat 0 0;
+  display: none;
+  &.active {
+    display: block;
+  }
+  .enter-phone-container {
+    margin-top: 47px;
+    &:first-child {
+      margin-bottom: 25px;
+    }
+  }
+  .input-container {
+    width: $input-container-width;
+    @include border-box();
+    margin-left: 24px;
+    margin-right: 7px;
+    float: left;
+    position: relative;
+  }
+  .confirm-btn {
+    float: left;
+    @extend %confirm-btn;
+  }
+}
+
+.account-status {
+  position: relative;
+  display: inline-block;
+  margin-top: 22px;
+  font: {
+    family: "Roboto", sans-serif;
+    weight: 300;
+    size: 12px;
+  }
+  color: $base-body-color;
+  span {
+    font: {
+      family: "Roboto", sans-serif;
+      weight: bold;
+    }
+    &.confirmed {
+      color: $confirmed-account-color;
+    }
+    &.not-confirmed {
+      color: $error-text-color;
+    }
+  }
+}
+

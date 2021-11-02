@@ -1,0 +1,259 @@
+$best-players-bg: rgb(38,92,64);
+$fire-height: 86px;
+$fire-width: 129px;
+$most-income-game: #ffda11;
+$lead-players-text-shadow: rgba(21, 22, 22, 0.7);
+$lead-thead-color: rgba(255, 255, 255, .3);
+$lead-line-height: 25px;
+$lead-line-color: #507965;
+$lead-first-column-width: 20px;
+$lead-second-column-width: 27px;
+$lead-third-column-width: 173px;
+$lead-fourth-column-width: 60px;
+$lead-fifth-column-width: 20px;
+$dynamic-bg: rgb(0,155,91);
+$arrow-width: 14px;
+$arrow-height: 12px;
+$points-color: #8f82ae;
+$current-user-points-color: #379f61;
+$position-font-size: 17px;
+$ring-with-fire-width: 221px;
+$ring-with-fire-height: 212px;
+$position-color: #d1d3d0;
+$play-btn-container-width: 196px;
+
+%arrow-in-lead-table {
+  width: $arrow-width;
+  height: $arrow-height;
+  margin-top: 2px;
+}
+
+%table-cells {
+  display: block;
+  float: left;
+  padding-top: 4px;
+  height: $lead-line-height;
+  @include border-box();
+  &:first-child {
+    width: $lead-first-column-width;
+  }
+  &:nth-child(2) {
+    padding-left: 5px;
+    text-align: left;
+    width: $lead-second-column-width;
+    border-bottom: 1px solid $lead-line-color;
+  }
+  &:nth-child(3) {
+    padding-left: 3px;
+    text-align: left;
+    width: $lead-third-column-width;
+    border-bottom: 1px solid $lead-line-color;
+  }
+  &:nth-child(4) {
+    text-align: right;
+    width: $lead-fourth-column-width;
+    border-bottom: 1px solid $lead-line-color;
+    color: $points-color;
+  }
+  &:last-child {
+    width: $lead-fifth-column-width;
+  }
+}
+
+.best-players {
+  position: relative;
+  @include border-box();
+  @include box-shadow(0 0 7px 1px rgb(0, 0, 0),
+          inset 0 0 2px 0 rgba(255,255,255,.5));
+  width: $aside-width - 2;
+  margin: 5px auto 22px;
+  padding-top: 15px;
+  padding-bottom: 37px;
+  background: $best-players-bg;
+  @include linear-gradient(to bottom,
+          rgb(55,160,97) 0%, rgb(38,92,64) 51%,
+          rgb(20,23,31) 100%);
+  .most-income-game {
+    padding-left: 25px;
+    padding-bottom: 8px;
+    text: {
+      align: left;
+      transform: uppercase;
+    }
+    font: {
+      size: 14px;
+      family: "Tahoma", sans-serif;
+      weight: bold;
+    }
+    color: $most-income-game;
+  }
+  .name-of-game {
+    padding-left: 25px;
+    text: {
+      align: left;
+      transform: uppercase;
+    }
+    font: {
+      size: 17px;
+      family: "Tahoma", sans-serif;
+      weight: bold;
+    }
+    color: $base-body-color;
+  }
+  .tournament-img-box {
+    margin-top: 7px;
+    margin-bottom: 0;
+    margin-left: 53px;
+    width: $ring-with-fire-width;
+    height: $ring-with-fire-height;
+    position: relative;
+    &:before {
+      top: 0;
+      left: 0;
+      position: absolute;
+      display: block;
+      content: "";
+      z-index: 10;
+      width: $ring-with-fire-width;
+      height: $ring-with-fire-height;
+      background: url(.././pic/tournaments/ring-with-fire.png) no-repeat 0 0;
+    }
+    .play-btn-container {
+      z-index: 11;
+      position: absolute;
+      left: 4px;
+      bottom: 4px;
+      width: $play-btn-container-width;
+      text-align: center;
+      .main-play-btn {
+        display: inline-block;
+      }
+    }
+    .tournament-img-container {
+      margin-top: 12px;
+      left: -8.5px;
+    }
+  }
+  .lead-players {
+    margin-top: 20px;
+    padding-left: 25px;
+    text: {
+      align: left;
+    }
+    font: {
+      size: 20px;
+      family: "Roboto", sans-serif;
+      weight: bold;
+    }
+    color: $base-body-color;
+    @include text-shadow(0 0 5px $lead-players-text-shadow);
+  }
+  .take-part-block {
+    position: static;
+  }
+}
+
+.lead-players-table {
+  margin-top: 8px;
+  margin-bottom: 30px;
+  width: $aside-width - 2;
+  font: {
+    size: 12px;
+    family: "Tahoma", sans-serif;
+  }
+  color: $base-body-color;
+  thead {
+    tr {
+      color: $lead-thead-color;
+      th {
+       @extend %table-cells;
+        font: {
+          weight: 400;
+        }
+        border-bottom: 0;
+        &:nth-child(2) {
+          border-bottom: 0;
+        }
+        &:nth-child(3) {
+          border-bottom: 0;
+        }
+        &:nth-child(4) {
+          color: $lead-thead-color;
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+  tr {
+    display: block;
+    td {
+      @extend %table-cells;
+    }
+    &.current-user {
+      td:nth-child(4) {
+        color: $current-user-points-color;
+      }
+    }
+    height: $lead-line-height;
+    position: relative;
+    &.dynamic {
+      td {
+        height: $lead-line-height;
+        border-bottom: 0;
+        @include border-box();
+        &:first-child {
+          width: $lead-first-column-width - 5;
+        }
+        &:nth-child(2) {
+          width: $lead-second-column-width + 5;
+          padding-left: 5px;
+        }
+        &:nth-child(3) {
+          padding-left: 3px;
+          text-align: left;
+          width: $lead-third-column-width;
+        }
+        &:nth-child(4) {
+          text-align: right;
+          width: $lead-fourth-column-width;
+          color: $base-body-color;
+        }
+        &:last-child {
+          width: $lead-fifth-column-width;
+        }
+        &.position {
+          font: {
+            size: $position-font-size;
+            family: "Tahoma", sans-serif;
+            weight: bold;
+          }
+          text-align: left;
+          color: $position-color;
+          position: relative;
+          padding-top: 2px;
+          padding-left: 9px;
+        }
+      }
+      position: relative;
+      background: $dynamic-bg;
+      @include box-shadow(inset 0 0 2px 0 rgba(255,255,255,.5),0 0 8px 1px rgba(0,0,0,.3));
+      @include linear-gradient(to bottom, rgb(0,155,91) 0%,rgb(0,129,84) 75%,rgb(0,110,78) 100%);
+      @include border-box();
+      width: $aside-width - 2;
+      height: $lead-line-height;
+      &.arrow-up {
+        .arrow {
+          @extend %arrow-in-lead-table;
+          background: url(".././pic/sprite/sprite.png") no-repeat -314px -257px;
+        }
+      }
+      &.arrow-down {
+        .arrow {
+          @extend %arrow-in-lead-table;
+          background: url(".././pic/sprite/sprite.png") no-repeat -314px -284px;
+        }
+      }
+    }
+  }
+
+}

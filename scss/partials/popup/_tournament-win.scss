@@ -1,0 +1,242 @@
+$prize-box-width: 359px;
+$prize-box-height: 323px;
+$prize-bg-top-width: 414px;
+$prize-bg-top-height: 21px;
+$prize-bg-middle-width: 790px;
+$prize-bg-middle-height: 176px;
+$prize-bg-bottom-width: 343px;
+$prize-bg-bottom-height: 23px;
+$prize-stamping-width: 297px;
+$prize-stamping-height: 3px;
+$prize-submit-form-btn-height: 33px;
+$prize-submit-form-btn-width: 98px;
+$prize-lines-width: 178px;
+$prize-lines-height: 1px;
+$left-bottom-shadow-width: 93px;
+$left-bottom-shadow-height: 73px;
+$right-top-shadow-width: 200px;
+$right-top-shadow-height: 254px;
+$prize-second-place-bg: rgb(0,109,146);
+$prize-third-place-bg: rgb(34,31,42);
+$prize-fourth-place-bg: rgb(50,34,45);
+$prize-first-place-medal-width: 118px;
+$prize-first-place-medal-height: 119px;
+$prize-second-place-medal-width: 117px;
+$prize-second-place-medal-height: 116px;
+$prize-third-place-medal-width: 119px;
+$prize-third-place-medal-height: 126px;
+$prize-fourth-place-medal-width: 105px;
+$prize-fourth-place-medal-height: 112px;
+
+%prize-lines {
+  width: $prize-lines-width;
+  height: $prize-lines-height;
+  position: absolute;
+  top: 50%;
+  background: $description-line-bg;
+  content: "";
+  display: block;
+}
+
+%prize-indent {
+  .prize-box {
+    padding-top: 22px;
+    padding-bottom: 30px;
+  }
+    .popup-head {
+      margin-top: 51px;
+    }
+}
+
+.popup.tournament-win {
+  .popup-head {
+    position: relative;
+    margin-top: 43px;
+  }
+  .prize-box {
+    @include border-box();
+    width: $prize-box-width;
+    margin: 35px auto 0;
+    position: relative;
+    padding-top: 24px;
+    padding-bottom: 32px;
+    .left-bottom-shadow {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: $left-bottom-shadow-width;
+      height: $left-bottom-shadow-height;
+      background: url(../pic/popup/left-bottom-shadow.png) no-repeat 0 0;
+    }
+    .right-top-shadow {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: $right-top-shadow-width;
+      height: $right-top-shadow-height;
+      background: url(../pic/popup/right-top-shadow.png) no-repeat 0 0;
+    }
+    &:before {
+      left: -210px;
+      @extend %prize-lines;
+    }
+    &:after {
+      right: -210px;
+      @extend %prize-lines;
+    }
+    .medal {
+      position: relative;
+      margin: 0 auto;
+      background: url(../pic/popup/medals.png) no-repeat 0 0;
+    }
+    .stamping {
+      position: relative;
+      margin: 18px auto 0;
+      width: $prize-stamping-width;
+      height: $prize-stamping-height;
+      background: url(../pic/popup/stamping.png) no-repeat 0 0;
+    }
+    .popup-middle-head {
+      position: relative;
+      margin-top: 16px;
+    }
+    .ok-btn {
+      @include border-radius(2px);
+      position: relative;
+      height: $prize-submit-form-btn-height;
+      line-height: $prize-submit-form-btn-height;
+      font-size: 14px;
+      width: $prize-submit-form-btn-width;
+      margin: 21px auto 0;
+    }
+    a.link {
+      position: relative;
+      display: block;
+      margin: 18px auto 0;
+    }
+    .prize-bg-top {
+      position: absolute;
+      left: -8px;
+      top: -10px;
+      width: $prize-bg-top-width;
+      height: $prize-bg-top-height;
+      background: url(../pic/popup/prize-bg-top.png) no-repeat 0 0;
+    }
+    .prize-bg-middle {
+      position: absolute;
+      left: -187px;
+      top: 65px;
+      width: $prize-bg-middle-width;
+      height: $prize-bg-middle-height;
+      background: url(../pic/popup/prize-bg-middle.png) no-repeat 0 0;
+    }
+    .prize-bg-bottom {
+      position: absolute;
+      left: 21px;
+      bottom: -11px;
+      width: $prize-bg-bottom-width;
+      height: $prize-bg-bottom-height;
+      background: url(../pic/popup/prize-bg-bottom.png) no-repeat 0 0;
+    }
+  }
+  &.first-place {
+    .prize-box {
+      height: $prize-box-height;
+      background: url(../pic/popup/first-place-box.png) no-repeat 0 0;
+      .medal {
+        width: $prize-first-place-medal-width;
+        height: $prize-first-place-medal-height;
+        background-position: 0 0;
+      }
+    }
+  }
+  &.second-place {
+    @extend %prize-indent;
+    .prize-box {
+	     &:before {
+	      top: 49.6%;
+	    }
+	    &:after {
+	      top: 49.6%;
+	    }
+      @include box-shadow(inset 0 0 2px 0 rgba(#fff, .5));
+      background: $prize-second-place-bg;
+      @include linear-gradient(to bottom,
+              rgb(0, 109, 146) 0%,
+              rgb(0, 99, 132) 22%,
+              rgb(0, 60, 84) 73%,
+              rgb(4, 57, 83) 75%,
+              rgb(0, 57, 82) 76%,
+              rgb(5, 53, 78) 81%,
+              rgb(5, 53, 77) 82%,
+              rgb(1, 53, 77) 83%,
+              rgb(5, 51, 74) 85%,
+              rgb(3, 50, 72) 88%,
+              rgb(7, 48, 71) 91%,
+              rgb(4, 48, 70) 91%,
+              rgb(7, 45, 68) 96%,
+              rgb(4, 45, 68) 97%,
+              rgb(5, 44, 66) 100%);
+      .medal {
+        width: $prize-second-place-medal-width;
+        height: $prize-second-place-medal-height;
+        background-position: -118px 0;
+      }
+    }
+
+  }
+  &.third-place {
+    @extend %prize-indent;
+    .prize-bg-middle {
+      top: 57px;
+    }
+    .prize-box {
+      &:before {
+      top: 49%;
+    }
+    &:after {
+      top: 49%;
+    }
+      background: $prize-third-place-bg;
+      @include box-shadow(inset 0 0 2px 0 rgba(#fff, .5));
+      @include linear-gradient(to bottom, rgb(34, 31, 42) 0%, rgb(30, 30, 40) 28%, rgb(7, 24, 33) 100%);
+      .stamping {
+        margin-top: 6px;
+      }
+      a.link {
+        margin-top: 19px;
+    }
+      .medal {
+        width: $prize-third-place-medal-width;
+        height: $prize-third-place-medal-height;
+        background-position: -235px 0;
+      }
+    }
+  }
+  &.fourth-place {
+    @extend %prize-indent;
+    .prize-box {
+      .prize-bg-middle {
+        top: 55px;
+      }
+     &:before {
+      top: 48%;
+    }
+    &:after {
+      top: 48%;
+    }
+       .stamping {
+       	margin-top: 7px;
+       }
+      background: $prize-fourth-place-bg;
+      @include box-shadow(inset 0 0 2px 0 rgba(#fff, .5));
+      @include linear-gradient(to bottom, rgb(50, 34, 45) 0%, rgb(48, 34, 46) 27%, rgb(32, 36, 54) 100%);
+      .medal {
+      margin-top: 4px;
+        width: $prize-fourth-place-medal-width;
+        height: $prize-fourth-place-medal-height;
+        background-position: -353px 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+$tournament-center-wrapper-width: 980px;
+
+.tournament-game {
+  .title-light {
+    width: $layout-width;
+    height: $title-lights-height + 15;
+    background: url(.././pic/tournaments/title-light.png) no-repeat 0 6px;
+    margin-bottom: 8px;
+  }
+  .tournament-center-wrapper {
+    width: $tournament-center-wrapper-width;
+    margin: 0 auto;
+  }
+
+  .tournament-line:first-child {
+    margin-top: 19px;
+  }
+  .last-section  {
+    padding-bottom: 250px;
+  }
+}

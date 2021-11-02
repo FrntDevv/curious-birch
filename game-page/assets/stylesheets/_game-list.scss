@@ -1,0 +1,162 @@
+$btn-in-track-bottom-height: 41px;
+$main-play-btn-padding: 30px;
+$main-play-btn-height: 38px;
+$content-bg: #14171f;
+$game-border: #3d4046;
+
+// game item
+$middle-game-item-width: 180px;
+$middle-game-item-height: 140px;
+$middle-game-img-height: 104px;
+$middle-frame-height: 36px;
+$game-item-margin-bottom: 15px;
+$label-new-width: 45px;
+$label-new-height: 45px;
+$btn-block-width: 127px;
+$info-btn-width: 32px;
+$info-btn-height: 32px;
+
+$play-bg: #d24b17;
+$jackpot: #ffe9a7;
+$main-play-btn-shadow: #d45019;
+
+%main-play-btn {
+  display: inline-block;
+  position: relative;
+  padding-left: $main-play-btn-padding;
+  padding-right: $main-play-btn-padding;
+  height: $main-play-btn-height;
+  line-height: $main-play-btn-height;
+  @include border-box;
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  background: $play-bg;
+  @include linear-gradient(to bottom, #fc7910 0%, #f24a08 50%, #ea3c39 90%, #ec565b 100%);
+  @include border-radius(3px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7.36px 0.64px rgba(0,0,0,0.5), inset 0px -2px 10px 0px rgba(255, 255, 255, 0.37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $main-play-btn-shadow, inset 0px -2px 10px 0px rgba(255, 255, 255, 0.37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 18px;
+    weight: bold;
+  }
+  @extend %base-text-in-ref;
+}
+
+  %game-description {
+    font: {
+      family: "Roboto Condensed", sans-serif;
+      weight: 700;
+      size: 11px;
+    }
+    opacity: 0.2;
+    color: $base-body-color;
+    padding-left: 10px;
+    padding-top: 16px;
+  }
+
+  // game item must be nested in game list
+  .game-list {
+    position: relative;
+    display: block;
+    width: $middle-game-item-width;
+    list-style: none;
+    margin: 24px auto 0;
+    height: $middle-game-item-height;
+    overflow: hidden;
+    .game-item {
+      position: relative;
+      display: block;
+      margin-bottom: $game-item-margin-bottom;
+      @include border-box;
+      width: $middle-game-item-width;
+      height: $middle-game-item-height;
+      background: $content-bg;
+      @include box-shadow(0 0 7px 1px rgb(0,0,0),0 0 $standard-shadow-size 0 $content-img-box-shadow inset);
+      .game-img-shadow {
+        position: relative;
+        max-width: 100%;
+        float: left;
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          @include box-shadow(0 0 $standard-shadow-size 0 $content-img-box-shadow inset);
+        }
+      }
+      .game-img {
+        float: left;
+        display: block;
+        @include border-box;
+        width: $middle-game-item-width;
+        height: $middle-game-img-height;
+      }
+      .frame {
+      width: $middle-game-item-width;
+	  float: left;
+        @include border-box;
+            display: block;
+        padding-left: 10px;
+        padding-right: 10px;
+        height: $middle-frame-height;
+        line-height: $middle-frame-height;
+        text-transform: uppercase;
+        font: {
+          family: "Roboto Condensed", sans-serif;
+          size: 14px;
+        }
+        opacity: 0.5;
+        color: $base-body-color;
+        @extend %text-overflow;
+      }
+      .rate {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .label-new {
+        position: absolute;
+        top: 1px;
+        right: 1px;
+        width: $label-new-width;
+        height: $label-new-height;
+        z-index: 2;
+        background: url("../images/new-label.png") no-repeat 0 0;
+      }
+      .hover-game {
+        display: none;
+        width: $middle-game-item-width;
+        height: $middle-game-img-height;
+        background: $transparent;
+      }
+      &:hover {
+        .hover-game {
+          display: block;
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 3;
+        }
+      }
+    }
+
+    .main-play-btn {
+      @extend %main-play-btn;
+    }
+
+    .hover-game {
+      position: relative;
+      text-align: center;
+      .main-play-btn {
+          margin-top: ($middle-game-img-height - $main-play-btn-height)/2;
+        }
+    }
+  }

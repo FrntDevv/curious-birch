@@ -1,0 +1,348 @@
+$btn-in-track-bottom-height: 41px;
+$main-play-btn-padding: 30px;
+$main-play-btn-height: 38px;
+$demo-btn-padding: 15px;
+$demo-btn-height: 34px;
+$running-string-length: 600px;
+$game-list-width: 662px;
+// game item
+$game-item-width: 210px;
+$game-item-height: 189px;
+$hot-icon-width: 49px;
+$hot-icon-height: 38px;
+$frame-height: 68px;
+$label-new-width: 45px;
+$label-new-height: 45px;
+$small-game-img-height: 121px;
+$btn-block-width: 127px;
+$info-btn-width: 32px;
+$info-btn-height: 32px;
+$hot-item-bg: rgb(55,27,25);
+// big game item
+$big-game-item-width: 320px;
+$big-game-item-height: 254px;
+$big-game-img-height: 185px;
+$demo-bg: #2df557;
+$play-bg: #d24b17;
+$jackpot: #ffe9a7;
+$main-play-btn-shadow: #d45019;
+$demo-btn-shadow: rgba(38,215,76,0.7);
+
+%main-play-btn {
+  display: inline-block;
+  position: relative;
+  padding-left: $main-play-btn-padding;
+  padding-right: $main-play-btn-padding;
+  height: $main-play-btn-height;
+  line-height: $main-play-btn-height;
+  @include border-box;
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  background: $play-bg;
+  @include linear-gradient(to bottom, #fc7910 0%, #f24a08 50%, #ea3c39 90%, #ec565b 100%);
+  @include border-radius(3px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $main-play-btn-shadow, inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 18px;
+    weight: bold;
+  }
+  @extend %base-text-in-ref;
+}
+
+%demo-btn {
+  display: inline-block;
+  position: relative;
+  padding-left: $demo-btn-padding;
+  padding-right: $demo-btn-padding;
+  height: $demo-btn-height;
+  line-height: $demo-btn-height;
+  @include border-box;
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  background: $demo-bg;
+  @include linear-gradient(to bottom, #7cda68 0%, #2bc060 50%, #34b05b 90%, #56b476 100%);
+  @include border-radius(3px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0 -2px 10px 0 rgba(255,255,255,.37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $demo-btn-shadow, inset 0 -2px 10px 0 rgba(255,255,255,.37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 14px;
+    weight: bold;
+  }
+  @extend %base-text-in-ref;
+}
+
+
+.small-game-list,
+.big-game-list {
+  display: block;
+  width: $game-list-width;
+  list-style: none;
+  margin: 20px 0 5px 59px;
+}
+
+.small-game-list.no-margin {
+    margin-top: 0;
+}
+
+%game-description {
+  font: {
+    family: "Roboto Condensed", sans-serif;
+    weight: 700;
+    size: 11px;
+  }
+  opacity: 0.2;
+  color: $base-body-color;
+  padding-left: 10px;
+  padding-top: 16px;
+}
+
+.game-item {
+  position: relative;
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 13px;
+  @include border-box;
+  width: $game-item-width;
+  height: $game-item-height;
+  background: $content-bg;
+  .game-img-shadow {
+    position: relative;
+    max-width: 100%;
+    float: left;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      @include box-shadow(0 0 $standard-shadow-size 0 $content-img-box-shadow inset);
+    }
+    width: $game-item-width;
+    height: $small-game-img-height;
+  }
+  .game-img {
+    float: left;
+    display: block;
+    @include border-box;
+    width: $game-item-width - 1;
+    height: $small-game-img-height -1;
+  }
+  &.hot-game {
+    background: rgb(55,27,25);
+    @include  linear-gradient(to bottom, rgb(10,16,25) 0%,rgb(10,16,25) 52%,rgb(27,19,24) 70%,rgb(55,27,25) 89%,rgb(67,32,25) 100%);
+    .hot-icon {
+      position: absolute;
+      z-index: 2;
+      width: $hot-icon-width;
+      height: $hot-icon-height;
+      bottom: 2px;
+      right: 2px;
+      background: url("../pic/sprite/sprite.png") no-repeat -286px -303px;
+      @include animation(fade-in-fade-out,5s,infinite,linear,none);
+    }
+    .frame {
+      .now-playing.hot {
+        opacity: .4 !important;
+      }
+    }
+  }
+  @include box-shadow(0 0 7px 1px rgb(0,0,0), 0 0 $standard-shadow-size 0 rgba(255,255,255,.3) inset);
+  .frame {
+    float: left;
+    @include border-box;
+    display: block;
+    width: $game-item-width;
+    height: $frame-height;
+    text:
+    {
+      transform: uppercase;
+      align: left;
+    }
+    .game-name {
+      @include border-box;
+      padding-top: 8px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font: {
+        family: "Roboto Condensed", sans-serif;
+        size: 14px;
+      }
+      opacity: 0.5;
+      color: $base-body-color;
+      @extend %text-overflow;
+    }
+    .now-playing {
+      @extend %game-description;
+    }
+  }
+  .label-new {
+    position: relative;
+    width: $label-new-width;
+    height: $label-new-height;
+    z-index: 2;
+  }
+  .hover-game {
+    display: none;
+    width: $game-item-width;
+    height: $small-game-img-height;
+    background: $transparent;
+  }
+  &:hover {
+    .hover-game {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 3;
+    }
+  }
+}
+
+.main-play-btn {
+  @extend %main-play-btn;
+}
+
+.demo-btn {
+  @extend %demo-btn;
+}
+
+.hover-game {
+  position: relative;
+  text-align: center;
+  .btn-block {
+    max-width: 90%;
+    margin: 0 auto;
+    padding-top: 17px;
+  }
+  .main-play-btn {
+    margin-bottom: 14px;
+  }
+  &.play-btn-only {
+    .btn-block {
+      padding-top: ($small-game-img-height - $main-play-btn-height)/2;
+    }
+    .main-play-btn {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.info-btn {
+  position: absolute;
+  z-index: 2;
+  bottom: 3px;
+  right: 4px;
+  height: $info-btn-height;
+  width: $info-btn-width;
+  background: url(../pic/sprite/sprite.png) no-repeat 0px -199px;
+  display: block;
+  &:hover {
+    background-position: -38px -199px;
+  }
+}
+
+.small-game-list .game-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.big-game-list .game-item:nth-child(even) {
+  margin-right: 0;
+}
+.game-item {
+  .rate {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.jackpot-in-game {
+  @include border-box;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 14px;
+  }
+  text-transform: uppercase;
+  z-index: 2;
+  text-align: right;
+  max-width: 80%;
+  color: $jackpot;
+  @include text-shadow (0 0 4px rgb(0,0,0));
+  position: absolute;
+  right: -2px;
+  top: 3px;
+  span {
+    background: $transparent;
+    padding: 5px 8px;
+  }
+}
+
+.big-game-list {
+  .frame {
+    width: $big-game-item-width;
+  }
+  .hover-game {
+    width: $big-game-item-width;
+    height: $big-game-img-height;
+    .info-btn {
+      bottom: 5px;
+    }
+    .btn-block {
+      padding-top: 50px;
+      max-width: 60%;
+    }
+    &.play-btn-only {
+      .btn-block {
+        padding-top: ($big-game-img-height - $main-play-btn-height)/2;
+      }
+    }
+  }
+  .hot-game {
+    .frame {
+      .now-playing {
+        opacity: 1 !important;
+      }
+    }
+  }
+  .game-item {
+    width: $big-game-item-width;
+    height: $big-game-item-height;
+    margin-right: 21px;
+  }
+  .game-img-shadow {
+    width: $big-game-item-width;
+    height: $big-game-img-height;
+  }
+  .game-img {
+    width: $big-game-item-width - 1;
+    height: $big-game-img-height - 1;
+  }
+}
+
+
+.rub {
+  position: relative;
+  display: inline;
+  &:before {
+    position: absolute;
+    top: -0.13em;
+    left: 0;
+    content: "_";
+  }
+}

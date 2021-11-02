@@ -1,0 +1,182 @@
+// footer
+$line-in-footer-height: 25px;
+$footer-grad-height: 129px;
+$footer-logo-width: 583px;
+$footer-logo-height: 280px;
+$shadow-grad-height: 465px;
+$footer-bg: rgb(20,19,25);
+$arrow-nav-height: 28px;
+$arrow-nav-width: 28px;
+
+footer {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 100px;
+  background: $footer-bg;
+  width: 100%;
+  min-width: $layout-width;
+}
+
+.footer-line {
+  position: absolute;
+  display: block;
+  top: -13px;
+  left: 0;
+  right: 0;
+  height: $line-in-footer-height;
+  background: url("../pic/footer-line.png") repeat-x 0 0;
+  z-index: 12;
+}
+
+.gradient-footer {
+  position: absolute;
+  bottom: 0;
+  height: $footer-grad-height;
+ background:  url("../pic/gradient-footer.png") repeat-x 0 0;
+  width: 100%;
+  min-width: $layout-width;
+}
+
+.footer-pos-point {
+  position: relative;
+}
+
+.foot-menu {
+  position: relative;
+  z-index: 14;
+  display: block;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.foot-menu li {
+  display: inline-block;
+  margin-right: 40px;
+  &:last-child {
+    margin-right: 0px;
+  }
+}
+
+.foot-menu li a {
+  display: block;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 16px;
+  }
+  color: $foot-menu-color;
+}
+
+.footer-logo {
+  position: absolute;
+  width: $footer-logo-width;
+  height: $footer-logo-height;
+  background: url("../pic/logo-footer.png") no-repeat 0 0;
+  top: -232px;
+  left: 260px;
+  z-index: 13;
+}
+
+.shadow-grad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: $shadow-grad-height;
+  width: $layout-width;
+  background: url("../pic/shadow-footer.png") no-repeat 0 0;
+}
+
+.footer-section {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: $layout-width - 40;
+}
+
+.name-of-section {
+  font: {
+    family: "Roboto", sans-serif;
+    size: 18px;
+  }
+  color: $base-body-color;
+}
+
+.name-footer-section {
+  position: relative;
+  margin-bottom: 20px;
+  .name-of-section {
+    float: left;
+  }
+  .more-games {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 37px;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 18px;
+    }
+    color: $foot-menu-color;
+  }
+  .arrow-nav {
+    position: relative;
+    right: -4px;
+    margin-top: -1px;
+    float: right;
+    height: $arrow-nav-height;
+    width: $arrow-nav-width;
+    background: url(../pic/sprite/sprite.png) no-repeat -92px -312px;
+    &:hover {
+      background-position: -120px -312px;
+    }
+  }
+  .slide {
+    float: right;
+    list-style: none;
+    display: block;
+    li {
+      display: inline-block;
+      width: $pagination-width;
+      height: $pagination-height;
+      margin-right: 5px;
+      &:last-child {
+        margin-right: 0;
+      }
+      position: relative;
+      background-image: url(../pic/sprite/sprite.png);
+      a {
+        @extend %absolute-reference;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &.slide-blank {
+        background-position: -50px -269px;
+        &:hover {
+          background-position: -25px -269px;
+        }
+      }
+      &.slide-select {
+        background-position: 0 -269px;
+      }
+    }
+  }
+}
+
+.hot-games-section {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: $big-game-item-width;
+  .big-game-list {
+    width: $big-game-item-width;
+    margin: 0;
+    .game-item {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+
+

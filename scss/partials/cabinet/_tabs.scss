@@ -1,0 +1,99 @@
+$tab-height: 72px;
+$active-tab-height: 77px;
+$tabs-container-height: 75px;
+$tab-width: 200px;
+$tab-cashier-width: 165px;
+$tab-bg: #14171f;
+$cashier-active-color: rgb(21, 45, 51);
+$cashier-bg: #eee;
+$active-tab-bg: rgb(28,19,24);
+$active-tab-color: rgb(236, 179, 70);
+$bonus-quantity-size: 31px;
+$bonus-quantity-color: #320b00;
+
+.menu-container {
+  height: $tabs-container-height;
+  width: 100%;
+  .tab {
+    z-index: 3;
+    float: left;
+    display: block;
+    height: $tab-height;
+    @include border-box();
+    @include border-radius(4px);
+    margin-right: 3px;
+    &:last-child {
+      margin-right: 0;
+    }
+    background: $tab-bg;
+    @include linear-gradient(to top,#14171f,#153137);
+    width: $tab-width;
+    padding-top: 16px;
+    position: relative;
+    box-shadow: inset 0 0 2px 0 rgba(#fff,.5);
+    text: {
+      align: center;
+      decoration: none;
+      transform: uppercase;
+    }
+    font: {
+      family: "Roboto", sans-serif;
+      size: 30px;
+      weight: 400;
+    }
+    @include text-shadow(0 -2px 0 rgba(#000,.2));
+    color: $base-body-color;
+    .shadow {
+      z-index: 1;
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      box-shadow: 0 0 6px 0 rgb(0,0,0);
+    }
+    &.cashier {
+      width: $tab-cashier-width;
+    }
+    &.active {
+      z-index: 5;
+      box-shadow: inset 2px 0 2px -2px rgba(#fff,.5),
+      inset -1px 0 2px -2px rgba(#fff,.5),
+      inset 0 2px 2px -2px rgba(#fff,.5);
+      height: $active-tab-height;
+      @include border-top-left-radius(4px);
+      @include border-top-right-radius(4px);
+      @include border-bottom-left-radius(0);
+      @include border-bottom-right-radius(0);
+      color: $active-tab-color;
+      @include linear-gradient(to bottom, rgba(35,22,25,1) 0%,rgba(12,16,25,1) 100%);
+      .shadow {
+        /* -blur, parent width + blur, parent height, -blur */
+        clip: rect(-6px,$tab-width + 6,$active-tab-height,-6px);
+      }
+      &.cashier {
+        color: $cashier-active-color;
+        background: $cashier-bg;
+      }
+    }
+  }
+  .notification-quantity {
+    z-index: 6;
+    width: $bonus-quantity-size;
+    height: $bonus-quantity-size;
+    line-height: $bonus-quantity-size + 1;
+    position: absolute;
+    top: -7px;
+    right: -15px;
+    display: block;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 18px;
+      weight: bold;
+    }
+    color: $bonus-quantity-color;
+    background: url(../pic/cabinet/sprite/sprite.png) no-repeat 0 0;
+  }
+}
+

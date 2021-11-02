@@ -1,0 +1,178 @@
+$base-body-color: #fff;
+$transparent: rgba(0,0,0,0.5);
+$layout-width: 1100px;
+// close icon
+$close-icon-size: 33px;
+$column-width: 200px;
+$min-line-height: 1px;
+
+$small-center-width: 600px;
+$middle-center-width: 920px;
+$big-center-width: 1020px;
+
+$game-item-margin-bottom: 15px;
+
+$small-game-container-height: 450px;
+$small-game-container-width: 1000px;
+$middle-game-container-width: 1320px;
+$middle-game-container-height: 620px;
+$big-game-container-width: 1420px;
+$big-game-container-height: 769px;
+
+$height-of-footer-line: 49px;
+
+// Shadows
+$standard-shadow-size: 2px;
+$text-shadow-color: rgba(0,0,0,0.2);
+$content-img-box-shadow: rgba(255, 255, 255, 0.7);
+
+// Ellipsis if text doesn't fit the block
+
+%text-overflow {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Mixin declaration
+
+@mixin size($size) {
+  $height: nth($size, 1);
+  $width: $height;
+
+  @if length($size) > 1 {
+    $height: nth($size, 2);
+  }
+
+  width: $width;
+  height: $height;
+}
+
+@mixin linear-gradient($grad-params...) {
+  background: -moz-linear-gradient($grad-params);
+  background: -webkit-linear-gradient($grad-params);
+  background: -o-linear-gradient($grad-params);
+  background: -ms-linear-gradient($grad-params);
+  background: linear-gradient($grad-params);
+  -pie-background: linear-gradient($grad-params);
+}
+
+@mixin text-shadow($text-shadows...) {
+  -webkit-text-shadow: $text-shadows;
+  -moz-text-shadow: $text-shadows;
+  -o-text-shadow: $text-shadows;
+  text-shadow: $text-shadows;
+}
+
+@mixin border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+@mixin box-shadow($box-shadows...) {
+  -webkit-box-shadow: $box-shadows;
+  -moz-box-shadow: $box-shadows;
+  box-shadow: $box-shadows;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin border-top-left-radius($radius) {
+  -webkit-border-top-left-radius: $radius;
+  -moz-border-radius-topleft: $radius;
+  -o-border-top-left-radius: $radius;
+  -ms-border-top-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+@mixin border-top-right-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+  -moz-border-radius-topright: $radius;
+  -o-border-top-right-radius: $radius;
+  -ms-border-top-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+  -moz-border-radius-bottomleft: $radius;
+  -o-border-bottom-left-radius: $radius;
+  -ms-border-bottom-left-radius: $radius;
+  border-bottom-left-radius: $radius;
+}
+
+@mixin border-bottom-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+  -moz-border-radius-bottomright: $radius;
+  -o-border-bottom-right-radius: $radius;
+  -ms-border-bottom-right-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin animation ($name,$duration,$iteration-count,$timing-function,$animation-fill-mode) {
+  -webkit-animation-name: $name;
+  -moz-animation-name: $name;
+  -o-animation-name: $name;
+  animation-name: $name;
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  -o-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-iteration-count: $iteration-count;
+  -moz-animation-iteration-count: $iteration-count;
+  -o-animation-iteration-count: $iteration-count;
+  animation-iteration-count: $iteration-count;
+  -webkit-animation-timing-function: $timing-function;
+  -moz-animation-timing-function: $timing-function;
+  -o-animation-timing-function: $timing-function;
+  animation-timing-function: $timing-function;
+  -webkit-animation-fill-mode: $animation-fill-mode;
+  -moz-animation-fill-mode: $animation-fill-mode;
+  -o-animation-fill-mode: $animation-fill-mode;
+  animation-fill-mode: $animation-fill-mode;
+}
+
+%button-base-font {
+  font: {
+    family: "Roboto", sans-serif;
+    size: 16px;
+    weight: bold;
+  }
+  line-height: 1.125;
+  text-transform: uppercase;
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+}
+
+%base-text-in-ref {
+  text-decoration: none;
+  color: #fff;
+}
+
+%absolute-reference {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+%close-icon {
+  display: block;
+  position: absolute;
+  width: $close-icon-size;
+  height: $close-icon-size;
+  background: url(../images/sprite.png) no-repeat -170px -42px;
+  &:hover {
+    cursor: pointer;
+    background-position: -170px -80px;
+  }
+}
+
+

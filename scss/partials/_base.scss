@@ -1,0 +1,555 @@
+$header-vertical-padding: 25px;
+$title-lights-height: 10px;
+$section-header-color: rgb(255, 210, 0);
+$full-page-wrapper-width: 980px;
+$modal-center-wrapper-width: 860px;
+$middle-head-color: rgb(255, 188, 7);
+$left-content-width: 662px;
+$link-color: #00a0db;
+$description-line-bg: #606b84;
+$confirm-btn-shadow: #5a5a5a;
+$confirm-btn-bg: rgb(165,167,167);
+$description-list-color: #9d9d9f;
+$description-list-mark-width: 14px;
+$description-list-mark-height: 16px;
+$description-box-bg: rgb(21, 23, 31);
+$short-title-lights-width: 779px;
+$basic-tablehead-width: 200px;
+$basic-table-bg: rgb(0,32,39);
+$basic-thead-color: rgb(134, 136, 134);
+$basic-sum-color: rgb(142,129,173);
+$current-user-sum-color: rgb(82,202,93);
+$basic-table-cell-height: 23px;
+$basic-1-col-width: 30px;
+$basic-2-col-width: 174px;
+$basic-3-col-width: 98px;
+$error-text-color: #ff0000;
+$not-set-size: 14px;
+$form-field-border: rgb(15, 14, 19);
+$form-field-bg: rgb(252, 252, 252);
+$form-field-placeholder: #5e5d5d;
+$success-width: 13px;
+$success-height: 10px;
+$close-btn-size: 58px;
+$overlay-bg: rgba(#272430,.6);
+$radiobutton-width: 20px;
+$radiobutton-height: 21px;
+$checkbox-width: 23px;
+$checkbox-height: 24px;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: $base-body-color;
+  width: 100%;
+  min-width: $min-body-width;
+  height: 100%;
+  position: relative;
+  font: {
+    family: "Roboto", sans-serif;
+  }
+}
+
+.window-overlay {
+  z-index: 50;
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: $overlay-bg;
+  &.active {
+    display: block;
+  }
+}
+
+.layout-center-wrapper {
+  width: $layout-width;
+  margin: 0 auto;
+}
+
+.clearfix:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.shadow {
+  display: none;
+}
+
+.main-header {
+  position: relative;
+  display: block;
+  padding: $header-vertical-padding 0;
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  margin: 0 0 20px 0;
+  font: {
+    size: 36px;
+    family: "Roboto", sans-serif;
+    weight: 400;
+  }
+  color: $base-body-color;
+  @include text-shadow(0 0 8px rgba(0,0,0,0.75));
+  &:before {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+    content: "";
+    width: $layout-width;
+    height: $title-lights-height;
+    background: url(.././pic/tournaments/title-light.png) no-repeat 0 0;
+  }
+}
+
+iframe {
+  border: 0;
+}
+
+.full-page-wrapper {
+  width: $full-page-wrapper-width;
+  margin: 0 auto;
+  position: relative;
+}
+
+.page-description {
+  padding-top: 7px;
+  padding-bottom: 31px;
+  font: {
+    size: 15px;
+    family: "Roboto", sans-serif;
+    weight: 300;
+  }
+  text: {
+    align: center;
+  }
+  color: $base-body-color;
+  line-height: 1.35;
+}
+
+.big-head {
+  font: {
+    size: 16px;
+    family: "Roboto", sans-serif;
+    weight: 400;
+  }
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  color: $section-header-color;
+}
+
+.modal-center-wrapper {
+  width: $modal-center-wrapper-width;
+  margin: 0 auto;
+}
+
+.middle-head {
+  font: {
+    size: 12px;
+    family: "Roboto", sans-serif;
+    weight: 400;
+  }
+  text: {
+    align: left;
+    transform: uppercase;
+  }
+  color: $middle-head-color;
+}
+
+a.link {
+  font: {
+    size: 12px;
+    family: "Roboto", sans-serif;
+  }
+  color: $link-color;
+}
+
+.description-line {
+  height: 1px;
+  width: 100%;
+  background: $description-line-bg;
+}
+
+.content-container {
+  ul {
+    line-height: 1.5;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 12px;
+      weight: 300;
+    }
+    color: $description-list-color;
+    text: {
+      align: left;
+    }
+    li {
+      position: relative;
+      list-style: none;
+      padding-left: 23px;
+      margin-bottom: 8px;
+      &:before {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        display: block;
+        content: "";
+        background: url(../pic/sprite/sprite.png) no-repeat -314px -206px;
+        width: $description-list-mark-width;
+        height: $description-list-mark-width;
+      }
+    }
+  }
+  p {
+    line-height: 1.5;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 12px;
+    }
+    color: $base-body-color;
+    text: {
+      align: left;
+    }
+    margin: 8px 0;
+    opacity: .8;
+  }
+  h3 {
+    font: {
+      size: 12px;
+      family: "Roboto", sans-serif;
+      weight: 400;
+    }
+    text: {
+      align: left;
+      transform: uppercase;
+    }
+    color: $middle-head-color;
+  }
+  h2 {
+    font: {
+      size: 16px;
+      family: "Roboto", sans-serif;
+      weight: 400;
+    }
+    text: {
+      align: center;
+      transform: uppercase;
+    }
+    color: $section-header-color;
+  }
+  a {
+    font: {
+      size: 12px;
+      family: "Roboto", sans-serif;
+    }
+    color: $link-color;
+  }
+}
+
+
+.description-box {
+  padding: 15px 20px;
+  margin: 20px 0;
+  @include border-box();
+  @include box-shadow(0 0 7px 1px rgb(0, 0, 0),
+          inset 0 0 2px 0 rgba(255, 255, 255, .3));
+  background: $description-box-bg;
+  &.undo {
+    margin-top: 15px;
+    width: $left-content-width;;
+    margin-left: 59px;
+    p {
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+  }
+  p {
+    text:
+    {
+      align: left;
+    }
+    font: {
+      family: "Roboto", sans-serif;
+      size: 12px;
+    }
+    line-height: 1.5;
+    color: $base-body-color;
+  }
+}
+
+.content-middle-header {
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  font: {
+    size: 12px;
+    weight: 300;
+  }
+  color: $base-body-color;
+}
+
+.content-header {
+  font-size: 16px;
+  color: $middle-head-color;
+  text-transform: uppercase;
+}
+
+%big-head-short {
+  text: {
+    align: left;
+  }
+  padding-top: 20px;
+  &:before {
+    top: -5px;
+    left: -70px;
+    position: absolute;
+    display: block;
+    content: "";
+    width: $short-title-lights-width;
+    height: $title-lights-height;
+    background: url(.././pic/short-title-light.png) no-repeat 0 0;
+  }
+}
+
+.table-img-link {
+  display: block;
+}
+
+%basic-tablehead {
+  position: relative;
+  display: inline-block;
+  line-height: 1.2;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 20px;
+  }
+  @include text-shadow(0 0 5px rgba(21,22,22,.7));
+  color: $base-body-color;
+  width: $basic-tablehead-width;
+}
+
+%basic-table-block {
+  text-align: center;
+  width: $aside-width;
+  position: relative;
+  background: $basic-table-bg;
+  @include box-shadow(0 0 7px 1px rgb(0,0,0), 0 0 $standard-shadow-size 0 rgba(255,255,255,.5) inset);
+  @include linear-gradient(to bottom,
+          rgb(0,45,52) 0%,
+          rgb(0,41,48) 21%,
+          rgb(0,32,39) 47%,
+          rgb(8,20,30) 78%,
+          rgb(10,16,25) 100%);
+}
+
+%currency {
+  display: inline;
+  text-transform: uppercase;
+}
+
+%basic-currency-cell {
+  &.sum {
+    color: $basic-sum-color;
+    .rub {
+      @extend %currency;
+      &:before {
+        display: none;
+      }
+    }
+    .usd {
+      @extend %currency;
+    }
+    .eur {
+      @extend %currency;
+    }
+  }
+}
+
+%current-user-row {
+  &.current-user {
+    td {
+      &.sum {
+        color: $current-user-sum-color;
+      }
+    }
+  }
+}
+
+%basic-table-cells {
+  display: block;
+  float: left;
+  height: $basic-table-cell-height;
+  line-height: $basic-table-cell-height;
+  color: $base-body-color;
+  @include border-box();
+  font: {
+    family: "Tahoma", sans-serif;
+    size: 12px;
+  }
+  &:first-child {
+    width: $basic-1-col-width;
+    text-align: right;
+  }
+  &:nth-child(2) {
+    width: $basic-2-col-width;
+    text-align: left;
+    padding-left: 10px;
+  }
+  &:last-child {
+    width: $basic-3-col-width;
+    text-align: right;
+    padding-right: 20px;
+  }
+}
+
+@-webkit-keyframes fade-in-fade-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fade-in-fade-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-o-keyframes fade-in-fade-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-fade-out {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+input[type="submit"] {
+  border: 0;
+}
+
+input.form-field {
+  border: 1px solid $form-field-border;
+  background: $form-field-bg;
+  @include border-box();
+  @include placeholder($form-field-placeholder);
+  color: rgb(0,0,0);
+  width: 100%;
+  font: {
+    family: "Roboto", sans-serif;
+    weight: 300;
+    size: 12px;
+  }
+}
+
+.input-container {
+  position: relative;
+  .error {
+    white-space: nowrap;
+    position: absolute;
+    color: $error-text-color;
+    bottom: -15px;
+    left: 1px;
+    font-size: 10px;
+  }
+  &.fail {
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: $not-set-size;
+      height: $not-set-size;
+      background: url(.././pic/sprite/sprite.png) no-repeat -29px -350px;
+    }
+  }
+  &.success {
+    &:before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: $success-width;
+      height: $success-height;
+      background: url(.././pic/sprite/sprite.png) no-repeat -51px -352px;
+    }
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display:none;
+}
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  position: relative;
+}
+input[type="radio"] + label span,
+input[type="checkbox"] + label span {
+  position: absolute;
+  display: inline-block;
+  width: $radiobutton-width;
+  height: $radiobutton-height;
+  background: url(../pic/sprite/sprite.png) no-repeat -50px -269px;
+  cursor:pointer;
+}
+
+input[type="checkbox"] + label span {
+  width: $checkbox-width;
+  height: $checkbox-height;
+  background-position: -234px -346px;
+}
+
+input[type="radio"] + label span:hover {
+  background-position: -25px -269px;
+}
+
+input[type="checkbox"] + label span:hover {
+  background-position: -304px -346px;
+}
+
+input[type="radio"]:checked + label span,
+input[type="radio"]:checked + label span:hover {
+  background-position: 0px -269px;
+}
+
+input[type="checkbox"]:checked + label span,
+input[type="checkbox"]:checked + label span:hover {
+  background-position: -269px -346px;
+}
+

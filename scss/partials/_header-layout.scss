@@ -1,0 +1,127 @@
+$header-grad-height: 135px;
+$header-height: 405px;
+$header-bg: #15171b;
+$header-grad: rgba(18, 18, 18, 0.85);
+$header-grad-fallback: #121212;
+$main-nav-bg: #333;
+
+$main-menu-list-height: 65px;
+
+// header lights
+$header-lights-width: 812px;
+$header-lights-height: 59px;
+
+// power lines
+$power-lines-height: 42px;
+$power-lines-width: 81px;
+
+// icon language
+$icon-language-width: 22px;
+$icon-language-height: 16px;
+
+// main logo
+$main-logo-width: 214px;
+$main-logo-height: 122px;
+
+.header-body-bg {
+  background: $primary-bg;
+}
+
+header {
+  width: 100%;
+  position: relative;
+  height: $header-height;
+  background: $header-bg;
+  &.without-carousel {
+    height: $header-grad-height;
+  }
+}
+
+.header-grad {
+  position: absolute;
+  height: $header-grad-height;
+  background: $header-grad-fallback;
+  background: $header-grad;
+  width: 100%;
+  min-width: $layout-width;
+  z-index: 3;
+}
+
+.header-pos-point {
+  position: relative;
+  height: $header-grad-height;
+  z-index: 11;
+}
+
+.header-lights {
+  position: absolute;
+  left: 0;
+  width: $header-lights-width;
+  height: $header-lights-height;
+  background: url("../pic/header-lights.png") no-repeat 0 0;
+}
+
+.main-logo-frank {
+  position: relative;
+  z-index: 2;
+  float: left;
+  margin-left: 30px;
+  margin-right: 17px;
+  width: $main-logo-width;
+  height: $main-logo-height;
+  background: url("../pic/main-logo.png") no-repeat 0 0;
+  a {
+    display: block;
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 10px;
+    right: 10px;
+    bottom: 0;
+    &:after {
+      position: absolute;
+      display: block;
+      content: "";
+      top: 70px;
+      background: $main-nav-bg;
+      right: -35px;
+      width: 30px;
+      height: 1px;
+    }
+  }
+  &:before,
+  &:after {
+    position: absolute;
+    display: block;
+    content: "";
+    top: 70px;
+    background: $main-nav-bg;
+    left: -30px;
+  }
+  &:before {
+    width: 1px;
+    height: 60px;
+  }
+  &:after {
+    width: 30px;
+    height: 1px;
+  }
+}
+
+
+.power-lines {
+  margin-top: 22px;
+  float: left;
+  height: $power-lines-height;
+  width: $power-lines-width;
+  background: url("../pic/power-lines.png") no-repeat 0 0;
+}
+
+
+
+
+
+
+
+
+

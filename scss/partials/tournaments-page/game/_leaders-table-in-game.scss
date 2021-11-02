@@ -1,0 +1,248 @@
+$leaders-block-width: 539px;
+$now-win-height: 54px;
+$now-win-label-width: 57px;
+$now-win-label-height: 53px;
+$now-win-header-width: 500px;
+$header-lines-height: 3px;
+$best-players-table-bg: rgb(57,109,143);
+$best-players-table-width: 269px;
+$best-line-height: 24px;
+$best-dynamic-bg: rgb(57,109,143);
+$best-1t-1-column-width: 20px;
+$best-2t-1-column-width: 10px;
+$best-2-column-width: 27px;
+$best-3-column-width: 163px;
+$best-4-column-width: 50px;
+$best-1t-5-column-width: 9px;
+$best-2t-5-column-width: 19px;
+$best-border-bottom: #445a6d;
+$best-thead-color: rgba(255, 255, 255, .3);
+
+%arrow-in-lead-table {
+  width: $arrow-width;
+  height: $arrow-height;
+  margin-top: 1px;
+  position: relative;
+  left: -1px;
+}
+
+%best-table-cells {
+  display: block;
+  float: left;
+  padding-top: 3px;
+  height: $best-line-height;
+  @include border-box();
+  &:nth-child(2) {
+    text-align: left;
+    width: $best-2-column-width;
+    border-bottom: 1px solid $best-border-bottom;
+  }
+  &:nth-child(3) {
+    text-align: left;
+    width: $best-3-column-width;
+    border-bottom: 1px solid $best-border-bottom;
+  }
+  &:nth-child(4) {
+    text-align: right;
+    width: $best-4-column-width;
+    border-bottom: 1px solid $best-border-bottom;
+    color: $points-color;
+  }
+}
+
+%first-table-cells {
+  &:first-child {
+    width: $best-1t-1-column-width;
+  }
+  &:last-child {
+    width: $best-1t-5-column-width;;
+  }
+}
+
+%second-table-cells {
+  &:first-child {
+    width: $best-2t-1-column-width;
+  }
+  &:last-child {
+    width: $best-2t-5-column-width;;
+  }
+}
+
+.leaders-table-block {
+  float: right;
+  width: $leaders-block-width;
+  text-align: center;
+}
+
+%header-lines {
+  display: block;
+  position: absolute;
+  top: 49%;
+  height: $header-lines-height;
+  content: "";
+  width: $now-win-header-width * 0.4;
+  background: url(".././pic/tournaments/now-win-line.png") repeat-x 0 0;
+}
+
+.now-win {
+  position: relative;
+  @include box-shadow(inset 0 0 2px 0px rgba(255, 255, 255, .5), 0 0 8px 1px rgba(0,0,0,.3));
+  width: $leaders-block-width;
+  height: $now-win-label-height;
+  background: url(.././pic/tournaments/now-win-box.png) no-repeat 0 0;
+  .now-win-header {
+    width: $now-win-header-width;
+    height: $now-win-height;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: $now-win-height;
+    text-align: center;
+    .head {
+      position: relative;
+      &:before {
+        @extend %header-lines;
+        right: 100%;
+        margin-right: 10px;
+      }
+      &:after {
+        @extend %header-lines;
+        left: 100%;
+        margin-left: 10px;
+      }
+    }
+    font: {
+      size: 20px;
+      family: "Roboto", sans-serif;
+    }
+    color: $base-body-color;
+    @include text-shadow(0 0 5px rgba(21,22,22,.7));
+  }
+  .now-win-label {
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $now-win-label-width;
+    height: $now-win-label-height;
+    background: url(.././pic/tournaments/now-win-label.png) no-repeat 0 0;
+  }
+}
+
+.leaders-tables {
+  margin-top: 5px;
+  padding-top: 17px;
+  background: $best-players-table-bg;
+  @include box-shadow(0 0 8px 1px rgb(0, 0, 0), inset 0 0 2px 0px rgba(255, 255, 255, .5));
+  @include linear-gradient(to bottom, rgb(57,109,143) 0%, rgb(29,48,67) 100%);
+  .best-players-table {
+    border: 0;
+    width: $best-players-table-width;
+    display: block;
+    font: {
+      size: 12px;
+      family: "Tahoma", sans-serif;
+    }
+    color: $base-body-color;
+    thead {
+      tr {
+        color: $best-thead-color;
+        th {
+          font: {
+            weight: 400;
+          }
+          @extend %best-table-cells;
+          border-bottom: 0;
+          &:nth-child(4) {
+            color: $best-thead-color;
+          }
+        }
+      }
+    }
+    tr {
+      display: block;
+      &.current-user {
+        td:nth-child(4) {
+          color: $current-user-points-color;
+        }
+      }
+      height: $best-line-height;
+      position: relative;
+      td {
+        @extend %best-table-cells;
+      }
+      &.dynamic {
+        height: $best-line-height;
+        background: $best-dynamic-bg;
+        @include box-shadow(inset 0 0 2px 0 rgba(255,255,255,.5),0 0 8px 1px rgba(0,0,0,.3));
+        @include linear-gradient(to bottom,
+                rgba(57,109,143,1) 0%,
+                rgba(51,98,128,1) 25%,
+                rgba(35,62,85,1) 75%,
+                rgba(30,49,69,1) 100%);
+        &.arrow-up {
+          .arrow {
+            @extend %arrow-in-lead-table;
+            background: url(".././pic/sprite/sprite.png") no-repeat -314px -257px;
+          }
+        }
+        &.arrow-down {
+          .arrow {
+            @extend %arrow-in-lead-table;
+            background: url(".././pic/sprite/sprite.png") no-repeat -314px -284px;
+          }
+        }
+        td {
+          height: $best-line-height;
+          border-bottom: 0;
+          @include border-box();
+          &.position {
+            font: {
+              size: $position-font-size;
+              family: "Tahoma", sans-serif;
+              weight: bold;
+            }
+            text-align: left;
+            color: $position-color;
+            padding-top: 0;
+          }
+          &:nth-child(4) {
+            color: $base-body-color;
+          }
+        }
+      }
+    }
+    &.left {
+      float: left;
+      thead {
+        tr {
+          th {
+            @extend %first-table-cells;
+          }
+        }
+      }
+      tr {
+        td {
+          @extend %first-table-cells;
+        }
+      }
+    }
+    &.right {
+      float: right;
+      thead {
+        tr {
+          th {
+            @extend %second-table-cells;
+          }
+        }
+      }
+      tr {
+        td {
+          @extend %second-table-cells;
+        }
+      }
+    }
+  }
+  .take-part-btn {
+    margin: 32px 0;
+  }
+}

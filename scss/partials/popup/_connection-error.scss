@@ -1,0 +1,20 @@
+$connection-error-icon-width: 301px;
+$connection-error-icon-height: 79px;
+
+.popup.connection-error {
+  .popup-head {
+    margin-top: 50px;
+  }
+  .popup-middle-head {
+    margin-top: 17px;
+  }
+  .connection-error-icon {
+    width: $connection-error-icon-width;
+    height: $connection-error-icon-height;
+    background: url(../pic/popup/connection-error.png) no-repeat 0 0;
+    margin: 55px auto 0;
+  }
+  .ok-btn {
+    margin: 75px auto 0;
+  }
+}

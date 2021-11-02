@@ -1,0 +1,64 @@
+$multiplier-box-width: 480px;
+$comp-points-width: 294px;
+$comp-points-height: 60px;
+$multiplier-width: 80px;
+$multiplier-cross-width: 24px;
+$multiplier-cross-height: 25px;
+$multiplier-text-shadow: rgb(54, 7, 67);
+$multiplier: rgb(0, 250, 40);
+
+.popup.multiplier {
+  .popup-head {
+    margin-top: 51px;
+  }
+  .multiplier-box {
+    margin: 29px auto 0;
+    padding-top: 27px;
+    position: relative;
+    width: $multiplier-box-width;
+    background: $popup-form-bg;
+    border: 1px solid $popup-form-border;
+    .comp-points {
+      position: relative;
+      width: $comp-points-width;
+      height: $comp-points-height;
+      margin: 20px auto 0;
+      display: block;
+      background: url(../pic/popup/multiplier.png) no-repeat 0 0;
+      .multiplier {
+        padding-left: 22px;
+        text-align: center;
+        position: relative;
+        @include border-box();
+        .cross {
+          position: absolute;
+          width: $multiplier-cross-width;
+          height: $multiplier-cross-height;
+          top: 20px;
+          left: 12px;
+          background: url(../pic/sprite/sprite.png) no-repeat -157px -344px;
+        }
+        @include text-shadow(1px 1px 1px $multiplier-text-shadow);
+        font:
+        {
+          weight: bold;
+          size: 51px;
+        }
+        &:first-child {
+          float: left;
+        }
+        &:last-child {
+          float: right;
+        }
+        width: $multiplier-width;
+        display: block;
+        list-style: none;
+        height: $comp-points-height;
+        line-height: $comp-points-height - 2;
+      }
+    }
+    .ok-btn {
+      margin: 27px auto 34px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+$game-box-height: 540px;
+$big-star-size: 23px;
+$game-background-width: 752px;
+$game-background-height: 450px;
+$game-picture-width: 536px;
+$game-picture-height: 487px;
+
+.game-box {
+  position: relative;
+  width: $left-content-width;
+  height: $game-box-height;
+ .big-head {
+   float: left;
+   @extend %big-head-short;
+ }
+  .rating {
+    float: right;
+    position: relative;
+    right: -2px;
+    margin-top: 15px;
+    li {
+      display: inline-block;
+      width: $big-star-size - 0.5;
+      height: $big-star-size;
+      &.full-star {
+        background: url(.././pic/sprite/sprite.png) no-repeat 0 -341px;
+      }
+    }
+  }
+  .game-background {
+    position: absolute;
+    top: 47px;
+    left: -45px;
+    width: $game-background-width;
+    height: $game-background-height;
+    background: url(.././pic/game-description/game-background.png) no-repeat 0 0;
+  }
+  .game-picture {
+    position: absolute;
+    top: 40px;
+    left: 63px;
+    width: $game-picture-width;
+    height: $game-picture-height;
+    z-index: 2;
+  }
+  .btn-container {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 15px;
+  }
+  .games-play-btn {
+    display: inline-block;
+  }
+}

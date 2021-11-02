@@ -1,0 +1,77 @@
+$jackpot-border: rgb(103,182,114);
+$jackpot: #ffe9a7;
+// jackpot
+$jackpot-height: 142px;
+$currency-height: 40px;
+$currency-rouble-width: 21px;
+$currency-dollar-width: 19px;
+$currency-euro-width: 22px;
+$counter-wrapper-width: 276px;
+$box-jackpot-width: 314px;
+$box-jackpot-height: 154px;
+$jackpot-name-width: 240px;
+$jackpot-name-height: 44px;
+
+.jackpot-section {
+  margin-top: 21px;
+  width: $aside-width;
+  @include border-box;
+  height: $jackpot-height;
+  position: relative;
+  border: 1px solid $jackpot-border;
+  @include border-radius(3px);
+  @include box-shadow(0 0 8px 2px #000);
+  text-align: center;
+}
+
+#jackpot-counter {
+  float: right;
+}
+
+.currency {
+  float: left;
+  position: relative;
+  height: $currency-height;
+  top: 2px;
+  margin-right: 10px;
+  background: url("../img/flip.png") no-repeat;
+  &.rub {
+    &:before {
+      display: none;
+    }
+    width: $currency-rouble-width;
+    top: 3px;
+    background-position: -316px 0;
+  }
+  &.eur {
+    top: 7px;
+    width: $currency-euro-width;
+    background-position: -294px 0;
+  }
+  &.usd {
+    width: $currency-dollar-width;
+    background-position: -275px 0;
+  }
+}
+
+.counter-wrapper {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+}
+
+.box-jackpot {
+  position: absolute;
+  top: -7.5px;
+  left: -7px;
+  width: $box-jackpot-width;
+  height: $box-jackpot-height;
+  background: url("../pic/box-jackpot.png") no-repeat 0 0;
+}
+
+.jackpot-name {
+  position: relative;
+  width: $jackpot-name-width;
+  height: $jackpot-name-height;
+  margin: 20px auto 10px;
+}

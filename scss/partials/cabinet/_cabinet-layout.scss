@@ -1,0 +1,126 @@
+$cabinet-width: 740px;
+$cabinet-shadow-width: 200px;
+$cabinet-shadow-height: 254px;
+$cabinet-footer-shadow-width: 663px;
+$cabinet-footer-shadow-height: 12px;
+$cabinet-content-width: 705px;
+$cabinet-section-bg: rgb(12,16,25);
+$modal-wrapper-width: 635px;
+$form-field-height: 26px;
+$left-profile-section-width: 217px;
+$central-profile-section-width: 201px;
+$right-profile-section-width: 217px;
+
+%cabinet-shadows {
+  position: absolute;
+  top: 0;
+  width: $cabinet-shadow-width;
+  height: $cabinet-shadow-height;
+}
+
+.cabinet {
+  width: $cabinet-width;
+  position: absolute;
+  top: 65px;
+  margin-left: -1/2 * $cabinet-width;
+  left: 50%;
+  padding-top: 14px;
+  padding-bottom: 20px;
+  background: url(.././pic/cabinet/cabinet-bg.png) repeat-y center 0;
+  .shadow-left {
+    @extend %cabinet-shadows;
+    left: 0;
+    background: url(.././pic/cabinet/shadow-left.png) no-repeat 0 0;
+  }
+  .shadow-right {
+    @extend %cabinet-shadows;
+    right: 0;
+    background: url(.././pic/cabinet/shadow-right.png) no-repeat 0 0;
+  }
+  .shadow-footer {
+    position: absolute;
+    bottom: -2px;
+    left: 1/2 * ($cabinet-width - $cabinet-footer-shadow-width);
+    width: $cabinet-footer-shadow-width;
+    height: $cabinet-footer-shadow-height;
+    background: url(.././pic/cabinet/shadow-footer.png) no-repeat 0 0;
+  }
+  .cabinet-content {
+    width: $cabinet-content-width;
+    margin: 0 auto;
+    position: relative;
+    .close-btn {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      width: $close-btn-size;
+      height: $close-btn-size;
+      background: url("../pic/close-btn.png") no-repeat -58px 0;
+      &:hover {
+        cursor: pointer;
+        background-position: 0 0;
+      }
+    }
+  }
+  .cabinet-section {
+    display: none;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    @include box-shadow(0 0 7px 1px rgb(0,0,0), 0 0 $standard-shadow-size 0 rgba(255,255,255,.3) inset);
+    &.active {
+      display: block;
+    }
+    @include border-bottom-left-radius(4px);
+    @include border-bottom-right-radius(4px);
+    background: $cabinet-section-bg;
+    @include linear-gradient(to bottom, rgba(14,16,25,1) 0%,rgba(12,16,25,1) 24%,rgba(15,17,25,1) 40%,rgba(35,22,25,1) 100%);
+    .modal-wrapper {
+      width: $modal-wrapper-width;
+      margin: 0 auto;
+    }
+    .transparent-box-container {
+      position: relative;
+      .transparent-bg {
+        position: absolute;
+        top: 9px;
+        bottom: 0;
+        left: -15px;
+        right: -15px;
+        @include border-radius(21px);
+        @include linear-gradient(to bottom,
+                rgba(0,0,0,0) 0%,
+                rgba(0,0,0,.06) 20%,
+                rgba(0,0,0,.32) 75%,
+                rgba(0,0,0,.4) 100%);
+      }
+    }
+    input.form-field {
+      height: $form-field-height;
+      line-height: $form-field-height - 10;
+      padding-left: 13px;
+      padding-right: 19px;
+    }
+    .birth-date {
+      float: left;
+      margin-right: 12px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .input-container {
+      &.fail {
+        &:before {
+          top: 6px;
+          right: 5px;
+        }
+      }
+      &.success {
+        &:before {
+          top: 8px;
+          right: 5px;
+        }
+      }
+    }
+  }
+}

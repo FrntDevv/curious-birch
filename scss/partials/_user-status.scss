@@ -1,0 +1,141 @@
+// Variable declaration
+$default-scale-color: #2ba7ea;
+$scale-color: #f4b90d;
+
+// light in scale
+$light-width: 23px;
+$light-height: 25px;
+
+// scale
+$scale-height: 3px;
+$count-scale-width: 70px;
+$scale-bg: rgb(10, 10, 10);
+
+// count of franks
+$count-height: 32px;
+$count-width: 90px;
+
+// rate
+$rate-height: 20px;
+$rate-block-size: 20px;
+
+// progress bar
+$progress-block-height: 32px;
+$progress-block-width: 160px;
+
+.scale {
+  position: relative;
+  background-color: $scale-bg;
+  @include box-shadow(0 1px 1px rgba(208, 208, 208, 0.2));
+  height: $scale-height;
+  @include border-box;
+  @include border-radius(1px);
+  .color {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 10%;
+    @include border-top-left-radius(1px);
+    @include border-bottom-left-radius(1px);
+    background: $default-scale-color;
+    z-index: 1;
+    .light {
+      position: absolute;
+      z-index: 2;
+      width: $light-width;
+      height: $light-height;
+      top: -10.7px;
+      right: -12px;
+      background: url(../pic/sprite/sprite.png) no-repeat -255px -43px;
+    }
+  }
+}
+
+
+.rate {
+  position: relative;
+  float: right;
+  height: $rate-height;
+  z-index: 2;
+  li {
+    display: inline-block;
+    height: $rate-block-size;
+    width: $rate-block-size - 4;
+    margin-right: 0;
+    background-image: url(../pic/sprite/sprite.png);
+    &.full-star {
+      background-position: -315px -50px;
+    }
+    &.half-star {
+      background-position: -315px -25px;
+    }
+    &.empty-star {
+      background-position: -315px 0;
+    }
+  }
+}
+
+.progress-bar-block {
+  position: relative;
+  height: $progress-block-height;
+  float: left;
+  margin-left: 90px;
+  margin-top: 20px;
+  width: $progress-block-width;
+  .user-status {
+    float: left;
+    font: {
+      family: "Tahoma", sans-serif;
+      size: 12px;
+    }
+    color: $base-body-color;
+    margin-top: 2px;
+  }
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    width: $progress-block-width;
+  }
+}
+
+.count-of-franks {
+  position: absolute;
+  height: $count-height;
+  top: 20px;
+  left: 235px;
+  width: $count-width;
+  @include border-box;
+  .count-text {
+    float: left;
+    display: block;
+    margin-top: 2px;
+    font: {
+      family: "Tahoma", sans-serif;
+      size: 12px;
+    }
+    color: $base-body-color;
+  }
+  .multiplier {
+    @include text-shadow(0 0 10px rgb(0,0,0));
+    color: $base-body-color;
+    display: block;
+    float: right;
+    font: {
+      size: 14px;
+      family: "Russo One", sans-serif;
+    }
+  }
+  .count-scale {
+    position: absolute;
+    bottom: 0;
+    width: $count-scale-width;
+    .color {
+      background: $scale-color;
+      .light {
+        background: url(../pic/sprite/sprite.png) no-repeat -255px -73px;
+      }
+    }
+  }
+}
+

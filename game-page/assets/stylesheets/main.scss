@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Tahoma";
+  src: url("../fonts/tahoma/tahoma.ttf");
+  src: url("../fonts/tahoma/tahoma.eot"),
+  url("../fonts/tahoma/tahoma.woff") format("woff"),
+  url("../fonts/tahoma/tahoma.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Disable outlines of input
+
+button {
+  border: 0;
+  outline: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline-width: 0;
+  background: 0;
+}
+
+input:focus {
+  outline-width: 0;
+}
+
+input {
+  outline: 0;
+  outline-width: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+// Modules
+
+@import "base-declaration";
+
+// Partials
+
+@import "base";
+@import "track";
+@import "buttons";
+@import "reg-social";
+@import "user-status";
+@import "battery";
+@import "popup-charge";
+@import "game-list";
+@import "tournament";
+@import "game-container";
+@import "media";

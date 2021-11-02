@@ -1,0 +1,111 @@
+$shadow-column-width: 200px;
+$shadow-column-height: 254px;
+$column-bg: rgba(0, 0, 0, 0.8);
+$center-column-bg: rgba(0, 0, 0, 0.6);
+$line-in-game-container: #393e44;
+$line-in-container-width: 180px;
+$logo-width: 137px;
+$logo-height: 87px;
+
+%gray-line {
+  position: absolute;
+  left: ($column-width - $line-in-container-width) / 2;
+  top: 118px;
+  height: $min-line-height;
+  width: $line-in-container-width;
+  background: $line-in-game-container;
+}
+
+%shadows-in-columns {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: $shadow-column-width;
+  height: $shadow-column-height;
+}
+
+.game-container {
+  width: $small-game-container-width;
+  height: $small-game-container-height;
+  top: 50%;
+  left: 50%;
+  margin-left: -($small-game-container-width/2);
+  margin-top: -($small-game-container-height/2);
+  position: absolute;
+  .left-column {
+    .battery {
+      display: none;
+    }
+  }
+  .right-column {
+    .img-in-tournament {
+      display: none;
+    }
+  }
+}
+
+.left-column {
+  float: left;
+  width: $column-width;
+  background: $column-bg;
+  position: relative;
+  height: $small-game-container-height;
+  .gray-line {
+    @extend %gray-line;
+  }
+}
+
+.logo {
+  position: relative;
+  display: block;
+  margin: 10px auto 30px;
+  background: url("../images/logo-footer.png") no-repeat 0 0;
+  width: $logo-width;
+  height: $logo-height;
+}
+
+.center-column {
+  position: absolute;
+  float: left;
+  margin-left: $column-width;
+  width: $small-center-width;
+  background: $center-column-bg;
+  height: $small-game-container-height;
+}
+
+.right-column {
+  float: right;
+  position: relative;
+  width: $column-width;
+  height:  $small-game-container-height;
+  background: $column-bg;
+  .gray-line {
+    @extend %gray-line;
+  }
+}
+
+.left-top-shadow {
+  @extend %shadows-in-columns;
+  background: url(../images/left-top-shadow.png) no-repeat 0 0;
+}
+
+.right-top-shadow {
+  @extend %shadows-in-columns;
+  background: url(../images/right-top-shadow.png) no-repeat 0 0;
+}
+
+.game-container.tournament {
+  .right-column {
+    .battery {
+      display: none;
+    }
+  }
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  @include border-box;
+}

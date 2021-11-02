@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("../images/bg-img.jpg") no-repeat center center;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100%;
+  min-height: 100vh;
+  height: $small-game-container-height + $height-of-footer-line;
+  position: relative;
+}
+
+.clearfix:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+.footer-line {
+  height: $height-of-footer-line;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: url("../images/line-footer.png") no-repeat center 0;
+}
+
+iframe:focus {
+  outline: none;
+}
+
+.shadow {
+  display: none;
+}

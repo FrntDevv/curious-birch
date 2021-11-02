@@ -1,0 +1,8 @@
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS here */
+  .main-menu-list li a {
+    padding-left: 42px;
+    padding-right: 43px; }
+
+  svg {
+    height: 40px; } }

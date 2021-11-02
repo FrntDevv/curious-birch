@@ -1,0 +1,15 @@
+$cashback-icon-width: 475px;
+$cashback-icon-height: 246px;
+.popup.cashback {
+  .popup-head {
+    margin: 41px auto 0;
+    max-width: 60%;
+    text-transform: none;
+  }
+  .cashback-icon {
+    width: $cashback-icon-width;
+    height: $cashback-icon-height;
+    margin: 28px auto 0;
+    background: url(../pic/popup/cashback.png) no-repeat 0 0;
+  }
+}

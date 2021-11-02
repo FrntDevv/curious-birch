@@ -1,0 +1,165 @@
+$btn-in-track-width: 85px;
+$btn-in-track-height: 21px;
+$track-width: 662px;
+$track-height: 36px;
+$first-line-in-track: #0d1116;
+$second-line-in-track: #23626c;
+// track
+$game-in-track-height: 20px;
+$game-in-track-width: 35px;
+$track-popup-height: 65px;
+$track-bottom-game-height: 40px;
+$track-bottom-game-width: 70px;
+$btn-in-track-bottom-width: 170px;
+$shadow-track-height: 25px;
+
+.track {
+  display: block;
+  margin-left: 59px;
+  width: $track-width;
+  height: $track-height;
+  background: url("../pic/track.png") no-repeat 0 0;
+  margin-bottom: 20px;
+  a.img-ref {
+    display: inline-block;
+    margin-top: 7px;
+    margin-left: 20px;
+    margin-right: 10px;
+    position: relative;
+    max-width: 100%;
+    &:before {
+      @include box-shadow(0 0 $standard-shadow-size 0 $content-img-box-shadow inset);
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+}
+
+.first-line {
+  width: 100%;
+  height: 1px;
+  background: $first-line-in-track;
+}
+.second-line {
+  height: 1px;
+  width: 100%;
+  background: $second-line-in-track;
+}
+
+.game-in-track {
+  float: left;
+  @include border-box;
+  display: block;
+  height: $game-in-track-height;
+  width: $game-in-track-width;
+}
+
+.btn-in-track {
+  @include border-box;
+  display: inline-block;
+  position: relative;
+  top: -6px;
+  margin-right: 10px;
+  background: url("../pic/icon-play-in-track.png") no-repeat 0 -21px;
+  width: $btn-in-track-width;
+  height: $btn-in-track-height;
+  line-height: $btn-in-track-height;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 11px;
+  }
+  color: $base-body-color;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  &:hover {
+    background-position: 0 0;
+  }
+}
+
+.track-desc {
+  @include border-box;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  overflow-x: hidden;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 14px;
+  }
+  text-transform: uppercase;
+  color: #fff;
+  .track-desc-ref {
+    text-decoration: underline;
+    color: $base-ref;
+  }
+  .sum {
+    color: $base-sum;
+  }
+  max-width: 480px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.track-popup {
+  background: none;
+  @include border-box;
+  position: fixed;
+  z-index: 14;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: $track-popup-height;
+  margin-left: 0;
+  margin-bottom: 0;
+  background: $track-popup-bg;
+  a.img-ref {
+    margin-top: 12px;
+    margin-right: 20px;
+  }
+  .track-center-wrapper {
+    width: $layout-width;
+    margin: 0 auto;
+    position: relative;
+  }
+  .game-in-track {
+    width: $track-bottom-game-width;
+    height:$track-bottom-game-height;
+  }
+  .btn-in-track {
+    top: -14px;
+    @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+    width: $btn-in-track-bottom-width;
+    height: $btn-in-track-bottom-height;
+    margin-right: 24px;
+    line-height: $btn-in-track-bottom-height;
+    @extend %button-base-font;
+    background: url("../pic/icon-play-btn-popup-track.png") no-repeat 0 -41px;
+    &:hover {
+      background-position: 0 0;
+    }
+  }
+  .shadow-track {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $shadow-track-height;
+    background: url("../pic/box-shadow-pattern-track.png") repeat-x 0 0;
+  }
+  .track-desc {
+    top: -10px;
+    max-width: 750px;
+  }
+  .close-icon {
+    @extend %close-icon;
+    top: 16px;
+    right: 20px;
+  }
+}

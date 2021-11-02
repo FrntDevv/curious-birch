@@ -1,0 +1,83 @@
+// Base background declaration
+
+.header-body-bg {
+  background: $primary-bg;
+}
+
+.header-bg {
+  background: $header-bg;
+}
+
+.header-grad {
+  height: $header-grad-height;
+  background: $transparent;
+}
+
+.header-pos-point {
+  position: relative;
+}
+
+.header-lights {
+  position: absolute;
+  left: 0;
+  width: 812px;
+  height: 59px;
+  background: url("../pic/header-lights.png") no-repeat 0 0;
+}
+
+.main-logo-frank {
+  position: absolute;
+  z-index: 2;
+  left: 49px;
+  top: 0;
+  width: 214px;
+  height: 122px;
+  background: url("../pic/main-logo-frank.png") no-repeat 0 0;
+}
+
+%first-line {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+a.btn-reg {
+  margin-left: 263px;
+  width: 265px;
+  height: 50px;
+  background: url("../pic/btn-reg.png") no-repeat 0 0;
+  @extend %first-line;
+  .reg {
+    @include text-shadow(0 2px 0 rgb(0,0,0));
+    @extend %button-base-font;
+    @extend %base-text-in-ref;
+    display: inline-block;
+    padding-top: 18px;
+    margin-left: 26px;
+    margin-right: 12px;
+  }
+  .reg-time {
+    @extend %base-text-in-ref;
+    @include text-shadow(2px -2px 15px red,
+            -2px 2px 15px red,
+            2px 2px 15px red,
+            -2px -2px 15px red);
+    display: inline-block;
+    padding-top: 12px;
+    margin-right: -4px;
+    text-transform: uppercase;
+    font: {
+      family: "Open Sans Condensed", sans-serif;
+      size: 14px;
+      weight: 700;
+    }
+  }
+  &:hover {
+    background: url("../pic/btn-reg-hover.png") no-repeat 0 0;
+    .reg-time {
+      @include text-shadow(2px -2px 15px #db0000,
+              -2px 2px 15px #db0000,
+              2px 2px 15px #db0000,
+              -2px -2px 15px #db0000);
+    }
+  }
+}

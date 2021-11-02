@@ -1,0 +1,155 @@
+$balance-box-width: 121px;
+$balance-box-height: 70px;
+$central-balance-section-width: 155px;
+$franks-bg-width: 134px;
+$money-bg-width: 127px;
+$exchange-btn-padding: 17px;
+$exchange-btn-height: 29px;
+$exchange-btn-bg: #73b667;
+$exchange-btn-shadow: #8ec182;
+$exchange-split-width: 10px;
+$exchange-split-height: 12px;
+$exchange-course-height: 41px;
+
+%exchange-btn {
+  display: inline-block;
+  position: relative;
+  padding-left: $exchange-btn-padding;
+  padding-right: $exchange-btn-padding;
+  height: $exchange-btn-height;
+  line-height: $exchange-btn-height;
+  @include border-box();
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  background: $exchange-btn-bg;
+  @include linear-gradient(to bottom,
+          rgb(131,231,137) 0%,
+          rgb(79,222,103) 4%,
+          rgb(11,214,86) 7%,
+          rgb(0,210,84) 11%,
+          rgb(0,187,88) 36%,
+          rgb(0,184,92) 50%,
+          rgb(0,183,90) 64%,
+          rgb(0,175,79) 79%,
+          rgb(0,157,63) 93%,
+          rgb(0,162,80) 96%,
+          rgb(0,179,115) 100%);
+  @include border-radius(3px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $exchange-btn-shadow, inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 14px;
+    weight: bold;
+  }
+  @extend %base-text-in-ref;
+}
+
+.exchange-block {
+  margin-top: 73px;
+  position: relative;
+  display: inline-block;
+  font: {
+    family: "Roboto", sans-serif;
+    weight: 300;
+    size: 12px;
+  }
+  color: $base-body-color;
+  text-align: center;
+  .central-section {
+    float: left;
+    width: $central-balance-section-width;
+    .exchange-btn {
+      @extend %exchange-btn;
+      margin-top: 15px;
+    }
+    .exchange-text {
+      margin-top: 14px;
+      li {
+        display: inline-block;
+        list-style: none;
+        margin-left: 5px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+      .split {
+        position: relative;
+        top: 2px;
+        width: $exchange-split-width;
+        height: $exchange-split-height;
+        background: url(../pic/cabinet/sprite/sprite.png) no-repeat -14px -57px;
+      }
+    }
+  }
+  .balance-box {
+    width: $balance-box-width;
+    height: $balance-box-height;
+    position: relative;
+    .balance-text {
+      position: relative;
+      margin-top: 13px;
+    }
+    .franks-points,
+    .account-balance {
+      position: relative;
+      font: {
+        family: "Roboto", sans-serif;
+        size: 20px;
+        weight: bold;
+      }
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+    .background {
+      position: absolute;
+      top: 0;
+      left: -2px;
+    }
+    &.franks {
+      float: left;
+      .background {
+        background: url(.././pic/cabinet/frank-balance.png) no-repeat 0 0;
+        width: $franks-bg-width;
+        height: $balance-box-height;
+      }
+    }
+    &.money {
+      float: right;
+      .background {
+        background: url(.././pic/cabinet/currency-balance.png) no-repeat 0 0;
+        width: $money-bg-width;
+        height: $balance-box-height;
+      }
+    }
+  }
+}
+
+.exchange-course-container {
+  position: relative;
+}
+
+.exchange-course {
+  font: {
+    family: "Roboto", sans-serif;
+    size: 12px;
+    weight: 300;
+  }
+  display: inline-block;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-top: 10px;
+  color: $base-body-color;
+  height: $exchange-course-height;
+  line-height: $exchange-course-height;
+  @include border-top-left-radius(10px);
+  @include border-top-right-radius(10px);
+  background: url(.././pic/cabinet/exchange-block-bg.png) repeat-x 0 0;
+  @include box-shadow(inset 0 0 8px 0 rgba(0,0,0,.75));
+}

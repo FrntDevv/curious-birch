@@ -1,0 +1,161 @@
+$profile-info-line-height: 32px;
+$profile-info-line-bg: rgb(0,22,32);
+$info-block-width: 40px;
+$positive-color-block-bg: #2bc060;
+$negative-color-block-bg: #c02b2b;
+$small-bonus-quantity-size: 25px;
+$turnover-text-block-width: 69px;
+$turnover-color-block-width: 108px;
+$active-bonuses-text-block-width: 153px;
+$active-wager-text-block-width: 133px;
+$active-wager-hidden-block-width: 187px;
+$active-wager-color-block-width: 44px;
+$hidden-list-marker-width: 7px;
+$hidden-list-marker-height: 8px;
+$hidden-block-bg: #25232e;
+$hidden-block-text: rgb(197, 197, 197);
+
+.profile-info-lines {
+  position: relative;
+  text-align: center;
+  font: {
+    family: "Roboto", sans-serif;
+    weight: 300;
+    size: 12px;
+  }
+  color: $base-body-color;
+  margin-top: 47px;
+  .profile-info-line {
+    height: $profile-info-line-height;
+    line-height: $profile-info-line-height;
+    background: $profile-info-line-bg;
+    position: relative;
+    @include linear-gradient(to bottom, rgb(0,22,32) 0%,rgb(0,27,39) 40%,rgb(0,27,39) 60%,rgb(0,22,32) 100%);
+    @include border-radius(5px);
+    @include box-shadow(inset 0 0 7px 0 rgba(0,0,0,.91));
+    .hidden-block {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      left: -177px;
+      bottom: 40px;
+      position: absolute;
+      text-align: left;
+      display: none;
+      background: $hidden-block-bg;
+      z-index: 4;
+      &.active {
+        display: block;
+      }
+      .profile-list {
+        @include border-box();
+        padding-left: 24px;
+        font: {
+          size: 11px;
+        }
+        line-height: 1.182;
+        color: $hidden-block-text;
+        li {
+          position: relative;
+          list-style: none;
+          margin-bottom: 3px;
+          &:last-child {
+            margin: 0;
+          }
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: $hidden-list-marker-width;
+            height: $hidden-list-marker-height;
+            background: url(../pic/cabinet/sprite/sprite.png) no-repeat -24px -57px;
+            top: 2px;
+            left: -14px;
+          }
+        }
+      }
+    }
+    .text-block {
+      float: left;
+      height: $profile-info-line-height;
+    }
+    .color-block {
+      float: left;
+      height: $profile-info-line-height;
+      @include box-shadow(0 0 #000, inset 0 0 5px 3px rgba(#000,.91));
+      &.positive {
+        background: $positive-color-block-bg;
+        color: #000;
+      }
+      &.negative {
+        background: $negative-color-block-bg;
+      }
+    }
+    .info-block {
+      float: left;
+      height: $profile-info-line-height;
+      width: $info-block-width;
+      position: relative;
+      .info-btn {
+        &:hover {
+          cursor: pointer;
+        }
+        position: static;
+        margin: 0 auto;
+      }
+    }
+   &.turnover {
+     float: left;
+     width: $left-profile-section-width;
+     .text-block {
+       width: $turnover-text-block-width;
+     }
+     .color-block {
+       width: $turnover-color-block-width;
+     }
+     .hidden-block {
+       width: $left-profile-section-width + 1;
+     }
+   }
+    &.active-bonuses {
+      float: right;
+      width: $right-profile-section-width + 1;
+      .text-block {
+        width: $active-bonuses-text-block-width;
+        @include border-box();
+        padding-right: 10px;
+      }
+      .hidden-block {
+        width: $left-profile-section-width - 1;
+      }
+      .bonus-quantity {
+        float: left;
+        width: $small-bonus-quantity-size;
+        height: $small-bonus-quantity-size + 1;
+        line-height: $small-bonus-quantity-size;
+        margin-top: 3px;
+        background: url(../pic/cabinet/sprite/sprite.png) no-repeat -57px -25px;
+        font: {
+          family: "Roboto", sans-serif;
+          size: 14px;
+          weight: bold;
+        }
+        color: $bonus-quantity-color;
+      }
+    }
+    &.active-wager {
+      margin: 12px auto 0;
+      width: $left-profile-section-width;
+      .text-block {
+        width: $active-wager-text-block-width;
+      }
+      .color-block {
+        width: $active-wager-color-block-width;
+      }
+      .hidden-block {
+        left: -163px;
+        width: $active-wager-hidden-block-width;
+        padding-bottom: 14px;
+      }
+    }
+  }
+}

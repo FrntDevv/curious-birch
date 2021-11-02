@@ -1,0 +1,82 @@
+$text-box-width: 421px;
+$text-box-bg: rgb(21,30,38);
+$rules-first-column-width: 302px;
+$rules-second-column-width: 238px;
+$rules-cell-height: 39px;
+$rules-border-bottom: #0d0f14;
+$rules-first-column-bg: rgb(0,154,91);
+$rules-second-column-bg: rgb(8,95,69);
+
+.rules-of-tournament {
+  margin-bottom: 20px;
+  .text-box {
+    float: left;
+    width: $text-box-width;
+    padding: 16px;
+    @include border-box();
+    background: $text-box-bg;
+    @include linear-gradient(to bottom, rgb(21,30,38) 0%, rgb(19,21,26) 100%);
+    @include box-shadow(0 0 8px 1px rgb(0,0,0), inset 0 0 2px 0px rgba(255,255,255,.5));
+    font: {
+      weight: 300;
+      size: 12px;
+      family: "Roboto", sans-serif;
+    }
+    text: {
+      align: left;
+    }
+    letter-spacing: 0.4px;
+    line-height: 1.5;
+    color: rgba(255,255,255,.7);
+  }
+}
+
+.rules {
+  display: block;
+  float: right;
+  border: 0;
+  tr {
+    display: block;
+    height: $rules-cell-height;
+    @include border-box();
+    border-bottom: 1px solid $rules-border-bottom;
+  }
+  td {
+    display: block;
+    height: $rules-cell-height;
+    line-height: $rules-cell-height;
+    @include border-box();
+    @include box-shadow(inset 0 0 2px 0 rgba(255,255,255,.5),0 0 8px 1px rgba(0,0,0,.3));
+    color: $base-body-color;
+    @include text-shadow(0 0 5px rgba(21,22,22,.7));
+    font: {
+      size: 13px;
+      family: "Tahoma", sans-serif;
+    }
+    &:first-child {
+      text-align: left;
+      float: left;
+      padding-left: 16px;
+      width: $rules-first-column-width;
+      background: $rules-first-column-bg;
+      @include linear-gradient(to bottom, rgba(0,154,91,1) 0%,rgba(0,129,84,1) 76%,rgba(0,110,78,1) 100%);
+    }
+    &:last-child {
+      text-align: right;
+      float: right;
+      padding-right: 18px;
+      width: $rules-second-column-width;
+      background: $rules-second-column-bg;
+      @include linear-gradient(to bottom, rgba(8,95,69,1) 0%,
+              rgba(15,91,67,1) 11%,
+              rgba(15,86,65,1) 22%,
+              rgba(11,84,63,1) 27%,
+              rgba(16,82,63,1) 30%,
+              rgba(14,75,59,1) 46%,
+              rgba(17,63,51,1) 70%,
+              rgba(15,60,49,1) 76%,
+              rgba(16,40,39,1) 95%,
+              rgba(13,35,36,1) 100%);
+    }
+  }
+}

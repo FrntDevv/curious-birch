@@ -1,0 +1,27 @@
+$auth-width: 400px;
+$auth-submit-form-btn-width: 311px;
+
+.authorization {
+  .auth-form {
+    background: $popup-form-bg;
+    border: 1px solid $popup-form-border;
+    margin: 64px auto 0;
+    display: block;
+    padding: 30px 0;
+    @include border-box();
+    width: $auth-width;
+    .input-container {
+      &:first-child {
+        margin-bottom: 30px;
+      }
+    }
+    a.link {
+      margin-top: 19px;
+      display: inline-block;
+    }
+    .submit-form-btn {
+      width: $auth-submit-form-btn-width;
+      margin: 22px auto 4px;
+    }
+  }
+}

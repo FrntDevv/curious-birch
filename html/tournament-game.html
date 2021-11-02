@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>Турнир - игра</title>
+    <link href="../css/normalize.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="../css/main.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="../css/jquery.bxslider.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="../css/firefox.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="../css/ie10.css" rel="stylesheet" type="text/css"/>
+    <!--[if lte IE 9]>
+    <link href="../css/ie9.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link href="../css/ie8.css" rel="stylesheet" type="text/css"/>
+    <![endif]-->
+    <link href="../fancyselect/fancyselect.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="../fancybox/source/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:700,400,300&subset=latin,cyrillic-ext,latin-ext,cyrillic"
+          rel="stylesheet"
+          type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300&subset=latin,cyrillic-ext,latin-ext,cyrillic"
+          rel="stylesheet"
+          type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic"
+          rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Russo+One&amp;subset=latin,cyrillic,latin-ext" rel="stylesheet"
+          type="text/css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!--[if lte IE 9]>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <script src="../js/respond.min.js"></script>
+    <![endif]-->
+    <script src="../js/html5shiv.min.js"></script>
+    <script src="../js/html5shiv-printshiv.min.js"></script>
+    <!--[if lte IE 8]>
+    <script src="../js/selectivizr-min.js"></script>
+    <![endif]-->
+</head>
+<body class="tournament-game">
+<div class="header-body-bg">
+    <header>
+        <div class="tournament-banner-container">
+        <div class="tournament-banner">
+            <img class="tournament-banner-img" src="../img/banner.png" alt="">
+            <div class="tournament-wrapper-container">
+            <div class="tournament-wrapper">
+                <div class="head-cont-grad"></div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <div class="information-block-container">
+            <div class="information-block clearfix">
+                <div class="tournament-info">
+                    <div class="name-of-tournament text-shadow">Турнир <span class="name">«It's magic!»</span></div>
+                    <div class="tournament-date text-shadow">Ср 17.06.2015 06:00 - Ср 17.06.2015 23:59</div>
+                </div>
+                <a href="#" class="big-take-part-btn text-shadow">
+                    Принять участие
+                </a>
+            </div>
+        </div>
+        <div class="header-grad"></div>
+        <div class="layout-center-wrapper header-pos-point clearfix">
+            <div class="header-lights"></div>
+            <div class="main-logo-frank"><a href="#"></a></div>
+            <div class="count-of-franks clearfix">
+                <a href="#" class="count-text">0 франков</a>
+
+                <div class="multiplier">x3</div>
+                <div class="scale count-scale">
+                    <div class="color">
+                        <div class="light"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-bar-block clearfix">
+                <div class="user-status">Новичок</div>
+                <ul class="rate">
+                    <li class="full-star">
+                    <li class="full-star">
+                    <li class="half-star">
+                    <li class="empty-star">
+                    <li class="empty-star">
+                </ul>
+                <div class="scale progress-bar">
+                    <div class="color">
+                        <div class="light"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-box">
+                <div class="profile-info">
+                    <a href="#" class="balance">3,512 Rub</a>
+
+                    <div class="e-mail">Cantseeeeme@gmail.com</div>
+                    <a href="#" class="alarm-count">
+                        <div class="text">2</div>
+                    </a>
+                </div>
+                <a href="#" class="settings"></a>
+                <a href="#" class="exit">выход</a>
+
+                <div class="select-language">
+                    <select class="language">
+                        <option value="russian" data-icon="russian"></option>
+                        <option value="english" data-icon="english"></option>
+                        <option value="german" data-icon="german"></option>
+                    </select>
+                </div>
+            </div>
+            <a href="#" class="small-cashbox text-shadow"><span>Касса</span></a>
+
+            <div class="power-lines"></div>
+            <nav class="main-menu">
+                <ul class="main-menu-list">
+                    <li><a href="#">Игры</a>
+                    <li><a href="#">Касса</a>
+                    <li><a href="#">Турниры</a>
+                    <li><a href="#">Бонусы</a>
+                    <li><a href="#">Лотерея</a>
+                    <li><a href="#">Плат. системы</a>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+    <nav class="game-category">
+        <div class="main-menu-shadow"></div>
+
+        <ul class="game-category-list">
+            <li class="hot">
+                <div class="cat-game-icon"></div>
+                <a href="#" class="cat-name">Нагретые игры</a>
+            <li class="popular">
+                <div class="cat-game-icon"></div>
+                <a href="#" class="cat-name">Популярные</a>
+            <li class="slots">
+                <div class="cat-game-icon"></div>
+                <a href="#" class="cat-name">Слоты</a>
+            <li class="jackpots">
+                <div class="cat-game-icon"></div>
+                <a href="#" class="cat-name">Джекпоты</a>
+            </li>
+            <li class="cards">
+                <div class="cat-game-icon"></div>
+                <a href="#" class="cat-name">Карточные</a>
+            <li class="tables">
+                <div class="cat-game-icon"></div>
+                <a href="#" class="cat-name">Столы</a>
+            </li>
+            <li class="videopokers">
+                <div class="cat-game-icon"></div>
+                <a href="#" class="cat-name">Видеопокеры</a>
+            <li class="others">
+                <div class="cat-game-icon"></div>
+                <a href="#" class="cat-name">Другие</a>
+        </ul>
+    </nav>
+
+<section class="content">
+    <div class="layout-center-wrapper content-pos-point">
+        <div class="left-top-cont-grad"></div>
+        <div class="right-top-cont-grad"></div>
+        <div class="left-bottom-cont-grad"></div>
+        <div class="right-bottom-cont-grad"></div>
+        <div class="grad-left-line"></div>
+        <div class="grad-right-line"></div>
+        <div class="foot-cont-grad"></div>
+        <div class="title-light"></div>
+        <div class="full-page-wrapper">
+            <ul class="small-game-list">
+                <li class="game-item">
+                    <div class="hover-game play-btn-only">
+                        <div class="btn-block">
+                            <a href="#" class="main-play-btn text-shadow">Играть</a>
+                        </div>
+                        <a href="#" class="info-btn"></a>
+                    </div>
+                    <div class="game-img-shadow"><img class="game-img" src="../img/small-game.jpg" alt="game"></div>
+
+                    <div class="frame">
+                        <div class="game-name">
+                            Lara Croft Tomb Raider Lara
+                        </div>
+                        <div class="now-playing">
+                            Сейчас играют: <span class="amount-of-players">5</span>
+                        </div>
+                    </div>
+                <li class="game-item hot">
+                    <div class="hover-game play-btn-only">
+                        <div class="btn-block">
+                            <a href="#" class="main-play-btn text-shadow">Играть</a>
+                        </div>
+                        <a href="#" class="info-btn"></a>
+                    </div>
+                    <div class="game-img-shadow"><img class="game-img" src="../img/small-game.jpg" alt="game"></div>
+                    <div class="frame">
+                        <div class="game-name">
+                            Lara Croft Tomb Raider Lara
+                        </div>
+                        <div class="now-playing">
+                            Нагретая игра
+                        </div>
+                    </div>
+                <li class="game-item">
+                    <div class="hover-game play-btn-only">
+                        <div class="btn-block">
+                            <a href="#" class="main-play-btn text-shadow">Играть</a>
+                        </div>
+                        <a href="#" class="info-btn"></a>
+                    </div>
+                    <div class="game-img-shadow"><img class="game-img" src="../img/small-game.jpg" alt="game"></div>
+
+                    <div class="frame">
+                        <div class="game-name">
+                            Lara Croft Tomb Raider Lara
+                        </div>
+                        <div class="now-playing">
+                            Сейчас играют: <span class="amount-of-players">5</span>
+                        </div>
+                    </div>
+                <li class="game-item">
+                    <div class="hover-game play-btn-only">
+                        <div class="btn-block">
+                            <a href="#" class="main-play-btn text-shadow">Играть</a>
+                        </div>
+                        <a href="#" class="info-btn"></a>
+                    </div>
+                    <div class="game-img-shadow"><img class="game-img" src="../img/small-game.jpg" alt="game"></div>
+
+                    <div class="frame">
+                        <div class="game-name">
+                            Lara Croft Tomb Raider Lara
+                        </div>
+                        <div class="now-playing">
+                            Сейчас играют: <span class="amount-of-players">5</span>
+                        </div>
+                    </div>
+                <li class="game-item">
+                    <div class="hover-game play-btn-only">
+                        <div class="btn-block">
+                            <a href="#" class="main-play-btn text-shadow">Играть</a>
+                        </div>
+                        <a href="#" class="info-btn"></a>
+                    </div>
+                    <div class="game-img-shadow"><img class="game-img" src="../img/small-game.jpg" alt="game"></div>
+
+                    <div class="frame">
+                        <div class="game-name">
+                            Lara Croft Tomb Raider Lara
+                        </div>
+                        <div class="now-playing">
+                            Сейчас играют: <span class="amount-of-players">5</span>
+                        </div>
+                    </div>
+                <li class="game-item hot">
+                    <div class="hover-game play-btn-only">
+                        <div class="btn-block">
+                            <a href="#" class="main-play-btn text-shadow">Играть</a>
+                        </div>
+                        <a href="#" class="info-btn"></a>
+                    </div>
+                    <div class="game-img-shadow"><img class="game-img" src="../img/small-game.jpg" alt="game"></div>
+                    <div class="frame">
+                        <div class="game-name">
+                            Lara Croft Tomb Raider Lara
+                        </div>
+                        <div class="now-playing">
+                            Нагретая игра
+                        </div>
+                    </div>
+                <li class="game-item">
+                    <div class="hover-game play-btn-only">
+                        <div class="btn-block">
+                            <a href="#" class="main-play-btn text-shadow">Играть</a>
+                        </div>
+                        <a href="#" class="info-btn"></a>
+                    </div>
+
+                    <div class="game-img-shadow"><img class="game-img" src="../img/small-game.jpg" alt="game"></div>
+
+                    <div class="frame">
+                        <div class="game-name">
+                            Lara Croft Tomb Raider Lara
+                        </div>
+                        <div class="now-playing">
+                            Сейчас играют: <span class="amount-of-players">5</span>
+                        </div>
+                    </div>
+                <li class="game-item">
+                    <div class="hover-game play-btn-only">
+                        <div class="btn-block">
+                            <a href="#" class="main-play-btn text-shadow">Играть</a>
+                        </div>
+                        <a href="#" class="info-btn"></a>
+                    </div>
+                    <div class="game-img-shadow"><img class="game-img" src="../img/small-game.jpg" alt="game"></div>
+
+                    <div class="frame">
+                        <div class="game-name">
+                            Lara Croft Tomb Raider Lara
+                        </div>
+                        <div class="now-playing">
+                            Сейчас играют: <span class="amount-of-players">5</span>
+                        </div>
+                    </div>
+                <li class="game-item hot">
+                    <div class="hover-game play-btn-only">
+                        <div class="btn-block">
+                            <a href="#" class="main-play-btn text-shadow">Играть</a>
+                        </div>
+                        <a href="#" class="info-btn"></a>
+                    </div>
+                    <div class="game-img-shadow"><img class="game-img" src="../img/small-game.jpg" alt="game"></div>
+
+                    <div class="frame">
+                        <div class="game-name">
+                            Lara Croft Tomb Raider Lara
+                        </div>
+                        <div class="now-playing">
+                            Нагретая игра
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        <div class="full-page-wrapper">
+            <div class="tournament-line"></div>
+            <section class="rules-of-tournament clearfix">
+                <div class="big-head rules-header">Правила турнира</div>
+                <div class="text-box">
+                    Каждую среду в Royal Casino  стартует турнир "IT'S MAGIC!". Ощути магию удачи и волшебство азарта!
+                    Этот турнир для тех, кто верит в чудеса и неравнодушен к действительно красивым играм. 10 лучших игроков
+                    получат призы от Франк Казино. Турнирная таблица будет отображаться на странице турнира, где Вы
+                    сможете посмотреть Вашу текущую позицию, а также увидеть результаты других игроков. Призы победителям
+                    начисляются сразу же после окончания турнира. Победителями станут игроки, набравшие наибольшую сумму
+                    выигрышей в играх турнира. Минимальный размер ставки должен быть равен или выше 20 Р / 0.40 $ / 0,35 &#8364;.
+                    Минимальный баланс при совершении каждой ставки должен быть равным или выше 1000 Р / 20 $ / 20 &#8364;.
+                </div>
+                <table class="rules">
+                    <tbody>
+                        <tr class="clearfix">
+                            <td class="text-shadow">Призовой фонд</td>
+                            <td class="text-shadow">205 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td class="text-shadow">Взнос</td>
+                            <td class="text-shadow">нет</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td class="text-shadow">Количество призовых мест</td>
+                            <td class="text-shadow">10</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td class="text-shadow">Номинация в турнире</td>
+                            <td class="text-shadow">Наибольшая сумма ставок</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td class="text-shadow">Минимальный баланс для участия</td>
+                            <td class="text-shadow">от 1000 Р / 20 $ / 20 &#8364;</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td class="text-shadow">Минимальный размер ставки</td>
+                            <td class="text-shadow">от 20 Р / 0.40 $ / 0,35 &#8364;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div class="tournament-line"></div>
+            <section class="today-leaders clearfix">
+                <div class="prizes-block">
+                    <div class="big-head prizes-head">Призы победителям</div>
+                    <table class="prizes-table">
+                        <tr class="clearfix">
+                            <td>1</td>
+                            <td>50 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>2</td>
+                            <td>40 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>3</td>
+                            <td>30 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>4</td>
+                            <td>25 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>5</td>
+                            <td>20 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>6</td>
+                            <td>15 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>7</td>
+                            <td>10 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>8</td>
+                            <td>7 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>9</td>
+                            <td>5 франков</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>10</td>
+                            <td>3 франка</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="leaders-table-block">
+                    <div class="now-win">
+                        <div class="now-win-header text-shadow"><span class="head">Сейчас выигрывают</span></div>
+                        <div class="now-win-label"></div>
+                    </div>
+                    <div class="leaders-tables">
+                        <div class="clearfix">
+                        <table class="best-players-table left">
+                            <thead>
+                            <tr class="clearfix">
+                                <th></th>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    логин
+                                </th>
+                                <th>
+                                    очки
+                                </th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="dynamic arrow-up clearfix">
+                                <td></td>
+                                <td>
+                                    <div class="arrow"></div>
+                                </td>
+                                <td>
+                                    логин
+                                </td>
+                                <td>
+                                    очки
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="dynamic arrow-down clearfix">
+                                <td></td>
+                                <td>
+                                    <div class="arrow"></div>
+                                </td>
+                                <td>
+                                    логин
+                                </td>
+                                <td>
+                                    очки
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="dynamic change-position clearfix">
+                                <td></td>
+                                <td class="position">
+                                    2
+                                </td>
+                                <td>
+                                    логин
+                                </td>
+                                <td>
+                                    очки
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    4
+                                </td>
+                                <td>
+                                    haziz
+                                </td>
+                                <td>
+                                    202521
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    5
+                                </td>
+                                <td>
+                                    nadia
+                                </td>
+                                <td>
+                                    192530
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    6
+                                </td>
+                                <td>
+                                    dokuch77
+                                </td>
+                                <td>
+                                    152673
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="current-user clearfix">
+                                <td></td>
+                                <td>
+                                    7
+                                </td>
+                                <td>
+                                    alexey78
+                                </td>
+                                <td>
+                                    118512
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    8
+                                </td>
+                                <td>
+                                    samin
+                                </td>
+                                <td>
+                                    87614
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    9
+                                </td>
+                                <td>
+                                    kashei2207
+                                </td>
+                                <td>
+                                    52763
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    10
+                                </td>
+                                <td>
+                                    lifigol
+                                </td>
+                                <td>
+                                    42763
+                                </td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <table class="best-players-table right">
+                            <thead>
+                            <tr class="clearfix">
+                                <th></th>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    логин
+                                </th>
+                                <th>
+                                    очки
+                                </th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="dynamic arrow-up clearfix">
+                                <td></td>
+                                <td>
+                                    <div class="arrow"></div>
+                                </td>
+                                <td>
+                                    логин
+                                </td>
+                                <td>
+                                    очки
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="dynamic arrow-down clearfix">
+                                <td></td>
+                                <td>
+                                    <div class="arrow"></div>
+                                </td>
+                                <td>
+                                    логин
+                                </td>
+                                <td>
+                                    очки
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="dynamic change-position clearfix">
+                                <td></td>
+                                <td class="position">
+                                    2
+                                </td>
+                                <td>
+                                    логин
+                                </td>
+                                <td>
+                                    очки
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    14
+                                </td>
+                                <td>
+                                    haziz
+                                </td>
+                                <td>
+                                    20252
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    15
+                                </td>
+                                <td>
+                                    nadia
+                                </td>
+                                <td>
+                                    19253
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    16
+                                </td>
+                                <td>
+                                    dokuch77
+                                </td>
+                                <td>
+                                    8761
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    17
+                                </td>
+                                <td>
+                                    alexey78
+                                </td>
+                                <td>
+                                    8761
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    18
+                                </td>
+                                <td>
+                                    samin
+                                </td>
+                                <td>
+                                    8761
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    19
+                                </td>
+                                <td>
+                                    kashei2207
+                                </td>
+                                <td>
+                                    5276
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr class="clearfix">
+                                <td></td>
+                                <td>
+                                    20
+                                </td>
+                                <td>
+                                    lifigol
+                                </td>
+                                <td>
+                                    4276
+                                </td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </div>
+                            <a class="take-part-btn" href="#">
+                                <div class="shadow">
+                                    принять участие
+                                </div>
+                                <span>принять участие</span></a>
+                    </div>
+                </div>
+            </section>
+            <div class="tournament-line"></div>
+            <section class="past-week-results clearfix">
+                <div class="big-head past-week">Результаты прошлой недели</div>
+                <div class="stand-block clearfix">
+                    <div class="stand first-place">
+                        <div class="medal"></div>
+                        <div class="count-of-franks-in-medal">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 154 40">
+                                <defs>
+                                    <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0" stop-color="#ffe89c" stop-opacity="1"/>
+                                        <stop offset="0.2" stop-color="#ffe192" stop-opacity="1"/>
+                                        <stop offset="0.4" stop-color="#ffd47a" stop-opacity="1"/>
+                                        <stop offset="0.6" stop-color="#ffc967" stop-opacity="1"/>
+                                        <stop offset="0.8" stop-color="#febd52" stop-opacity="1"/>
+                                        <stop offset="1" stop-color="#fdba4c" stop-opacity="1"/>
+                                    </linearGradient>
+                                </defs>
+                                <text fill="url(#grad1)" x="77" y="35">
+                                    50</text>
+                            </svg>
+                            <div class="count first-grad text-shadow">50</div>
+                            <div class="franks text-shadow">франков</div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="winner-block">
+                            <div class="login clearfix">
+                                <span class="name-field">логин:</span>
+                                <span class="login-field">geka28</span>
+                            </div>
+                            <div class="result clearfix">
+                                <span class="name-field">результат:</span>
+                                <span class="result-field">8763</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stand second-place">
+                        <div class="medal"></div>
+                        <div class="count-of-franks-in-medal">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 143 40">
+                                <defs>
+                                    <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0" stop-color="#eff0f3" stop-opacity="1"/>
+                                        <stop offset="0.2" stop-color="#efeff1" stop-opacity="1"/>
+                                        <stop offset="0.4" stop-color="#e0e0e1" stop-opacity="1"/>
+                                        <stop offset="0.6" stop-color="#d3d4d5" stop-opacity="1"/>
+                                        <stop offset="0.8" stop-color="#cccdcf" stop-opacity="1"/>
+                                    </linearGradient>
+                                </defs>
+                                <text fill="url(#grad2)" x="71" y="35">
+                                    40</text>
+                            </svg>
+                            <div class="count second-grad text-shadow">40</div>
+                            <div class="franks text-shadow">франков</div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="winner-block">
+                            <div class="login clearfix">
+                                <span class="name-field">логин:</span>
+                                <span class="login-field">geka28</span>
+                            </div>
+                            <div class="result clearfix">
+                                <span class="name-field">результат:</span>
+                                <span class="result-field">8763</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stand third-place">
+                        <div class="medal"></div>
+                        <div class="count-of-franks-in-medal">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 143 40">
+                                <defs>
+                                    <linearGradient id="grad3" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0" stop-color="#fcb39c" stop-opacity="1"/>
+                                        <stop offset="0.2" stop-color="#eb9e86" stop-opacity="1"/>
+                                        <stop offset="0.4" stop-color="#e3967d" stop-opacity="1"/>
+                                        <stop offset="0.6" stop-color="#d5846a" stop-opacity="1"/>
+                                        <stop offset="0.8" stop-color="#b6664a" stop-opacity="1"/>
+                                    </linearGradient>
+                                </defs>
+                                <text fill="url(#grad3)" x="74" y="35">
+                                    30</text>
+                            </svg>
+                            <div class="count third-grad text-shadow">30</div>
+                            <div class="franks text-shadow">франков</div>
+                        </div>
+                        <div class="line"></div>
+                        <div class="winner-block">
+                            <div class="login clearfix">
+                                <span class="name-field">логин:</span>
+                                <span class="login-field">geka28</span>
+                            </div>
+                            <div class="result clearfix">
+                                <span class="name-field">результат:</span>
+                                <span class="result-field">8763</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <table class="result-table">
+                    <thead>
+                        <tr class="clearfix">
+                            <th>место</th>
+                            <th>логин</th>
+                            <th>результат</th>
+                            <th>приз, КП</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="clearfix">
+                            <td>4</td>
+                            <td>geka68</td>
+                            <td>5145</td>
+                            <td>100</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>5</td>
+                            <td>centrall1</td>
+                            <td>4864</td>
+                            <td>70</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>6</td>
+                            <td>qwert1974</td>
+                            <td>2933</td>
+                            <td>50</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>7</td>
+                            <td>andreika78</td>
+                            <td>2245</td>
+                            <td>40</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>8</td>
+                            <td>mmakc</td>
+                            <td>1801</td>
+                            <td>30</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>9</td>
+                            <td>yuriu2015</td>
+                            <td>485</td>
+                            <td>20</td>
+                        </tr>
+                        <tr class="clearfix">
+                            <td>10</td>
+                            <td>dakka755</td>
+                            <td>235</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+</section>
+    </div>
+<footer class="game-footer">
+    <div class="footer-line"></div>
+    <div class="layout-center-wrapper footer-pos-point">
+        <div class="footer-logo"></div>
+        <div class="shadow-grad"></div>
+        <ul class="foot-menu">
+            <li><a href="#">Правила и условия</a>
+            <li><a href="#">Защита информации</a>
+            <li><a href="#">Честная игра</a>
+            <li><a href="#">Ответственная игра</a>
+            <li><a href="#">Защита от мошенничества</a>
+            <li><a href="#">Партнерам</a>
+        </ul>
+        <ul class="payment-list">
+            <li class="visa">
+            <li class="mastercard">
+            <li class="maestro">
+            <li class="webmoney">
+            <li class="yandex-money">
+            <li class="alfa-click">
+            <li class="mail-money">
+            <li class="privat-24">
+            <li class="liqpay">
+            <li class="qiwi">
+            <li class="interkassa">
+            <li class="w1">
+            <li class="skrill">
+            <li class="moneta">
+        </ul>
+        <div class="copyright">
+            <div class="copy-text">&copy; RoyalCasino 2015</div>
+            <div class="logotypes">
+                <div class="adulthood"></div>
+                <!--
+                                -->
+                <div class="powered-by"><a href="#"></a></div>
+                <!--
+                                -->
+                <div class="antille"></div>
+            </div>
+            <div class="all-rights-reserved">Все права защищены</div>
+        </div>
+        <div class="footer-section">
+            <div class="table-info">
+                <div class="name-footer-section clearfix">
+                    <div class="name-of-section">Только что выиграли:</div>
+                    <ul class="slide">
+                        <li class="slide-blank"><a href="#"></a>
+                        <li class="slide-select"><a href="#"></a>
+                        <li class="slide-blank"><a href="#"></a>
+                        <li class="slide-blank"><a href="#"></a>
+                    </ul>
+                </div>
+                <table class="games-info">
+                    <tr>
+                        <td>
+                            <a class="foot-img-shadow" href="#"><img src="../img/foot-img.jpg" class="foot-img"></a>
+                        </td>
+                        <td class="desc">
+                            <div class="track-desc">В игре <a href="#" class="track-desc-ref">Big Bad Wolf</a> игрок
+                                Truman
+                                только что выиграл <span class="sum">14.000.00 Rub</span></div>
+                        </td>
+                        <td><a href="#" class="games-play-btn text-shadow">Играть!</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="foot-img-shadow" href="#"><img src="../img/foot-img.jpg" class="foot-img"></a>
+                        </td>
+                        <td class="desc">
+                            <div class="track-desc">В игре <a href="#" class="track-desc-ref">Big Bad Wolf</a> игрок
+                                Truman
+                                только что выиграл <span class="sum">14.000.00 Rub</span></div>
+                        </td>
+                        <td><a href="#" class="games-play-btn text-shadow">Играть!</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="foot-img-shadow" href="#"><img src="../img/foot-img.jpg" class="foot-img"></a>
+                        </td>
+                        <td class="desc">
+                            <div class="track-desc">В игре <a href="#" class="track-desc-ref">Big Bad Wolf</a> игрок
+                                Truman
+                                только что выиграл <span class="sum">14.000.00 Rub</span></div>
+                        </td>
+                        <td><a href="#" class="games-play-btn text-shadow">Играть!</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a class="foot-img-shadow" href="#"><img src="../img/foot-img.jpg" class="foot-img"></a>
+                        </td>
+                        <td class="desc">
+                            <div class="track-desc">В игре <a href="#" class="track-desc-ref">Big Bad Wolf</a> игрок
+                                Truman
+                                только что выиграл <span class="sum">14.000.00 Rub</span></div>
+                        </td>
+                        <td><a href="#" class="games-play-btn text-shadow">Играть!</a></td>
+                    </tr>
+                </table>
+            </div>
+            <section class="hot-games-section">
+                <div class="name-footer-section clearfix">
+                    <div class="name-of-section">Нагретые игры:</div>
+                    <a href="#" class="more-games">Еще</a>
+                    <a href="#" class="arrow-nav"></a>
+                </div>
+                <ul class="big-game-list">
+                    <li class="game-item hot-game">
+                        <div class="hot-icon"></div>
+                        <div class="hover-game">
+                            <div class="btn-block">
+                                <a href="#" class="main-play-btn text-shadow">Играть</a>
+                                <a href="#" class="demo-btn text-shadow">Демо</a>
+                            </div>
+                            <a href="#" class="info-btn"></a>
+                        </div>
+                        <div class="jackpot-in-game"><span>$ 805,723.43</span></div>
+                        <ul class="rate">
+                            <li class="full-star">
+                            <li class="full-star">
+                            <li class="half-star">
+                            <li class="empty-star">
+                            <li class="empty-star">
+                        </ul>
+                        <div class="game-img-shadow"><img class="game-img" src="../img/big-game.jpg" alt="game"></div>
+
+                        <div class="frame">
+                            <div class="game-name">
+                                Lara Croft Tomb Raider Lara
+                            </div>
+                            <div class="now-playing">
+                                Сейчас играют: <span class="amount-of-players">5</span>
+                            </div>
+                        </div>
+
+                    <li class="game-item hot-game">
+                        <div class="hot-icon"></div>
+                        <div class="hover-game">
+                            <div class="btn-block">
+                                <a href="#" class="main-play-btn text-shadow">Играть</a>
+                                <a href="#" class="demo-btn text-shadow">Демо</a>
+                            </div>
+                            <a href="#" class="info-btn"></a>
+                        </div>
+                        <ul class="rate">
+                            <li class="full-star">
+                            <li class="full-star">
+                            <li class="half-star">
+                            <li class="empty-star">
+                            <li class="empty-star">
+                        </ul>
+                        <div class="game-img-shadow"><img class="game-img" src="../img/big-game.jpg" alt="game"></div>
+
+                        <div class="frame">
+                            <div class="game-name">
+                                Lara Croft Tomb Raider Lara
+                            </div>
+                            <div class="now-playing">
+                                Сейчас играют: <span class="amount-of-players">5</span>
+                            </div>
+                        </div>
+
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <div class="gradient-footer"></div>
+</footer>
+<!--[if lte IE 9]>
+<script src="../js/jquery-ie-text-shadow.js"></script>
+<![endif]-->
+<!--[if lte IE 9]>
+<script src="../js/text-shadow.js"></script>
+<![endif]-->
+<!--[if lte IE 8]>
+<script src="../js/ie8.js"></script>
+<![endif]-->
+<script src="../fancyselect/fancyselect.js"></script>
+<script src="../js/jquery.bxslider.min.js"></script>
+<!--[if lte IE 8]>
+<script src="../js/pxgradient-1.0.3.js"></script>
+<![endif]-->
+<script src="../js/main.js"></script>
+<script src="../js/tournament.js"></script>
+</body>
+</html>

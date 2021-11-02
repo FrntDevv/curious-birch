@@ -1,0 +1,40 @@
+$popup-activate-btn-padding: 17px;
+$popup-activate-btn-height: 33px;
+.popup.deactivation {
+  @extend %two-columns-popup-layout;
+  .popup-center-wrapper {
+    .left-part {
+      padding: 37px 0;
+    }
+  }
+  .activate-bonus {
+    background: $popup-form-bg;
+    border: 1px solid $popup-form-border;
+    margin: 22px 0;
+    @include border-box();
+    padding: 35px 0 41px;
+    .popup-text {
+      padding: 0 57px;
+      @include border-box();
+      margin-top: 21px;
+    }
+    .inline-container {
+      margin-top: 22px;
+    }
+    .popup-activate-btn {
+      display: inline-block;
+      padding-left: $popup-activate-btn-padding;
+      padding-right: $popup-activate-btn-padding;
+      height: $popup-activate-btn-height;
+      line-height: $popup-activate-btn-height;
+      margin-right: 13px;
+      @extend %default-popup-btn;
+      font-size: 14px;
+    }
+    a.link {
+      display: inline-block;
+      top: -2px;
+      position: relative;
+    }
+  }
+}

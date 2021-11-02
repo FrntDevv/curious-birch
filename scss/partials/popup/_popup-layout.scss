@@ -1,0 +1,510 @@
+$popup-main-head-height: 87px;
+$popup-big-light-height: 10px;
+$popup-big-light-width: 1250px;
+$submit-form-btn-height: 42px;
+$submit-form-btn-bg:  #d24b17;
+$submit-form-btn-shadow: rgb(244,79,10);
+$popup-description-color: rgb(168, 168, 168);
+$popup-head-color: rgb(255, 148, 53);
+$popup-middle-head-color: #ffd200;
+$popup-middle-light-width: 903px;
+$popup-middle-light-height: 6px;
+$middle-popup-height: 587px;
+$small-popup-width: 819px;
+$small-popup-height: 512px;
+$middle-popup-width: 1068px;
+$big-popup-width: 1280px;
+$big-popup-height: 761px;
+$popup-center-wrapper-width: 818px;
+$popup-left-part-width: 494px;
+$popup-form-bg: rgba(55, 51, 68, .5);
+$popup-form-border: rgb(76, 72, 86);
+$popup-small-light-width: 819px;
+$popup-shadow-width: 300px;
+$popup-top-shadow-height: 382px;
+$popup-bottom-shadow-height: 378px;
+$popup-text-line: #5c6f94;
+$bonus-submit-form-btn-width: 127px;
+$bonus-submit-form-btn-height: 42px;
+$further-btn-width: 86px;
+$further-btn-height: 33px;
+$further-btn-bg: #73b667;
+$further-btn-shadow: #8ec182;
+$letter-width: 233px;
+$letter-height: 152px;
+$base-input-width: 315px;
+$base-input-height: 49px;
+$popup-lines: #787878;
+$refresh-captcha-width: 32px;
+$refresh-captcha-height: 29px;
+$captcha-width: 121px;
+$captcha-height: 42px;
+$enter-captcha-bg: rgba(#000,.3);
+$enter-captcha-width: 92px;
+$loading-element-width: 21px;
+$loading-width: 210px;
+$loading-height: 60px;
+$loading-bg: #251d2b;
+$loading-yellow-bg: rgb(255,167,0);
+$popup-form-name-color: rgb(0, 156, 255);
+$auth-btn-padding: 52px;
+
+%popup-header-lines {
+  display: block;
+  position: absolute;
+  top: 49%;
+  height: 1px;
+  content: "";
+  width: 200%;
+  background: $popup-lines;
+}
+
+%default-popup-btn {
+  display: block;
+  position: relative;
+  height: $submit-form-btn-height;
+  line-height: $submit-form-btn-height;
+  @include border-box();
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  background: $submit-form-btn-bg;
+  @include linear-gradient(to bottom,
+          rgb(255,156,60) 0%,
+          rgb(255,129,0) 2%,
+          rgb(255,114,0) 5%,
+          rgb(255,85,0) 24%,
+          rgb(255,78,0) 32%,
+          rgb(255,73,0) 44%,
+          rgb(255,73,0) 59%,
+          rgb(255,62,0) 73%,
+          rgb(255,45,8) 83%,
+          rgb(255,19,22) 95%,
+          rgb(255,39,47) 98%,
+          rgb(255,81,91) 100%);
+  @include border-radius(3px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $submit-form-btn-shadow, inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 18px;
+    weight: bold;
+  }
+  @extend %base-text-in-ref;
+}
+
+%two-columns-popup-layout {
+  .popup-center-wrapper {
+    position: relative;
+    width: $popup-center-wrapper-width;
+    margin: 64px auto 0;
+    .left-part {
+      position: relative;
+      width: $popup-left-part-width;
+      float: left;
+    }
+    .right-part {
+      position: relative;
+      width: $aside-width;
+      float: right;
+    }
+    .popup-small-head {
+      position: relative;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+%further-btn {
+  @include border-radius(3px);
+  width: $further-btn-width;
+  height: $further-btn-height;
+  line-height: $further-btn-height;
+  background: $further-btn-bg;
+  @include linear-gradient(to bottom, #35D95F, #00B85B 50%, #00AC5F);
+  display: block;
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0 -2px 10px 0 rgba(255,255,255,.37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $further-btn-shadow, inset 0 -2px 10px 0 rgba(255,255,255,.37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 13px;
+    weight: bold;
+  }
+  @include text-shadow(0 2px 0 rgba(#000,.2));
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  @extend %base-text-in-ref;
+}
+
+.popup {
+  z-index: 50;
+  display: block;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  margin: 0 auto;
+  text-align: center;
+  background: $overlay-bg;
+  @include box-shadow(0 3px 62px 0 rgba(#000,.35));
+  .auth-btn {
+    padding-left: $auth-btn-padding;
+    padding-right: $auth-btn-padding;
+    @extend %default-popup-btn;
+    display: inline-block;
+    margin: 30px auto 0;
+  }
+  .popup-form-name {
+    text-transform: uppercase;
+    font-size: 13px;
+    color: $popup-form-name-color;
+  }
+  .popup-text {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 1.5;
+    color: $base-body-color;
+    word-spacing: 2.5px;
+  }
+  .captcha-block {
+    position: relative;
+    display: inline-block;
+    margin-top: 32px;
+    .refresh-captcha {
+      float: left;
+      display: block;
+      width: $refresh-captcha-width;
+      height: $refresh-captcha-height;
+      background: url(../pic/sprite/sprite.png) no-repeat -190px -341px;
+      top: 7px;
+      left: 6px;
+      position: relative;
+    }
+    .captcha {
+      float: left;
+      margin-left: 19px;
+      width: $captcha-width;
+      height: $captcha-height;
+      background: url(../pic/popup/captcha.png) no-repeat 0 0;
+    }
+    .enter-captcha {
+      border: 0;
+      @include border-box();
+      padding-left: 5px;
+      padding-right: 5px;
+      float: left;
+      margin-left: 13px;
+      width: $enter-captcha-width;
+      height: $captcha-height;
+      line-height: $captcha-height;
+      background: $enter-captcha-bg;
+      font-size: 12px;
+      color: $popup-description-color;
+      @include box-shadow(0 1px 0 0 rgba(#fff,.3), inset 0 0 4px 0 #000);
+      text-align: center;
+    }
+  }
+  .input-container {
+    width: $base-input-width;
+    margin: 0 auto;
+    .error {
+      left: 0;
+      font-size: 12px;
+      bottom: -20px;
+    }
+    &.fail {
+      &:before {
+        top: 18px;
+        right: 22px;
+      }
+    }
+    &.success {
+      &:before {
+        top: 20px;
+        right: 23px;
+      }
+    }
+  }
+  .block-name {
+    position: relative;
+    overflow: hidden;
+    font-size: 13px;
+    color: $link-color;
+    text-transform: uppercase;
+    span {
+      position: relative;
+      &:before {
+        @extend %popup-header-lines;
+        right: 100%;
+        margin-right: 10px;
+      }
+      &:after {
+        @extend %popup-header-lines;
+        left: 100%;
+        margin-left: 10px;
+      }
+    }
+  }
+  input.form-field {
+    font-size: 16px;
+    height: $base-input-height;
+    line-height: $base-input-height;
+    padding-left: 13px;
+    padding-right: 35px;
+  }
+  .popup-description {
+    font-size: 12px;
+    color: $popup-description-color;
+    position: relative;
+  }
+  .letter {
+    margin: 0 auto;
+    position: relative;
+    width: $letter-width;
+    height: $letter-height;
+    background: url(../pic/popup/letter.png) no-repeat 0 0;
+  }
+  .popup-link {
+    font-size: 13px;
+    color: $base-body-color;
+  }
+  .further-btn {
+    @extend %further-btn;
+  }
+  .text-line {
+    width: 100%;
+    height: 1px;
+    background: $popup-text-line;
+  }
+  .popup-small-head {
+    text:
+    {
+      transform: uppercase;
+      align: center;
+    }
+    color: $popup-middle-head-color;
+    font-size: 16px;
+    position: relative;
+  }
+  .popup-top-left-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $popup-shadow-width;
+    height: $popup-top-shadow-height;
+    background: url(../pic/popup/top-left-shadow.png) no-repeat 0 0;
+  }
+  .popup-top-right-shadow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $popup-shadow-width;
+    height: $popup-top-shadow-height;
+    background: url(../pic/popup/top-right-shadow.png) no-repeat 0 0;
+  }
+  .popup-bottom-left-shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: $popup-shadow-width;
+    height: $popup-bottom-shadow-height;
+    background: url(../pic/popup/bottom-left-shadow.png) no-repeat 0 0;
+  }
+  .popup-bottom-right-shadow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: $popup-shadow-width;
+    height: $popup-bottom-shadow-height;
+    background: url(../pic/popup/bottom-right-shadow.png) no-repeat 0 0;
+  }
+  .popup-footer-light-container {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+  }
+  .popup-header-light-container {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 100%;
+  }
+  .popup-light {
+    position: relative;
+    width: $popup-middle-light-width;
+    height: $popup-middle-light-height;
+    margin: 0 auto;
+    background: url(../pic/popup/popup-light.png) no-repeat 0 0;
+  }
+  .popup-main-head {
+    position: relative;
+    height: $popup-main-head-height;
+    line-height: $popup-main-head-height - 3;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 32px;
+    }
+    color: $base-body-color;
+    .close-btn {
+      display: block;
+      position: absolute;
+      top: 14.5px;
+      right: 14.5px;
+      width: $close-btn-size;
+      height: $close-btn-size;
+      background: url("../pic/close-btn.png") no-repeat -58px 0;
+      &:hover {
+        cursor: pointer;
+        background-position: 0 0;
+      }
+    }
+  }
+  .submit-form-btn,
+  .ok-btn {
+    @extend %default-popup-btn;
+  }
+  .ok-btn {
+    width: $bonus-submit-form-btn-width;
+    height: $bonus-submit-form-btn-height;
+    line-height: $bonus-submit-form-btn-height;
+  }
+  .popup-description {
+    display: inline-block;
+    line-height: 1.333;
+    font-size: 12px;
+    color: $popup-description-color;
+  }
+  .popup-head {
+    position: relative;
+    text-transform: uppercase;
+    font:
+    {
+      weight: 300;
+      size: 20px;
+    }
+    color: $popup-head-color;
+    line-height: 1.2;
+  }
+  .popup-middle-head {
+    position: relative;
+    font:
+    {
+      weight: 300;
+      size: 20px;
+    }
+    color: $base-body-color;
+    line-height: 1.2;
+    span {
+      color: $popup-middle-head-color;
+    }
+  }
+  .popup-huge-head {
+    position: relative;
+    font:
+    {
+      weight: 500;
+      size: 62px;
+    }
+    color: $base-body-color;
+    text-transform: uppercase;
+  }
+  .popup-large-head {
+    position: relative;
+    font:
+    {
+      weight: 500;
+      size: 33px;
+    }
+    color: $popup-head-color;
+    span {
+      color: $base-body-color;
+    }
+    text-transform: uppercase;
+  }
+  .popup-bonus-text {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $base-body-color;
+  }
+  &.big {
+    width: $big-popup-width;
+    height: $big-popup-height;
+    margin-left: - 1/2 * ($big-popup-width);
+    margin-top: - 1/2 * ($big-popup-height);
+    .popup-header-light-container {
+      top: -9px;
+    }
+    .popup-footer-light-container {
+      bottom: -2px;
+    }
+    .popup-light {
+      width: $popup-big-light-width;
+      height: $popup-big-light-height;
+      background: url(.././pic/popup/big-popup-light.png) no-repeat 0 0;
+    }
+  }
+  &.middle {
+    width: $middle-popup-width;
+    height: $middle-popup-height;
+    margin-left: - 1/2 * ($middle-popup-width);
+    margin-top: - 1/2 * ($middle-popup-height);
+  }
+  &.small {
+    .popup-header-light-container {
+      top: -6px;
+    }
+    width: $small-popup-width;
+    height: $small-popup-height;
+    margin-left: - 1/2 * ($small-popup-width);
+    margin-top: - 1/2 * ($small-popup-height);
+    .popup-light {
+      width: $popup-small-light-width;
+      background: url(../pic/popup/small-light.png) no-repeat 0 0;
+    }
+  }
+}
+
+.popup-bg {
+  @include blur(5);
+}
+
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -1/2 * $loading-width;
+  margin-top: -1/2 * $loading-height;
+  width: $loading-width;
+  height: $loading-height;
+  display: block;
+  li {
+    width: $loading-element-width;
+    height: $loading-height;
+    display: inline-block;
+    margin-right: 9px;
+    &:last-child {
+      margin-right: 0;
+    }
+    @include border-radius(4px);
+    @include box-shadow(0 0 5px 0 rgba(#000,.7) inset);
+    background: $loading-bg;
+    .yellow {
+      display: block;
+      width: $loading-element-width;
+      height: $loading-height;
+      @include box-shadow(0 0 5px 0 rgba(#000,.7) inset,0 0 8px 0 rgba(#000,.37) inset);
+      background: $loading-yellow-bg;
+      @include linear-gradient(to bottom,rgb(255,202,0) 0%,rgb(255,192,0) 17%,rgb(255,167,0) 42%,rgb(255,146,0) 59%,
+              rgb(255,134,19) 71%,rgb(255,124,29) 81%,rgb(255,112,38) 100%);
+    }
+  }
+}

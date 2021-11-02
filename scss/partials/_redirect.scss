@@ -1,0 +1,215 @@
+$redirect-top-shadow-height: 283px;
+$redirect-bottom-shadow-height: 276px;
+$redirect-bg: #141319;
+$redirect-left-group-width: 313px;
+$redirect-left-group-height: 242px;
+$redirect-right-group-width: 363px;
+$redirect-right-group-height: 177px;
+$loading-scale-bg-width: 911px;
+$loading-scale-bg-height: 77px;
+$loading-list-item-width: 10px;
+$loading-list-item-height: 35px;
+$redirect-logo-lines-width: 1086px;
+$redirect-logo-lines-height: 375px;
+$cubes-width: 408px;
+$cubes-height: 109px;
+$loading-list-width: 476px;
+$top-group-height: 355px;
+$redirect-content-height: 610px;
+$cubes-pic-width: 155px;
+$cubes-pic-height: 95px;
+
+.redirect {
+  min-height: $redirect-content-height;
+  height: 100vh;
+  position: relative;
+  &:before {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    background: url(../pic/redirect/bg.png) repeat center 0 $redirect-bg;
+    content: "";
+  }
+  .section-content-container {
+    width: 100%;
+    min-width: $min-body-width;
+    min-height: $redirect-content-height;
+    height: 100vh;
+    position: relative;
+    .top-shadow-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: $redirect-top-shadow-height;
+      background: url("../pic/redirect/top-shadow.png") no-repeat 0 0;
+    }
+    .top-shadow-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: $redirect-top-shadow-height;
+      background: url("../pic/redirect/top-shadow.png") no-repeat 100% 0;
+    }
+    .bottom-shadow-left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50%;
+      height: $redirect-bottom-shadow-height;
+      background: url("../pic/redirect/bottom-shadow.png") no-repeat 0 0;
+    }
+    .bottom-shadow-right {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 50%;
+      height: $redirect-bottom-shadow-height;
+      background: url("../pic/redirect/bottom-shadow.png") no-repeat 100% 0;
+    }
+    .content {
+      height: $redirect-content-height;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -1/2 * $redirect-content-height;
+    }
+    .top-group {
+      position: relative;
+      width: 900px;
+      height: $top-group-height;
+      margin: 0 auto;
+      .logo {
+        width: $footer-logo-width;
+        height: $footer-logo-height;
+        top: 83px;
+        left: 156px;
+        position: absolute;
+        &:before {
+          position: absolute;
+          content: "";
+          @include size($redirect-logo-lines-width,$redirect-logo-lines-height);
+          background: url("../pic/redirect/logo-lines.png") no-repeat 0 0;
+          top: 0px;
+          left: -135px;
+        }
+        &:after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: $footer-logo-width;
+          height: $footer-logo-height;
+          background: url("../pic/logo-footer.png") no-repeat 0 0;
+
+        }
+        .content-middle-header {
+          @extend %text-overflow;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 232px;
+        }
+      }
+      .left-group {
+        position: relative;
+        z-index: 2;
+        float: left;
+        top: 2px;
+        left: 6px;
+        background: url("../pic/redirect/left-group.png") no-repeat 0 0;
+        @include size($redirect-left-group-width,$redirect-left-group-height);
+      }
+      .right-group {
+        position: relative;
+        z-index: 2;
+        float: right;
+        top: 33px;
+        right: -16px;
+        background: url("../pic/redirect/right-group.png") no-repeat 0 0;
+        @include size($redirect-right-group-width,$redirect-right-group-height);
+      }
+    }
+    .loading-scale {
+      @include size($loading-scale-bg-width,$loading-scale-bg-height);
+      position: relative;
+      margin: 0 auto 10px;
+      @include border-box();
+      text-align: center;
+      padding-top: 20px;
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size($loading-scale-bg-width,$loading-scale-bg-height);
+        z-index: 2;
+        content: "";
+        background: url("../pic/redirect/loading-scale-bg.png") no-repeat 0 0;
+      }
+      &:after {
+        z-index: 3;
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size($loading-scale-bg-width,$loading-scale-bg-height);
+        content: "";
+        background: url("../pic/redirect/loading-scale.png") no-repeat 0 0;
+      }
+      .loading-list {
+        position: relative;
+        display: block;
+        @include size($loading-list-width,$loading-list-item-height);
+        text-align: center;
+        background: url("../pic/redirect/blank-scale.png") no-repeat 0 0;
+        margin: 0 auto;
+        left: -9px;
+        li {
+          display: inline-block;
+          margin-right: 6px;
+          @include size($loading-list-item-width,$loading-list-item-height);
+          &.yellow {
+            @include box-shadow(0 0 2px 0 rgba(#000,.7) inset,0 0 3px 0 rgba(#000,.37) inset);
+            background: $loading-yellow-bg;
+            @include linear-gradient(to bottom,rgb(255,202,0) 0%,rgb(255,192,0) 17%,rgb(255,167,0) 42%,rgb(255,146,0) 59%,
+                    rgb(255,134,19) 71%,rgb(255,124,29) 81%,rgb(255,112,38) 100%);
+          }
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    .content-header {
+      font-size: 12px;
+      text-align: center;
+      position: relative;
+      margin-bottom: 25px;
+    }
+    .cubes {
+      position: relative;
+      @include size($cubes-width,$cubes-height);
+      margin: 0 auto;
+      left: -30px;
+      &:after {
+        @include size($cubes-pic-width,$cubes-pic-height);
+        left: 153px;
+        top: 1px;
+        content: "";
+        position: absolute;
+        background: url("../pic/redirect/cubes.png") no-repeat 0 0;
+      }
+      &:before {
+        @include size($cubes-width,$cubes-height);
+        z-index: 2;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url("../pic/redirect/cubes-lights.png") no-repeat 0 0;
+      }
+    }
+  }
+}

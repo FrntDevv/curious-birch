@@ -1,0 +1,108 @@
+// social
+$social-btn-size: 28px;
+$social-box-height: 48px;
+$social-box-width: 347px;
+
+%social {
+  width: $social-btn-size;
+  height: $social-btn-size;
+}
+
+%social-a {
+  width: $social-btn-size;
+  height: $social-btn-size;
+  display: block;
+}
+
+.social-box {
+  z-index: 3;
+  position: relative;
+  float: right;
+  margin-right: 1px;
+  margin-top: 11px;
+  width: $social-box-width;
+  height: $social-box-height;
+  background: url("../pic/social-box.png") no-repeat 0 0;
+  .social-list {
+    float: left;
+    height: $social-btn-size;
+    margin-top: 11px;
+  }
+
+  .social-list li {
+    display: inline-block;
+    margin-right: 1px;
+    @extend %social;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a.btn-vk {
+      @extend %social-a;
+      background: url(../pic/sprite/sprite.png) no-repeat -212px -164px;
+      &:hover {
+        background-position: -109px -199px;
+      }
+    }
+    a.btn-fb {
+      @extend %social-a;
+      background: url(../pic/sprite/sprite.png) no-repeat -99px -236px;
+      &:hover {
+        background-position: -132px -236px;
+      }
+    }
+    a.btn-tw {
+      @extend %social-a;
+      background: url(../pic/sprite/sprite.png) no-repeat -142px -199px;
+      &:hover {
+        background-position: -53px -166px;
+      }
+    }
+    a.btn-gm {
+      @extend %social-a;
+      background: url(../pic/sprite/sprite.png) no-repeat -33px -236px;
+      &:hover {
+        background-position: -66px -236px;
+      }
+    }
+    a.btn-ok {
+      @extend %social-a;
+      background: url(../pic/sprite/sprite.png) no-repeat -86px -166px;
+      &:hover {
+        background-position: -119px -166px;
+      }
+    }
+    a.btn-ml {
+      @extend %social-a;
+      background: url(../pic/sprite/sprite.png) no-repeat -152px -166px;
+      &:hover {
+        background-position: 0 -236px;
+      }
+    }
+    a.btn-ya {
+      @extend %social-a;
+      background: url(../pic/sprite/sprite.png) no-repeat -208px -199px;
+      &:hover {
+        background-position: -175px -199px;
+      }
+    }
+  }
+}
+
+.ent-soc {
+  float: left;
+  font: {
+    family: "Roboto Condensed", sans-serif;
+    size: 13px;
+    weight: 700;
+  }
+  text-transform: uppercase;
+  color: $base-name;
+  margin-left: 11px;
+  margin-right: 5px;
+  position: relative;
+  margin-top: 18px;
+ // line-height: $social-box-height + 4;
+}
+
+

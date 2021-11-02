@@ -1,0 +1,104 @@
+$popup-bonus-image-width: 774px;
+$popup-bonus-image-height: 761px;
+$popup-desc-text-line-width: 648px;
+$popup-short-desc-text-line-width: 351px;
+$get-bonus-btn-width: 364px;
+$get-bonus-btn-height: 94px;
+$green-light-width: 350px;
+$green-light-height: 80px;
+$translate-lights: 150px;
+$green-light-block-width: 570px;
+
+%popup-get-bonus-btn {
+  position: relative;
+  width: $get-bonus-btn-width;
+  height: $get-bonus-btn-height;
+  line-height: $get-bonus-btn-height;
+  display: block;
+  color: $base-body-color;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 30px;
+    weight: bold;
+  }
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+  background: url(../pic/popup/get-bonus-btn.png) no-repeat 0 -94px;
+  &:hover {
+    background-position: 0 0;
+  }
+  @include text-shadow(0 3px 0 rgba(0,0,0,.2));
+}
+
+.popup.popup-bonus-description {
+  text-align: right;
+  .bonus-image {
+    position: absolute;
+    width: $popup-bonus-image-width;
+    height: $popup-bonus-image-height;
+    top: 0;
+    left: 34px;
+    background: url(../pic/popup/deposit-100.png) no-repeat 0 0;
+    &:hover {
+      background-position: 0 -761px;
+    }
+  }
+  .bonus-description-block {
+    margin-right: 50px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    .popup-huge-head {
+      margin-top: 40px;
+    }
+    .popup-large-head {
+      margin-top: 23px;
+    }
+    .popup-bonus-text {
+      margin-top: 41px;
+    }
+    .text-line {
+      width: $popup-desc-text-line-width;
+      margin: 31px auto 0;
+      &.short {
+        margin-top: 30px;
+        width: $popup-short-desc-text-line-width;
+      }
+    }
+    .popup-get-bonus-btn {
+      @extend %popup-get-bonus-btn;
+      margin: 20px auto 0;
+      position: relative;
+      .green-light {
+       overflow: hidden;
+        position: absolute;
+        top: 7px;
+        left: 7px;
+        @include border-radius(13px);
+        display: block;
+       .green-light-block {
+         display: block;
+         background: url(../pic/popup/popup-green-light.png) no-repeat 0 0;
+         width: $green-light-block-width;
+         height: $green-light-height;
+       }
+        width: $green-light-width;
+        height: $green-light-height;
+      }
+    }
+    a.link {
+      display: inline-block;
+      font-size: 13px;
+      text-transform: uppercase;
+      margin-top: 19px;
+    }
+    a.popup-link {
+      display: inline-block;
+      margin-top: 40px;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.popup.popup-user-status {
+  .popup-head {
+    margin-top: 67px;
+  }
+  .popup-middle-head {
+    margin-top: 22px;
+  }
+  .user-status {
+    position: relative;
+    margin: 0 auto;
+    .user-status-image {
+      position: relative;
+      top: 2px;
+      &.platinum  {
+        top: 10px;
+      }
+    }
+  }
+  .ok-btn {
+    margin: 8px auto 0;
+  }
+  &.dark {
+    .popup-head {
+      margin-top: 9px;
+    }
+    .popup-middle-head {
+      margin-top: 12px;
+    }
+    .user-status-image.dark {
+      top: -18px;
+    }
+    .ok-btn {
+      margin-top: 0;
+      top: -22px;
+    }
+  }
+}

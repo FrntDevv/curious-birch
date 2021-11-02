@@ -1,0 +1,527 @@
+.content {
+  width: 100%;
+  min-width: $layout-width;
+  overflow: hidden;
+  position: relative;
+}
+
+.content-pos-point {
+  position: relative !important;
+  background-color: $content-bg;
+}
+
+%top-grad {
+  position: absolute;
+  top: 0;
+  width: 225px;
+  height: 560px;
+  z-index: 10;
+}
+
+.left-top-cont-grad {
+  @extend %top-grad;
+  left: -225px;
+  background: url("../pic/left-top-cont-grad.png") no-repeat 0 0;
+}
+
+.right-top-cont-grad {
+  @extend %top-grad;
+  right: -225px;
+  background: url("../pic/right-top-cont-grad.png") no-repeat 0 0;
+}
+
+%bottom-grad {
+  position: absolute;
+  bottom: 0;
+  width: 224px;
+  height: 344px;
+  z-index: 10;
+}
+
+.left-bottom-cont-grad {
+  @extend %bottom-grad;
+  left: -224px;
+  background: url("../pic/left-bottom-cont-grad.png") no-repeat 0 0;
+}
+
+.right-bottom-cont-grad {
+  @extend %bottom-grad;
+  right: -224px;
+  background: url("../pic/right-bottom-cont-grad.png") no-repeat 0 0;
+}
+
+.head-cont-grad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1100px;
+  height: 295px;
+  background: url("../pic/head-cont-grad.png") no-repeat 0 0;
+}
+
+.foot-cont-grad {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 1100px;
+  height: 154px;
+  background: url("../pic/foot-cont-grad.png") no-repeat 0 0;
+}
+
+.grad-left-line {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  left: -300px;
+  height: 100%;
+  @include linear-gradient(-180deg, rgba(7,10,17,0.8) 0%, rgba(7,10,17,0.8) 57.153%, rgba(29,30,38,0.8) 100%);
+}
+
+.grad-right-line {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  right: -300px;
+  height: 100%;
+  @include linear-gradient(-180deg, rgba(7,10,17,0.8) 0%, rgba(7,10,17,0.8) 57.153%, rgba(29,30,38,0.8) 100%);
+}
+
+.games {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  margin-top: 40px;
+  margin-bottom: 250px;
+  margin-right: 6px;
+}
+
+.track {
+  display: block;
+  margin-left: 59px;
+  width: 662px;
+  height: 36px;
+  background: url("../pic/track.png") no-repeat 0 0;
+  a.img-ref {
+    display: inline-block;
+    margin-top: 7px;
+    margin-left: 20px;
+    margin-right: 6px;
+  }
+}
+
+
+
+.game-in-track {
+  @include border-box;
+  display: block;
+  height: 20px;
+  width: 35px;
+}
+
+.btn-in-track {
+  @include border-box;
+  display: inline-block;
+  position: relative;
+  top: -6px;
+  margin-right: 6px;
+  background: url("../pic/icon-play-in-track.png") no-repeat 0 -21px;
+  width: 85px;
+  height: $btn-in-track-height;
+  line-height: $btn-in-track-height;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 11px;
+  }
+  color: rgb(255,255,255);
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  @include text-shadow(0 1px 0 rgb(0,0,0));
+  &:hover {
+    background: url("../pic/icon-play-in-track.png") no-repeat 0 0;
+  }
+}
+
+.track-desc {
+  @include border-box;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  overflow-x: hidden;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 14px;
+  }
+  text-transform: uppercase;
+  color: #fff;
+  .track-desc-ref {
+    text-decoration: underline;
+    color: $base-ref;
+  }
+  .sum {
+    color: $base-sum;
+  }
+}
+
+.small-game-list,
+.big-game-list {
+  display: block;
+  width: 662px;
+  list-style: none;
+  margin: 20px 0 5px 59px;
+}
+
+%game-description {
+  font: {
+    family: "Roboto Condensed", sans-serif;
+    weight: 700;
+    size: 11px;
+  }
+  opacity: 0.2;
+  color: #fff;
+  padding-left: 10px;
+  padding-top: 16px;
+}
+
+.game-item {
+  position: relative;
+  display: inline-block;
+  margin-right: 11px;
+  margin-bottom: 13px;
+  @include border-box;
+  width: 210px;
+  height: 189px;
+  border: 1px solid #3d4046;
+  background: $content-bg;
+  &.hot-game {
+    background: url("../pic/box-game-small.png") no-repeat -8px -7px;
+    .hot-icon {
+      position: absolute;
+      z-index: 100;
+      width: 49px;
+      height: 38px;
+      bottom: 0;
+      right: 0;
+      background: url("../pic/sprite/sprite.png") no-repeat 0px -301px;
+    }
+  }
+  @include box-shadow(0 0 8px 2px rgb(0,0,0));
+  .frame {
+    border-top: 1px solid #3d4046;
+    @include border-box;
+    display: block;
+    width: 208px;
+    height: 69px;
+    text-transform: uppercase;
+    .game-name {
+      @include border-box;
+      padding-top: 8px;
+      padding-left: 10px;
+      font: {
+        family: "Roboto Condensed", sans-serif;
+        size: 14px;
+      }
+      opacity: 0.5;
+      color: #fff;
+      width: game-name-width($little-frame);
+      @extend %text-overflow;
+    }
+    .now-playing {
+      @extend %game-description;
+    }
+  }
+  .label-game {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    z-index: 100;
+    background: url("../pic/new-label.png") no-repeat 0 0;
+  }
+  .hover-game {
+    display: none;
+    width: 208px;
+    height: 120px;
+    background: $transparent;
+  }
+  &:hover {
+    .hover-game {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1000;
+    }
+  }
+}
+
+.main-play-btn {
+  @extend %main-play-btn;
+}
+
+.demo-btn {
+  @extend %demo-btn;
+}
+
+.track-popup {
+  @include border-box;
+  position: fixed;
+  z-index: 1005;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  margin-left: 0;
+  background: rgba(13,17,22,0.97);
+  a.img-ref {
+    margin-top: 12px;
+    margin-right: 20px;
+  }
+  .track-center-wrapper {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .game-in-track {
+    width: 70px;
+    height: 40px;
+  }
+  .btn-in-track {
+    top: -14px;
+    width: 170px;
+    height: $btn-in-track-bottom-height;
+    margin-right: 20px;
+    line-height: $btn-in-track-bottom-height;
+    @extend %button-base-font;
+    background: url("../pic/icon-play-btn-popup-track.png") no-repeat 0 -41px;
+    &:hover {
+      background: url("../pic/icon-play-btn-popup-track.png") no-repeat 0 0;
+    }
+  }
+  .shadow-track {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background: url("../pic/box-shadow-pattern-track.png") repeat-x 0 0;
+  }
+  .track-desc {
+    top: -10px;
+  }
+  .close-icon {
+    @extend %close-icon;
+    top: 16px;
+    right: 20px;
+  }
+}
+
+.hover-game {
+  position: relative;
+  .btn-block {
+    margin: 0 auto;
+    width: 127px;
+    padding-top: 17px;
+  }
+  .main-play-btn {
+    margin-bottom: 14px;
+  }
+}
+
+.info-btn {
+  position: absolute;
+  z-index: 100;
+  bottom: 3px;
+  right: 4px;
+  height: 32px;
+  width: 32px;
+  background-image: url(../pic/sprite/sprite.png);
+  background-position: 0px -199px;
+  a {
+    @extend %absolute-reference;
+  }
+  &:hover {
+    background-image: url(../pic/sprite/sprite.png);
+    background-position: -37px -199px;
+  }
+}
+
+.small-game-img {
+  display: block;
+  @include border-box;
+  width: 208px;
+  height: 120px;
+}
+
+.small-game-list .game-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.big-game-list .game-item:nth-child(even) {
+  margin-right: 0;
+}
+.game-item {
+  .rate {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.jackpot-in-game {
+  @include border-box;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 14px;
+  }
+  text-transform: uppercase;
+  z-index: 2;
+  text-align: right;
+  max-width: 80%;
+  color: $jackpot;
+  position: absolute;
+  right: -2px;
+  top: 3px;
+  span {
+    background: $transparent;
+    padding: 5px 8px;
+  }
+}
+
+.banner-game {
+  @include border-box;
+  display: block;
+  width: 730px;
+  height: 182px;
+  margin-left: 3px;
+  margin-bottom: 20px;
+  background: rgb(13,15,20);
+  padding-top: 30px;
+}
+
+.banner-img {
+  float: left;
+  @include border-box;
+  position: relative;
+  margin-left: 56px;
+  @include box-shadow(0 0 8px 2px rgb(0,0,0));
+  width: 240px;
+  height: 121px;
+  a {
+    @extend %absolute-reference;
+  }
+  .label-popular {
+    position: absolute;
+    z-index: 100;
+    left: -9px;
+    top: -9.5px;
+    width: 48px;
+    height: 139px;
+    background: url("../pic/popular-lable.png");
+  }
+  .banner {
+    @include border-box;
+    display: inline-block;
+    margin-right: -4px;
+    margin-left: 30px;
+    border: 1px solid #4c4c4c;
+    height: 121px;
+  }
+}
+
+.game-description {
+  margin-right: 20px;
+  @include border-box;
+  float: right;
+  position: relative;
+  width: 390px;
+  height: 121px;
+  .game-name {
+    padding-top: 5px;
+    font: {
+      family: "Roboto Condensed", sans-serif;
+      size: 20px;
+      weight: bold;
+    }
+    color: #fff;
+    text-transform: uppercase;
+    width: 245px;
+    @extend %text-overflow;
+  }
+  .main-play-btn {
+   position: absolute;
+    top: 5px;
+    right: 0;
+  }
+  .rate {
+    float: none;
+    position: static;
+    margin: 8px 0 12px;
+  }
+  .line {
+    width: 390px;
+    height: 1px;
+    background: #4c4c4c;
+    margin-bottom: 12px;
+  }
+  .text-description {
+    width: 390px;
+    @include border-box;
+    font: {
+      family: "Tahoma", sans-serif;
+      size: 12px;
+    }
+    line-height: 14px;
+    color: $base-name;
+  }
+}
+
+.big-game-list {
+  .frame {
+    width: 318px;
+  }
+  .hover-game {
+    width: 320px;
+    height: 185px;
+    .btn-block {
+      padding-top: 50px;
+    }
+  }
+  .hot-game {
+    .frame {
+      .now-playing {
+        opacity: 1 !important;
+      }
+    }
+  }
+  .game-item {
+    width: 320px;
+    height: 254px;
+    margin-right: 17px;
+    &.hot-game {
+      background: url("../pic/box-game-big.png") no-repeat -8px -7px;
+    }
+  }
+  .game-name {
+    width: game-name-width($big-frame) !important;
+  }
+}
+.big-game-img {
+  display: block;
+  @include border-box;
+  width: 318px;
+  height: 184px;
+}
+
+.rub {
+  position: relative;
+  display: inline;
+  &:before {
+    position: absolute;
+    top: -0.13em;
+    left: 0px;
+    content: "_";
+  }
+}

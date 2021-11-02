@@ -1,0 +1,148 @@
+$btn-height: 44px;
+$btn-width: 180px;
+$exit-icon-width: 24px;
+$exit-icon-height: 20px;
+$refresh-icon-width: 25px;
+$refresh-icon-height: 23px;
+$cashier-icon-width: 24px;
+$cashier-icon-height: 24px;
+$help-icon-width: 20px;
+$help-icon-height: 23px;
+$help-icon-hover: rgba(168, 168, 168, 0.1);
+
+%base-button {
+  width: $btn-width;
+  height: $btn-height;
+  line-height: $btn-height;
+  background: no-repeat 0 -44px;
+  display: block;
+  margin: 0 auto;
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  &:hover {
+    background-position: 0 0;
+  }
+  font: {
+    weight: bold;
+    size: 16px;
+    family: "Roboto", sans-serif;
+  }
+  color: $base-body-color;
+  text: {
+    transform: uppercase;
+    decoration: none;
+    align: center;
+  }
+}
+
+%base-button-with-icon {
+  @include border-box;
+  position: relative;
+  span {
+    z-index: 3;
+    top: 1px;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+    }
+  }
+}
+
+.btn-registration {
+  position: relative;
+  @extend %base-button;
+  background-image: url("../images/btn-reg.png");
+  margin-top: 12px;
+}
+
+.btn-exit {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  background-image: url(../images/btn-exit.png);
+  @extend %base-button;
+  @extend %base-button-with-icon;
+  padding-left: $exit-icon-width + 13;
+  span {
+    &:before {
+      top: -1px;
+      left: -($exit-icon-width + 13);
+      width: $exit-icon-width;
+      height: $exit-icon-height;
+      background: url(../images/sprite.png) no-repeat -130px -268px;
+    }
+  }
+}
+
+.btn-refresh {
+  margin-top: 20px;
+  position: relative;
+  @extend %base-button;
+  @extend %base-button-with-icon;
+  background-image: url(../images/btn-refresh.png);
+  margin-bottom: 5px;
+  padding-left: $refresh-icon-width + 10;
+  span {
+    &:before {
+      top: -1px;
+      left: -($refresh-icon-width + 10);
+      width: $refresh-icon-width;
+      height: $refresh-icon-height;
+      background: url(../images/sprite.png) no-repeat -156px -267px;
+    }
+  }
+}
+
+.btn-cashier {
+  position: relative;
+  @extend %base-button;
+  @extend %base-button-with-icon;
+  background-image: url(../images/btn-cashier.png);
+  margin-bottom: 10px;
+  padding-left: $cashier-icon-width + 10;
+  span {
+    &:before {
+      top: -5px;
+      left: -($cashier-icon-width + 10);
+      width: $cashier-icon-width;
+      height: $cashier-icon-width;
+      background: url(../images/sprite.png) no-repeat -100px -266px;
+    }
+  }
+}
+
+.btn-play-on-money {
+  position: relative;
+  @extend %base-button;
+  background-image: url("../images/btn-play-on-money.png");
+}
+
+.btn-help {
+  margin-bottom: 24px;
+  position: relative;
+  @extend %base-button;
+  @extend %base-button-with-icon;
+  padding-left: $help-icon-width + 10;
+  font-weight: normal;
+  text-transform: none;
+  span {
+    top: 0;
+    &:before {
+      top: -1px;
+      left: -($help-icon-width + 10);
+      width: $help-icon-width;
+      height: $help-icon-height;
+      background: url(../images/sprite.png) no-repeat -185px -264px;
+    }
+  }
+  &:hover {
+    background-color: $help-icon-hover;
+    span {
+      &:before {
+        left: -($help-icon-width + 11);
+        background: url(../images/sprite.png) no-repeat -210px -264px;
+      }
+    }
+  }
+}

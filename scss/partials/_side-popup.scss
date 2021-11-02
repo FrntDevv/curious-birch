@@ -1,0 +1,247 @@
+// popup
+$popup-width: 200px;
+$popup-height: 300px;
+$popup-img-width: 160px;
+$popup-img-height: 92px;
+$btn-in-track-side-width: 170px;
+$btn-in-track-side-height: 41px;
+$popup-top-line-height: 25px;
+$popup-left-bg-width: 210px;
+$popup-left-bg-height: 300px;
+$popup-right-bg-width: 53px;
+$popup-right-bg-height: 123px;
+$popup-game-name: rgba(255, 255, 255, 0.5);
+$show-popup: $layout-width + 2*$popup-width + 26;
+
+%anim-arrow {
+  display: block;
+  width: $anim-arrow-width;
+  height: $anim-arrow-height;
+  background: url("../pic/anim-arrow.png");
+  z-index: 10;
+}
+
+.popup-section {
+  display: none;
+}
+
+@media screen and (min-width: $show-popup) {
+  .popup-section {
+    display: block;
+    position: fixed;
+    right: 13px;
+    width: $popup-width;
+    top: 0;
+    z-index: 13;
+  }
+
+  .popup-section {
+    .anim-arrow-container {
+      position: relative;
+      margin: 0 auto 20px;
+      background: $header-bg;
+      height: $arrows-height;
+      width: $popup-width;
+      .anim-arrow {
+        display: block;
+        width: $arrows-width;
+        height: $arrows-height;
+        background: url("../pic/anim-arrow.png");
+        z-index: 12;
+        position: absolute;
+        left: 20px;
+        top: -15px;
+      }
+    }
+  }
+
+  .popup-list {
+    display: block;
+    width: $popup-width;
+    li {
+      position: relative;
+      border: 1px solid rgba(34, 30, 48, 0.2);
+      @include border-box;
+      @include box-shadow(0 0 30px 10px rgb(0,0,0));
+      background: $header-bg;
+      display: block;
+      width: $popup-width;
+      height: $popup-height;
+      padding: 15px 20px;
+      .popup-description {
+        max-height: 74px;
+        overflow: hidden;
+        text: {
+          align: center;
+          decoration: none;
+          transform: uppercase;
+        }
+        font: {
+          family: "Roboto", sans-serif;
+          size: 13px;
+        }
+        color: $base-body-color;
+        line-height: 18px;
+        .sum {
+          display: block;
+          color: $base-sum;
+          font: {
+            weight: bold;
+            size: 18px;
+          }
+          line-height: 20px;
+        }
+      }
+      a.img-ref {
+        position: relative;
+        float: left;
+        display: block;
+        margin: 15px auto 6px;
+        z-index: 3;
+        &:before {
+          content: "";
+          @include box-shadow(0 0 $standard-shadow-size 0 $content-img-box-shadow inset);
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          position: absolute;
+        }
+      }
+      .popup-img {
+        float: left;
+        display: block;
+        width: $popup-img-width;
+        height: $popup-img-height;
+      }
+      .popup-game-name {
+        display: inline-block;
+        width: $popup-img-width;
+        text-align: center;
+        color: $popup-game-name;
+        a {
+          color: $popup-game-name;
+          text: {
+            decoration: none;
+            transform: uppercase;
+          }
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        font: {
+          family: "Roboto Condensed", sans-serif;
+          size: 14px;
+        }
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      a.popup-play-btn {
+        float: left;
+        display: block;
+        font: {
+          family: "Roboto", sans-serif;
+          size: 16px;
+          weight: bold;
+        }
+        line-height: 1.125;
+        .shadow {
+          display: none;
+        }
+        @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+        color: $base-body-color;
+        @include border-box;
+        text:
+        {
+          align: center;
+          transform: uppercase;
+          decoration: none;
+        }
+        padding-top: 12px;
+        margin: 10px auto 0;
+        width: $btn-in-track-side-width;
+        height: $btn-in-track-side-height;
+        background: url("../pic/icon-btn-play-popup.png") no-repeat 0 -41px;
+        position: relative;
+        z-index: 3;
+        &:hover {
+          position: relative;
+          z-index: 3;
+          background: url("../pic/icon-btn-play-popup.png") no-repeat 0 0;
+        }
+      }
+      .bottom-block {
+        position: absolute;
+        bottom: 30px;
+      }
+    }
+  }
+
+
+  .popup-top-line {
+    position: absolute;
+    display: block;
+    height: $popup-top-line-height;
+    width: $popup-width;
+    top: -25px;
+    left: 0;
+    z-index: 3;
+    background: url("../pic/popup-top-line.png") repeat-x 0 0 $header-bg;
+  }
+
+  .popup-left-bg {
+    width: $popup-left-bg-width;
+    height: $popup-left-bg-height;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../pic/popup-left-bg.png") no-repeat 0 0;
+  }
+
+  .popup-right-bg {
+    width: $popup-right-bg-width;
+    height: $popup-right-bg-height;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: url("../pic/popup-right-bg.png") no-repeat 0 0;
+  }
+
+  .close-icon {
+    display: block;
+    position: absolute;
+    width: $close-icon-size;
+    height: $close-icon-size;
+    background: url(../pic/sprite/sprite.png) no-repeat -170px -42px;
+    &:hover {
+      cursor: pointer;
+      background-position: -170px -80px;
+    }
+    top: -15px;
+    right: -13px;
+    z-index: 10;
+  }
+
+  %line {
+    position: absolute;
+    height: 1px;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+  }
+
+  .first-line {
+    @extend %line;
+    top: 0;
+    background: rgba(40, 117, 129, 0.8);
+  }
+
+  .second-line {
+    @extend %line;
+    top: 1px;
+    background: rgba(0, 0, 0, 0.8);
+  }
+}

@@ -1,0 +1,60 @@
+.btn-cashier .shadow, .btn-exit .shadow, .btn-refresh .shadow, .btn-help .shadow {
+  width: 180px;
+  height: 44px;
+  line-height: 44px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.left-column {
+  text-align: center; }
+
+.right-column {
+  text-align: center; }
+
+.shadow {
+  display: block !important;
+  position: absolute !important;
+  left: 0;
+  top: 3px;
+  z-index: 2;
+  color: rgba(0, 0, 0, 0.2); }
+
+.btn-cashier .shadow {
+  padding-left: 34px; }
+
+.btn-exit .shadow {
+  padding-left: 37px; }
+
+.btn-refresh .shadow {
+  padding-left: 38px; }
+
+.btn-help .shadow {
+  left: -1px;
+  top: 2px;
+  padding-left: 33px; }
+
+.battery-charge .full-charge .text-in-battery .shadow {
+  width: 160px;
+  z-index: -1;
+  top: 2px; }
+
+.charge-now .shadow {
+  padding-left: 15px;
+  padding-right: 15px;
+  z-index: -1;
+  top: 2px; }
+
+.text-charge .shadow {
+  z-index: -1;
+  top: -5px;
+  left: -5px;
+  filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=5);
+  color: #43fff8; }
+
+.no-wait .shadow {
+  z-index: -1;
+  top: -5px;
+  left: 8px;
+  filter: progid:DXImageTransform.Microsoft.Blur(pixelradius=5);
+  color: #055b42; }

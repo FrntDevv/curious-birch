@@ -1,0 +1,141 @@
+$btn-in-track-width: 85px;
+$btn-in-track-height: 21px;
+$first-line-in-track: #0d1116;
+$second-line-in-track: #23626c;
+$base-ref: #00a1ff;
+$base-sum: #ff6c00;
+// track
+$track-popup-bg: rgba(13, 17, 22, 0.97);
+$track-popup-height: 65px;
+$track-bottom-game-height: 40px;
+$track-bottom-game-width: 70px;
+$btn-in-track-bottom-width: 170px;
+$btn-in-track-bottom-height: 41px;
+$shadow-track-height: 25px;
+
+%line-in-track {
+  position: absolute;
+  height: $min-line-height;
+  width: 100%;
+}
+
+.track-in-game {
+  @include border-box;
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $track-popup-height;
+  margin-left: 0;
+  background: $track-popup-bg;
+  a.img-ref {
+    display: inline-block;
+    margin-top: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+    position: relative;
+    max-width: 100%;
+    &:before {
+      @include box-shadow(0 0 $standard-shadow-size 0 $content-img-box-shadow inset);
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
+  .first-line {
+    @extend %line-in-track;
+    top: 63px;
+    background: $first-line-in-track;
+  }
+  .second-line {
+    @extend %line-in-track;
+    top: 64px;
+    background: $second-line-in-track;
+  }
+
+  .game-in-track {
+    float: left;
+    @include border-box;
+    display: block;
+    width: $track-bottom-game-width;
+    height: $track-bottom-game-height;
+  }
+
+  .track-desc {
+    @include border-box;
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    overflow-x: hidden;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 14px;
+    }
+    text-transform: uppercase;
+    color: #fff;
+    .track-desc-ref {
+      text-decoration: underline;
+      color: $base-ref;
+    }
+    .sum {
+      color: $base-sum;
+    }
+  }
+
+  .btn-in-track {
+    @include border-box;
+    display: inline-block;
+    position: relative;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 16px;
+      weight: bold;
+    }
+    color: $base-body-color;
+    text: {
+      align: center;
+      decoration: none;
+      transform: uppercase;
+    }
+    @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+    top: -14px;
+    width: $btn-in-track-bottom-width;
+    height: $btn-in-track-bottom-height;
+    margin-right: 24px;
+    line-height: $btn-in-track-bottom-height;
+    background: url("../images/icon-play-btn-popup-track.png") no-repeat 0 -41px;
+    &:hover {
+      background-position: 0 0;
+    }
+  }
+
+  .track-center-wrapper {
+    width: $layout-width;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .shadow-track {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $shadow-track-height;
+    background: url("../images/box-shadow-pattern-track.png") repeat-x 0 0;
+  }
+  .track-desc {
+    top: -10px;
+  }
+  .close-icon {
+    @extend %close-icon;
+    top: 16px;
+    right: 20px;
+  }
+
+}

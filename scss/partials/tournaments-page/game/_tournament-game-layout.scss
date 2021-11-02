@@ -1,0 +1,44 @@
+$header-vertical-padding: 15px;
+$prizes-second-column-width: 385px;
+$prizes-first-column-width: 34px;
+
+.tournament-game {
+  .title-light {
+    width: $layout-width;
+    height: $title-lights-height + 15;
+    background: url(.././pic/tournaments/title-light.png) no-repeat 0 6px;
+    margin-bottom: 8px;
+  }
+
+  .tournament-line:first-child {
+    margin-top: 19px;
+  }
+
+  .today-leaders {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .big-head {
+    &.prizes-head {
+      margin-bottom: 11px;
+      position: relative;
+      top: -6px;
+      width: $prizes-second-column-width;
+      margin-left: $prizes-first-column-width;
+    }
+    &.rules-header {
+      padding-top: $header-vertical-padding;
+      padding-bottom: $header-vertical-padding;
+    }
+    &.past-week {
+      padding-top: $header-vertical-padding;
+      padding-bottom: $header-vertical-padding;
+    }
+  }
+
+  .past-week-results {
+    padding-bottom: 250px;
+  }
+
+}

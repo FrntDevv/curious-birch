@@ -1,0 +1,414 @@
+footer {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 100px;
+  background: rgb(20,19,25);
+  width: 100%;
+  min-width: $layout-width;
+}
+
+.footer-line {
+  position: absolute;
+  display: block;
+  top: -13px;
+  left: 0;
+  right: 0;
+  height: 25px;
+  background: url("../pic/footer-line.png") repeat-x 0 0;
+  z-index: 100;
+}
+
+.gradient-footer {
+  position: absolute;
+  bottom: 0;
+  height: 129px;
+ background:  url("../pic/gradient-footer.png") repeat-x 0 0;
+  width: 100%;
+  min-width: $layout-width;
+}
+
+.footer-pos-point {
+  position: relative;
+}
+
+.foot-menu {
+  position: relative;
+  z-index: 300;
+  display: block;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.foot-menu li {
+  display: inline-block;
+  margin-right: 36px;
+  &:last-child {
+    margin-right: -4px;
+  }
+}
+
+.payment-list {
+  width: 1100px;
+  text-align: center;
+  position: relative;
+  @include border-box;
+  z-index: 300;
+  margin: 0 auto 40px;
+  height: 40px;
+  li {
+    display: inline-block;
+    margin: 0 1px 0px 24px;
+    &:last-child {
+      margin-right: -4px;
+    }
+    &.visa {
+      width: 80px;
+      height: 25px;
+      position: relative;
+      top: -2px;
+      margin-left: 0;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -85px 0px;
+    }
+    &.mastercard {
+      width: 50px;
+      height: 30px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -41px -115px;
+    }
+    &.maestro {
+      width: 50px;
+      height: 30px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -96px -115px;
+    }
+    &.webmoney {
+      width: 38px;
+      height: 35px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -212px 0px;
+    }
+    &.yandex-money {
+      width: 34px;
+      height: 39px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -212px -80px;
+    }
+    &.alfa-click {
+      width: 26px;
+      height: 38px;
+      margin-top: 1px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -255px 0px;
+    }
+    &.mail-money {
+      width: 38px;
+      height: 35px;
+      position: relative;
+      top: -3px;
+      margin-left: 23px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -212px -40px;
+    }
+    &.privat-24 {
+      width: 30px;
+      height: 32px;
+      position: relative;
+      top: -5px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -74px -199px;
+    }
+    &.liqpay {
+      width: 37px;
+      height: 37px;
+      position: relative;
+      top: -3px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -170px 0px;
+    }
+    &.qiwi {
+      width: 35px;
+      height: 35px;
+      position: relative;
+      top: -3px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -212px -124px;
+    }
+    &.interkassa {
+      width: 27px;
+      height: 40px;
+      position: relative;
+      top: -2px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: -170px -118px;
+    }
+    &.w1 {
+      width: 48px;
+      height: 28px;
+      position: relative;
+      top: -6px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: 0px -166px;
+    }
+    &.skrill {
+      width: 80px;
+      height: 27px;
+      position: relative;
+      top: -8px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: 0px -38px;
+    }
+    &.moneta {
+      width: 80px;
+      height: 33px;
+      position: relative;
+      top: -7px;
+      background-image: url(../pic/sprite/sprite.png);
+      background-position: 0px 0px;
+    }
+  }
+}
+
+.foot-menu li a {
+  display: block;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 16px;
+  }
+  color: rgb(174,100,60);
+}
+
+.footer-logo {
+  position: absolute;
+  width: 583px;
+  height: 280px;
+  background: url("../pic/logo-footer.png") no-repeat 0 0;
+  top: -232px;
+  left: 260px;
+  z-index: 200;
+}
+
+.shadow-grad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 465px;
+  width: $layout-width;
+  background: url("../pic/shadow-footer.png") no-repeat 0 0;
+}
+
+.copyright {
+  position: relative;
+  display: block;
+  width: 1060px;
+  margin: 0 auto 70px;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 12px;
+  }
+  color: rgb(150,117,91);
+}
+
+.logotypes {
+  width: 300px;
+  height: 45px;
+  margin: 0 auto;
+  .adulthood {
+    display: inline-block;
+    margin-right: 23px;
+    width: 49px;
+    height: 30px;
+    background: url("../pic/adulthood.png") no-repeat 0 0;
+    position: relative;
+    top: -3px;
+  }
+  .powered-by {
+    position: relative;
+    display: inline-block;
+    margin-right: 23px;
+    width: 146px;
+    height: 36px;
+    background: url("../pic/powered-by.png") no-repeat 0 0;
+    a {
+      @extend %absolute-reference;
+    }
+  }
+  .antille {
+    display: inline-block;
+    margin-right: -4px;
+    width: 29px;
+    height: 45px;
+    background: url("../pic/antille.png") no-repeat 0 0;
+  }
+  &:before,
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 62%;
+    margin-top: -1px;
+    height: 1px;
+    width: 235px;
+    background: #3f3126;
+  }
+  &:before {
+    left: 120px;
+  }
+  &:after {
+    right: 135px;
+  }
+}
+
+.copy-text {
+  position: absolute;
+  top: 18px;
+  left: 0;
+}
+
+.all-rights-reserved {
+  position: absolute;
+  top: 18px;
+  right: 0;
+}
+
+.footer-section {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 1060px;
+}
+
+.name-of-section {
+  font: {
+    family: "Roboto", sans-serif;
+    size: 18px;
+  }
+  color: #fff;
+}
+
+.name-footer-section {
+  position: relative;
+  margin-bottom: 20px;
+  .name-of-section {
+    float: left;
+  }
+  .more-games {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 37px;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 18px;
+    }
+    color: rgb(174,100,60);
+  }
+  .arrow-nav {
+    margin-top: 3px;
+    float: right;
+    height: 20px;
+    width: 20px;
+    background-image: url(../pic/sprite/sprite.png);
+    background-position: -315px -75px;
+  }
+  .slide {
+    float: right;
+    list-style: none;
+    display: block;
+    li {
+      display: inline-block;
+      width: 20px;
+      height: 21px;
+      margin-right: 1px;
+      position: relative;
+      a {
+        @extend %absolute-reference;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      &.slide-blank {
+        background-image: url(../pic/sprite/sprite.png);
+        background-position: -50px -269px;
+        &:hover {
+          background-image: url(../pic/sprite/sprite.png);
+          background-position: -25px -269px;
+        }
+      }
+      &.slide-select {
+        background-image: url(../pic/sprite/sprite.png);
+        background-position: 0px -269px;
+      }
+    }
+  }
+}
+
+.table-info {
+  width: 700px;
+  display: inline-block;
+  margin-right: -16px;
+}
+
+.games-info {
+  width: 700px;
+  border: 0;
+  tr {
+    border-top: 1px solid #3f3126;
+    border-bottom: 1px solid #3f3126;
+  }
+  td {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    vertical-align: middle;
+  }
+  td.desc {
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 35px;
+  }
+}
+
+.foot-img {
+  width: 160px;
+  height: 92px;
+}
+
+a.games-play-btn {
+  position: relative;
+  right: 0;
+  display: block;
+  @extend %button-base-font;
+  @extend %base-text-in-ref;
+  @include border-box;
+  text-align: center;
+  padding-top: 12px;
+  width: 170px;
+  height: 41px;
+  background: url("../pic/icon-btn-play-popup.png") no-repeat 0 -41px;
+  z-index: 1003;
+  &:hover {
+    position: relative;
+    z-index: 1003;
+    background: url("../pic/icon-btn-play-popup.png") no-repeat 0 0;
+  }
+}
+
+.hot-games-section {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: block;
+  width: 320px;
+  .big-game-list {
+    width: 320px;
+    margin: 0;
+    .game-item {
+      margin-right: -4px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+
+

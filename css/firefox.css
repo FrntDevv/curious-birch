@@ -1,0 +1,26 @@
+@-moz-document url-prefix() {
+  .main-menu-list li a {
+    padding-left: 42px;
+    padding-right: 43px; }
+
+  .ent-soc {
+    margin-top: 16px; }
+
+  .profile-info .alarm-count .text {
+    top: 1px; }
+
+  .small-cashbox span:before {
+    top: 4%; }
+
+  .cashbox span:before {
+    top: 4%; }
+
+  .take-part-btn span:before {
+    top: 4%; }
+
+  .tournament-name-box {
+    padding-top: 13px;
+    padding-bottom: 16px; }
+
+  .lead-players-table tr.dynamic {
+    line-height: 26px; } }

@@ -1,0 +1,112 @@
+// banner section
+$game-name-width: 245px;
+$banner-game-width: 730px;
+$banner-vertical-padding: 30px;
+$banner-img-width: 240px;
+$banner-img-height: 121px;
+$label-popular-width: 48px;
+$label-popular-height: 139px;
+$banner-height: 121px;
+$game-description-width: 390px;
+$game-description-height: 121px;
+$min-line-height: 1px;
+
+.banner-game {
+  @include border-box;
+  display: block;
+  width: $banner-game-width;
+  margin-left: 3px;
+  margin-bottom: 20px;
+  background: $banner-game-bg;
+  padding-top: $banner-vertical-padding;
+  padding-bottom: $banner-vertical-padding;
+}
+
+.banner-img {
+  float: left;
+  @include border-box;
+  position: relative;
+  margin-left: 56px;
+  @include box-shadow(0 0 10px $standard-shadow-size rgb(0,0,0));
+  width: $banner-img-width;
+  height: $banner-img-height;
+  a {
+    @extend %absolute-reference;
+  }
+  .label-popular {
+    position: relative;
+    z-index: 2;
+    width: $label-popular-width;
+    height: $label-popular-height;
+  }
+  .banner-shadow {
+    position: relative;
+    float: right;
+    width: $banner-img-width - 30;
+    &:before {
+      content: "";
+      @include box-shadow(0 0 $standard-shadow-size 0 $content-img-box-shadow inset);
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+  }
+  .banner {
+    width: $banner-img-width - 30;
+    float: right;
+    @include border-box;
+    display: block;
+    margin-left: 30px;
+    height: $banner-height;
+  }
+}
+
+.game-description {
+  margin-right: 20px;
+  @include border-box;
+  float: right;
+  position: relative;
+  width: $game-description-width;
+  height: $game-description-height;
+  .game-name {
+    padding-top: 5px;
+    font: {
+      family: "Roboto Condensed", sans-serif;
+      size: 20px;
+      weight: bold;
+    }
+    color: #fff;
+    text-transform: uppercase;
+    width: $game-name-width;
+    @extend %text-overflow;
+  }
+  .main-play-btn {
+    position: absolute;
+    top: 5px;
+    right: 0;
+  }
+  .rate {
+    float: none;
+    position: static;
+    margin: 8px 0 12px;
+  }
+  .line {
+    width: $game-description-width;
+    height: $min-line-height;
+    background: $banner-border;
+    margin-bottom: 12px;
+  }
+  .text-description {
+    width: $game-description-width;
+    @include border-box;
+    font: {
+      family: "Tahoma", sans-serif;
+      size: 12px;
+    }
+    line-height: 14px;
+    color: $base-name;
+  }
+}
+

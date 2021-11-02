@@ -1,0 +1,136 @@
+$tournament-banner-width: 1337px;
+$tournament-banner-height: 337px;
+$visible-banner-height: 269px;
+$big-take-part-btn-width: 292px;
+$big-take-part-btn-height: 68px;
+$big-take-part-btn-margin-left: 25px;
+
+%tournament-info {
+  letter-spacing: -0.5px;
+  font: {
+    family: "Roboto", sans-serif;
+    weight: bold;
+  }
+  text: {
+    align: center;
+    transform: uppercase;
+  }
+  color: $base-body-color;
+  @include text-shadow(0 0 8px rgba(0, 0, 0, 0.75));
+}
+
+.tournament-banner-container {
+  overflow: hidden;
+  width: 100%;
+  height: $tournament-banner-height;
+  position: absolute;
+  top: 69px;
+  text-align: center;
+}
+
+.tournament-banner {
+  float: right;
+  right: 50%;
+  overflow: visible;
+  display: inline-block;
+  width: $tournament-banner-width;
+  height: $tournament-banner-height;
+  position: relative;
+  .tournament-banner-img {
+    right: -50%;
+    width: $tournament-banner-width;
+    height: $tournament-banner-height;
+    z-index: 2;
+    position: relative;
+  }
+  a.banner-ref {
+    display: none;
+    position: absolute;
+    top: $tournament-banner-height - $visible-banner-height;
+    left: 0;
+    width: $tournament-banner-width;
+    height: $visible-banner-height;
+    z-index: 10;
+  }
+  .tournament-wrapper-container {
+    position: absolute;
+    bottom: 0;
+    width: $tournament-banner-width;
+    height: $visible-banner-height;
+    text-align: center;
+    .tournament-wrapper {
+      position: relative;
+      height: $visible-banner-height;
+      width: $layout-width;
+      display: inline-block;
+    }
+  }
+  .head-cont-grad {
+    width: $layout-width;
+    height: $visible-banner-height;
+  }
+  text-align: center;
+}
+
+.information-block-container {
+  text-align: center;
+  position: absolute;
+  bottom: 23px;
+  left: 0;
+  width: 100%;
+  height: $big-take-part-btn-height;
+  z-index: 9;
+}
+
+.information-block {
+  display: inline-block;
+  position: relative;
+  .tournament-info {
+    top: -6px;
+    text-align: center;
+    position: relative;
+    float: left;
+    max-width: $tournament-banner-width - $big-take-part-btn-margin-left - $big-take-part-btn-width;
+    .name-of-tournament {
+      max-width: $tournament-banner-width - $big-take-part-btn-margin-left - $big-take-part-btn-width;
+      font: {
+        size: 40px;
+      }
+      @extend %tournament-info;
+    }
+    .tournament-date {
+      max-width: $tournament-banner-width - $big-take-part-btn-margin-left - $big-take-part-btn-width;
+      font: {
+        size: 17px;
+      }
+      @extend %tournament-info;
+    }
+  }
+  .big-take-part-btn {
+    z-index: 11;
+    display: block;
+    position: relative;
+    float: right;
+    margin-left: $big-take-part-btn-margin-left;
+    width: $big-take-part-btn-width;
+    height: $big-take-part-btn-height;
+    line-height: $big-take-part-btn-height;
+    background: url(.././pic/tournaments/big-take-part-btn.png) no-repeat 0 -68px;
+    font: {
+      size: 24px;
+      family: "Roboto", sans-serif;
+      weight: bold;
+    }
+    text: {
+      align: center;
+      transform: uppercase;
+      decoration: none;
+    }
+    color: $base-body-color;
+    @include text-shadow(0 $standard-shadow-size 0 rgba(0, 0, 0, 0.46));
+    &:hover {
+      background-position: 0 0;
+    }
+  }
+}
+

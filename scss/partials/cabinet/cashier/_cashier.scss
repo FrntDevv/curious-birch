@@ -1,0 +1,50 @@
+$cashier-width: 593px;
+$cashier-height: 339px;
+$advertising-block-height: 265px;
+$advertising-block-bg: #152d33;
+
+.cabinet-section {
+  &.cashier {
+    background: $cashier-bg;
+    padding-top: 61px;
+    padding-bottom: 57px;
+    iframe {
+      margin: 0 auto;
+      width: $cashier-width;
+      height: $cashier-height;
+      background:  url(.././pic/cabinet/cashier.png) no-repeat 0 0;
+      display: block;
+      border: none;
+      @include border-box;
+    }
+  }
+}
+
+.advertising {
+  width: $cashier-width;
+  height: $advertising-block-height;
+  background: $advertising-block-bg;
+  margin: 37px auto 0;
+  text: {
+    align: center;
+    decoration: none;
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 30px;
+  }
+  &:before {
+    content: "";
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .advertising-text {
+    @include border-box();
+    width: 95%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.2;
+    color: $base-body-color;
+  }
+}

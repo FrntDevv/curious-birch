@@ -1,0 +1,39 @@
+.charge-now {
+  behavior: url(../assets/stylesheets/PIE.htc); }
+
+.battery-charge .full-charge .text-in-battery {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 49px; }
+
+.shadow {
+  color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20); }
+
+.track-in-game {
+  background: #0d1116;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=97); }
+
+.left-column {
+  background: black; }
+
+.right-column {
+  background: black; }
+
+.center-column {
+  background: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60); }
+
+.btn-help:hover {
+  background: #a8a8a8;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60); }
+
+.game-list .game-item {
+  behavior: url(../assets/stylesheets/PIE.htc); }
+  .game-list .game-item .game-img-shadow {
+    behavior: url(../assets/stylesheets/PIE.htc); }
+  .game-list .game-item .main-play-btn {
+    behavior: url(../assets/stylesheets/PIE.htc); }
+
+.track-in-game a.img-ref:before {
+  behavior: url(../assets/stylesheets/PIE.htc); }

@@ -1,0 +1,38 @@
+$tournament-line: #606b84;
+
+.table-tournaments {
+  .left-content {
+    margin-left: 59px;
+    margin-top: 0;
+  }
+  .cashbox {
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
+  .right-content {
+    margin-top: 0;
+  }
+}
+
+.tournament-line {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: $tournament-line;
+}
+
+.tournament-name-section {
+  margin: 10px 0;
+  text: {
+    transform: uppercase;
+    align: left;
+  }
+  font: {
+    size: 16px;
+    family: "Roboto", sans-serif;
+  }
+  color: $base-body-color;
+}
+
+
+

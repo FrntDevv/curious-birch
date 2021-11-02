@@ -1,0 +1,85 @@
+// copyright
+$copyright-color: rgb(150,117,91);
+$logotypes-width: 300px;
+$logotypes-height: 45px;
+$adulthood-width: 49px;
+$adulthood-height: 30px;
+$powered-by-width: 146px;
+$powered-by-height: 36px;
+$antille-width: 29px;
+$antille-height: 45px;
+$copyright-lines-color: #3f3126;
+$copyright-lines-width: 235px;
+
+.copyright {
+  position: relative;
+  display: block;
+  width: $layout-width -40;
+  margin: 0 auto 70px;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 12px;
+  }
+  color: $copyright-color;
+}
+
+.logotypes {
+  width: $logotypes-width;
+  height: $logotypes-height;
+  margin: 0 auto;
+  .adulthood {
+    display: inline-block;
+    margin-right: 27px;
+    width: $adulthood-width;
+    height: $adulthood-height;
+    background: url("../pic/adulthood.png") no-repeat 0 0;
+    position: relative;
+    top: -3px;
+  }
+  .powered-by {
+    position: relative;
+    display: inline-block;
+    margin-right: 27px;
+    width: $powered-by-width;
+    height: $powered-by-height;
+    background: url("../pic/powered-by.png") no-repeat 0 0;
+    a {
+      @extend %absolute-reference;
+    }
+  }
+  .antille {
+    display: inline-block;
+    width: $antille-width;
+    height: $antille-height;
+    background: url("../pic/antille.png") no-repeat 0 0;
+  }
+  &:before,
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 62%;
+    margin-top: -1px;
+    height: 1px;
+    width: $copyright-lines-width;
+    background: $copyright-lines-color;
+  }
+  &:before {
+    left: 120px;
+  }
+  &:after {
+    right: 135px;
+  }
+}
+
+.copy-text {
+  position: absolute;
+  top: 18px;
+  left: 0;
+}
+
+.all-rights-reserved {
+  position: absolute;
+  top: 18px;
+  right: 0;
+}

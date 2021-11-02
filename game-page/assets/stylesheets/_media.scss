@@ -1,0 +1,109 @@
+$media-indent: 40px;
+
+@media only screen {
+
+  /* 620px height layout */
+
+  @media (min-height: $middle-game-container-height) {
+
+    body {
+      height: $middle-game-container-height;
+    }
+
+    .tournament-section {
+      .img-in-tournament {
+        display: block !important;
+      }
+    }
+
+    .logo {
+      margin-bottom: 40px;
+    }
+
+    .game-container {
+      height: $middle-game-container-height;
+      margin-top: -($middle-game-container-height/2);
+    }
+
+    .left-column,
+    .right-column,
+    .center-column {
+      height: $middle-game-container-height;
+    }
+
+    .right-column {
+      .battery {
+        display: none;
+      }
+    }
+
+    .left-column {
+      .battery {
+        display: block !important;
+        bottom: 65px;
+      }
+    }
+
+    .game-list {
+      height: 3*$middle-game-item-height + 2*$game-item-margin-bottom;
+    }
+
+  }
+
+  /* 769px height layout */
+
+  @media (min-height: $big-game-container-height) {
+
+    .game-container {
+      height: $big-game-container-height;
+      margin-top: -($big-game-container-height/2);
+      .left-column,
+      .right-column,
+      .center-column {
+        height: $big-game-container-height;
+      }
+    }
+
+    .game-list {
+      height: 4*$middle-game-item-height + 3*$game-item-margin-bottom;
+    }
+
+    body {
+      height: $big-game-container-height;
+    }
+
+  }
+
+  /* 1360px width layout */
+
+  @media (min-width: $middle-game-container-width + $media-indent) {
+    .game-container {
+      width: $middle-game-container-width;
+      margin-left: -($middle-game-container-width/2);
+      .center-column {
+        width: $middle-center-width;
+      }
+    }
+    .track-in-game {
+      .track-center-wrapper {
+        width: $middle-game-container-width;
+      }
+    }
+  }
+
+  @media (min-width: $big-game-container-width + $media-indent) {
+    .game-container {
+      width: $big-game-container-width;
+      margin-left: -($big-game-container-width/2);
+      .center-column {
+        width: $big-center-width;
+      }
+    }
+    .track-in-game {
+      .track-center-wrapper {
+        width: $big-game-container-width;
+      }
+    }
+  }
+
+}

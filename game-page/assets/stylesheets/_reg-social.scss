@@ -1,0 +1,109 @@
+$reg-soc-color: rgb(255, 148, 53);
+$social-list-width: 170px;
+$social-btn-size: 28px;
+%social {
+  width: $social-btn-size;
+  height: $social-btn-size;
+}
+
+%social-a {
+  width: $social-btn-size;
+  height: $social-btn-size;
+  display: block;
+}
+
+.reg-description {
+  position: relative;
+  padding: 0 5px;
+  font: {
+    size: 16px;
+    family: "Roboto", sans-serif;
+  }
+  color: $base-body-color;
+  line-height: 1.556;
+  text-align: center;
+}
+
+
+.reg-soc {
+  position: relative;
+  padding: 0 5px;
+  font: {
+    size: 12px;
+    family: "Roboto", sans-serif;
+  }
+  color: $reg-soc-color;
+  text: {
+    transform: uppercase;
+    align: center;
+  }
+  line-height: 1.5;
+  margin: 15px auto;
+}
+
+.social-list {
+  position: relative;
+  display: block;
+  width: $social-list-width;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.social-list li {
+  display: inline-block;
+  margin-right: 1px;
+  @extend %social;
+  &:last-child {
+    margin-right: 0;
+  }
+  a.btn-vk {
+    @extend %social-a;
+    background: url(../images/sprite.png) no-repeat -212px -164px;
+    &:hover {
+      background-position: -109px -199px;
+    }
+  }
+  a.btn-fb {
+    @extend %social-a;
+    background: url(../images/sprite.png) no-repeat -99px -236px;
+    &:hover {
+      background-position: -132px -236px;
+    }
+  }
+  a.btn-tw {
+    @extend %social-a;
+    background: url(../images/sprite.png) no-repeat -142px -199px;
+    &:hover {
+      background-position: -53px -166px;
+    }
+  }
+  a.btn-gm {
+    @extend %social-a;
+    background: url(../images/sprite.png) no-repeat -33px -236px;
+    &:hover {
+      background-position: -66px -236px;
+    }
+  }
+  a.btn-ok {
+    @extend %social-a;
+    background: url(../images/sprite.png) no-repeat -86px -166px;
+    &:hover {
+      background-position: -119px -166px;
+    }
+  }
+  a.btn-ml {
+    @extend %social-a;
+    background: url(../images/sprite.png) no-repeat -152px -166px;
+    &:hover {
+      background-position: 0 -236px;
+    }
+  }
+  a.btn-ya {
+    @extend %social-a;
+    background: url(../images/sprite.png) no-repeat -208px -199px;
+    &:hover {
+      background-position: -175px -199px;
+    }
+  }
+
+}

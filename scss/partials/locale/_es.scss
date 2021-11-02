@@ -1,0 +1,47 @@
+.es {
+  .jackpot-name {
+    background: url("../pic/jackpot.png") no-repeat 0 0;
+  }
+
+}
+
+.game-item {
+  .es {
+    position: absolute;
+    width: $label-new-width;
+    height: $label-new-height;
+    top: 1px;
+    right: 1px;
+    z-index: 2;
+    .label-new {
+      background: url("../pic/new-label.png") no-repeat 0 0;
+    }
+  }
+}
+
+.banner-img {
+  .es {
+    position: absolute;
+    z-index: 2;
+    left: -9px;
+    top: -9.5px;
+    width: $label-popular-width;
+    height: $label-popular-height;
+    .label-popular {
+      background: url("../pic/popular-lable.png");
+    }
+  }
+}
+
+.tournament-box {
+  .es {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: $now-label-width;
+    height: $now-label-height;
+    .now-label {
+      background: url(.././pic/tournaments/now-label.png) no-repeat 0 0;
+    }
+  }
+}

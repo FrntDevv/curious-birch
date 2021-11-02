@@ -1,0 +1,70 @@
+$track-popup-color: rgb(13,17,22);
+$column-bg: rgb(0,0,0);
+$help-hover: rgb(168, 168, 168);
+$battery-height: 49px;
+
+.charge-now {
+  behavior: url(../assets/stylesheets/PIE.htc);
+}
+
+.battery-charge {
+  .full-charge {
+    .text-in-battery {
+      font: {
+        family: "Roboto", sans-serif;
+        size: 16px;
+      }
+      line-height: $battery-height;
+    }
+  }
+}
+
+.shadow {
+  color: $column-bg;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=20);
+}
+
+.track-in-game {
+  background: $track-popup-color;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=97);
+}
+
+.left-column {
+  background: $column-bg;
+}
+
+.right-column {
+  background: $column-bg;
+}
+
+.center-column {
+  background: $column-bg;
+  filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+}
+
+.btn-help {
+  &:hover {
+    background: $help-hover;
+    filter:progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+  }
+}
+
+.game-list {
+  .game-item {
+    behavior: url(../assets/stylesheets/PIE.htc);
+    .game-img-shadow {
+      behavior: url(../assets/stylesheets/PIE.htc);
+    }
+    .main-play-btn {
+      behavior: url(../assets/stylesheets/PIE.htc);
+    }
+  }
+}
+
+.track-in-game {
+  a.img-ref {
+    &:before {
+      behavior: url(../assets/stylesheets/PIE.htc);
+    }
+  }
+}

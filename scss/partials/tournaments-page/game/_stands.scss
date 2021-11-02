@@ -1,0 +1,254 @@
+$stand-block-width: 420px;
+$stand-block-height: 311px;
+$stand-box-width: 143px;
+$stand-box-height: 276px;
+$stand-box-1-pl-width: 154px;
+$stand-box-1-pl-height: 293px;
+$first-place-bg: rgb(143,57,57);
+$second-place-bg: rgb(57,109,143);
+$third-place-bg: rgb(21,30,38);
+$first-place-light-width: 154px;
+$first-place-light-height: 233px;
+$first-place-medal-width: 118px;
+$first-place-medal-height: 119px;
+$second-place-medal-width: 103px;
+$second-place-medal-height: 104px;
+$third-place-medal-width: 105px;
+$third-place-medal-height: 112px;
+$fourth-place-medal-width: 105px;
+$fourth-place-medal-height: 112px;
+$first-place-color: rgb(252, 195, 59);
+$second-place-color: rgb(209, 209, 211);
+$third-place-color: rgb(192, 131, 102);
+$stand-line-width: 130px;
+$stand-line-height: 3px;
+$first-franks-color: #fdba4c;
+$second-franks-color: #b7bbc2;
+$third-franks-color: #b2684a;
+
+%stand-box {
+  width: $stand-box-width;
+  height: $stand-box-height;
+  margin-top: 35px;
+  position: relative;
+}
+
+.stand-block {
+  width: $stand-block-width;
+  height: $stand-block-height;
+  float: left;
+  position: relative;
+}
+
+
+.stand {
+  position: relative;
+  text-align: center;
+  @include box-shadow(0 0 7px 1px rgb(0, 0, 0),
+          inset 0 0 2px 0 rgba(255,255,255,.5));
+  .winner-block {
+    margin-top: 8px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font: {
+      family: "Tahoma", sans-serif;
+      size: 11px;
+    }
+    .login {
+      display: block;
+      .login-field {
+        font:
+        {
+          weight: bold;
+          family: "Tahoma-Bold", sans-serif;
+        }
+        margin-left: 2px;
+      }
+    }
+    .result {
+      margin-top: 1px;
+      display: block;
+      .result-field {
+        font:
+        {
+          weight: bold;
+          family: "Tahoma-Bold", sans-serif;
+        }
+        margin-left: 2px;
+      }
+    }
+  }
+  .line {
+    margin-top: 14px;
+    display: inline-block;
+    width: $stand-line-width;
+    height: $stand-line-height;
+    background: no-repeat 0 0;
+  }
+  .count-of-franks-in-medal {
+    position: relative;
+    width: 100%;
+    text:
+    {
+      align: center;
+      transform: uppercase;
+    }
+    font: {
+      family: "Tahoma-Bold", sans-serif;
+      weight: bold;
+    }
+    .count {
+      display: none;
+      font-size: 37px;
+    }
+    .franks {
+      position: relative;
+      font-size: 12px;
+    }
+  }
+  text {
+    text-anchor: middle;
+    font: {
+      family: "Tahoma-Bold", sans-serif;
+      weight: bold;
+      size: 37px;
+    }
+  }
+  &.first-place {
+    .winner-block {
+      .login {
+        @include border-box();
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .result {
+        @include border-box();
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+    }
+    text {
+      @include text-shadow(1px 0 1px rgb(54, 7, 67), -1px 0 1px rgba(199,127,2,.75));
+    }
+    color: $first-place-color;
+    position: absolute;
+    top: 0;
+    left: 134px;
+    z-index: 2;
+    width: $stand-box-1-pl-width;
+    height: $stand-box-1-pl-height;
+    background: $first-place-bg;
+    @include linear-gradient(to bottom,
+            rgb(143,57,57) 0%, rgb(29,48,67) 100%);
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: $first-place-light-width;
+      height: $first-place-light-height;
+      background: url(.././pic/tournaments/medals/1-place-light.png)
+                  no-repeat 0 0;
+    }
+    .medal {
+      position: relative;
+      z-index: 3;
+      width: $first-place-medal-width;
+      height: $first-place-medal-height;
+      margin-top: 19px;
+      margin-left: 19px;
+      background: url(.././pic/tournaments/medals/1-place-2.png)
+      no-repeat 0 0;
+    }
+    .count-of-franks-in-medal {
+      margin-top: 13px;
+      .count {
+        @include text-shadow(1px 0 1px rgb(54, 7, 67), -1px 0 1px rgba(199,127,2,.75));
+      }
+      .franks {
+        @include text-shadow(1px 0 1px rgb(54, 7, 67));
+        color: $first-franks-color;
+      }
+    }
+    .line {
+      background-image:
+        url(.././pic/tournaments/medals/1-place-line.png);
+    }
+  }
+  &.second-place {
+    color: $second-place-color;
+    @extend %stand-box;
+    float: left;
+    background: $second-place-bg;
+    @include linear-gradient(to bottom,
+            rgb(57,109,143) 0%, rgb(29,48,67) 100%);
+    text {
+      @include text-shadow(1px 0px 1px rgb(7, 32, 67), -1px 0 1px rgba(92,128,173,.75));
+    }
+    .medal {
+      width: $second-place-medal-width;
+      height: $second-place-medal-height;
+      margin-top: 18px;
+      margin-left: 20px;
+      background: url(.././pic/tournaments/medals/2-place-2.png)
+      no-repeat 0 0;
+    }
+    .count-of-franks-in-medal {
+      margin-top: 13px;
+      .count {
+        @include text-shadow(1px 0px 1px rgb(7, 32, 67), -1px 0 1px rgba(92,128,173,.75));
+      }
+      .franks {
+        @include text-shadow(1px 0px 1px rgb(7, 32, 67));
+        color: $second-franks-color;
+      }
+    }
+    .line {
+      background-image:
+      url(.././pic/tournaments/medals/2-place-line.png);
+      margin-left: 10px;
+    }
+  }
+  &.third-place {
+    color: $third-place-color;
+    @extend %stand-box;
+    float: right;
+    background: $third-place-bg;
+    @include linear-gradient(to bottom,
+            rgb(21,30,38) 0%, rgb(19,21,26) 100%);
+    .winner-block {
+      left: 7px;
+      margin-top: 10px;
+    }
+    text {
+      @include text-shadow(1px -1px 1px rgb(0,0,0), -1px 0 1px rgba(109,56,40,.75));
+    }
+    .medal {
+      width: $third-place-medal-width;
+      height: $third-place-medal-height;
+      margin-top: 17px;
+      margin-left: 27px;
+      background: url(.././pic/tournaments/medals/3-place-2.png)
+      no-repeat 0 0;
+    }
+    .count-of-franks-in-medal {
+      left: 4px;
+      margin-top: 5px;
+      .count {
+        @include text-shadow(1px -1px 1px rgb(0,0,0), -1px 0 1px rgba(109,56,40,.75));
+      }
+      .franks {
+        left: 3px;
+        @include text-shadow(1px -1px 1px rgb(0,0,0));
+        color: $third-franks-color;
+      }
+    }
+    .line {
+      background-image:
+      url(.././pic/tournaments/medals/3-place-line.png);
+      margin-right: 10px;
+    }
+  }
+}

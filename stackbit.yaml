@@ -1,0 +1,8 @@
+stackbitVersion: ~0.3.0
+pagesDir: fancybox
+models:
+  fancybox:
+    type: page
+    label: Fancybox
+    match: '*'
+    fields: []

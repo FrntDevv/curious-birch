@@ -1,0 +1,336 @@
+// tournament
+$tourn-shadow-width: 300px;
+$tourn-shadow-height: 62px;
+$tourn-label-width: 300px;
+$tourn-label-height: 62px;
+$tourn-name-width: 300px;
+$prize-pool-height: 35px;
+$tourn-img-height: 185px;
+$take-part-btn-height: 34px;
+$take-part-icon-width: 22px;
+$take-part-icon-height: 19px;
+$time-counter-height: 100px;
+$shadow-counter-width: 300px;
+$shadow-counter-height: 192px;
+$tourn-cell-height: 23px;
+$tourn-first-col-width: 30px;
+$tourn-second-col-width: 250px;
+$current-user-height: 28px;
+$arrow-in-table-width: 7px;
+$arrow-in-table-height: 8px;
+$tournament-bg: rgb(37,37,47);
+$tournament-name: rgb(183,183,183);
+$tournament-color-name: #ffbc07;
+$prize-pool-text: #5ee2e7;
+$letter-color: rgb(253,255,192);
+$time-description: rgb(255,238,187);
+$tourn-cell-color: rgb(142,129,173);
+$current-user: rgb(82,202,93);
+$tourn-cell-bg: rgb(49,49,63);
+$tourn-thead-color: rgb(106, 106, 121);
+$take-part-btn-bg: #d19924;
+
+.weekly-tournament,
+.month-tournament {
+  position: relative;
+  width: $aside-width;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.box-tournament {
+  position: relative;
+  width: $aside-width;
+  display: block;
+  @include border-box;
+  @include border-radius(3px);
+  background: $tournament-bg;
+}
+
+.box-tournament-shadow {
+  position: absolute;
+  top: 0;
+  left: 1px;
+  width: $tourn-shadow-width;
+  height: $tourn-shadow-height;
+  background: url("../pic/box-tournament-shadow.png") no-repeat 0 0;
+}
+
+.tournament-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: $tourn-label-width;
+  height: $tourn-label-height;
+  background: url("../pic/tournament-lable.png") no-repeat 0 0;
+}
+
+.tournament-name {
+  position: relative;
+  z-index: 10;
+  max-width: $tourn-name-width;
+  display: block;
+  margin: 0 auto 6px;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 20px;
+  }
+  text-align: center;
+  line-height: 1.25;
+  color: $tournament-name;
+  padding-top: 15px;
+  .color-name {
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font: {
+      size: 26px;
+      weight: bold;
+    }
+    color: $tournament-color-name;
+    margin-top: 3px;
+  }
+}
+
+.prize-pool {
+  display: block;
+  width: $aside-width;
+  height: $prize-pool-height;
+  @include border-box;
+  text-align: center;
+  line-height: $prize-pool-height;
+  @include text-shadow(0 0 5px rgb(21,22,22));
+  background: url("../pic/prize-pool-shadow.png") no-repeat 1px 0;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 16px;
+  }
+  color: $prize-pool-text;
+  .color-sum {
+    font-weight: bold;
+    color: $tournament-color-name;
+  }
+}
+
+.img-in-tournament {
+  display: block;
+  position: relative;
+  width: $aside-width;
+  height: $tourn-img-height;
+  margin-bottom: 26px;
+}
+
+.table-img {
+  width: $aside-width;
+  height: $tourn-img-height;
+  display: block;
+}
+
+.take-part-block {
+  position: absolute;
+  bottom: -17px;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+}
+
+.take-part-btn {
+  position: relative;
+  z-index: 5;
+  display: inline-block;
+  text-align: center;
+  height: $take-part-btn-height;
+  line-height: $take-part-btn-height;
+  font: {
+    family: "Roboto", sans-serif;
+    size: 14px;
+    weight: bold;
+  }
+  text-transform: uppercase;
+  padding-left: 20px;
+  @extend %base-text-in-ref;
+  @include border-box;
+  background: $take-part-btn-bg;
+  @include border-radius(3px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,0.5),0 -2px 8px 0 rgba(255,255,255,0.4) inset, 0 0 3px rgba(255,255,255,0.4) inset);
+//  @include linear-gradient(90deg, rgb(255,138,0) 0%, rgb(255,216,61) 100%);
+  @include linear-gradient(to bottom, #fbd358, #e49b03 50%, #f69f2c);
+  &:hover {
+    @include box-shadow(0 0 8px 4px $button-shadow-color,0 -2px 8px 0 rgba(255,255,255,0.4) inset, 0 0 3px rgba(255,255,255,0.4) inset);
+  }
+  span {
+    z-index: 7;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+    &:before {
+      position: absolute;
+      z-index: 5;
+      content: "";
+      display: block;
+      width: $take-part-icon-width;
+      height: $take-part-icon-height;
+      left: 0;
+      top: -2px;
+      background: url(../pic/sprite/sprite.png) no-repeat -75px -269px;
+    }
+  }
+}
+
+.time-counter {
+  display: block;
+  position: relative;
+  width: $aside-width;
+  height: $time-counter-height;
+}
+
+.shadow-counter {
+  display: block;
+  position: absolute;
+  top: -50px;
+  left: 1px;
+  width: $shadow-counter-width;
+  height: $shadow-counter-height;
+  background: url("../pic/shadow-counter.png") no-repeat 0 0;
+}
+
+.counter {
+  position: relative;
+  display: block;
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  margin-bottom: 30px;
+  font: {
+    family: "Roboto Condensed", sans-serif;
+    size: 35px;
+    weight: bold;
+  }
+  color: $base-body-color;
+  .count {
+    position: relative;
+    display: inline-block;
+    margin-right: 12px;
+    p {
+      position: absolute;
+      display: block;
+      top: -2px;
+      right: -11px;
+    }
+    .letter {
+      position: absolute;
+      display: block;
+      bottom: -20px;
+      left: 14px;
+      font: {
+        size: 11px;
+        weight: normal;
+      }
+      color: $letter-color;
+      line-height: 2.25;
+    }
+  }
+}
+
+
+.time-description {
+  position: relative;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font: {
+    family: "Roboto Condensed", sans-serif;
+    size: 11px;
+  }
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  color: $time-description;
+  line-height: 1.636;
+}
+
+.tournament-rating {
+  position: relative;
+  border: 0;
+  width: $aside-width;
+  margin-top: 10px;
+  @include border-box;
+  tr {
+    width: $aside-width;
+    height: $tourn-cell-height;
+    line-height: $tourn-cell-height;
+    @include border-box;
+    font: {
+      family: "Tahoma", sans-serif;
+      size: 12px;
+    }
+    color: $base-body-color;
+    th:first-child,
+    td:first-child {
+      width: $tourn-first-col-width;
+      text-align: right;
+    }
+    th:nth-child(2),
+    td:nth-child(2) {
+      @include border-box;
+      width: $tourn-second-col-width;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-align: left;
+    }
+    th:nth-child(3),
+    td:nth-child(3) {
+      @include border-box;
+      padding-right: 20px;
+      text-align: right;
+    }
+    td:nth-child(3) {
+      color: $tourn-cell-color;
+    }
+    &.current-user {
+      color: $current-user;
+      height: $current-user-height;
+      line-height: $current-user-height;
+      td {
+        .arrow-in-table {
+          width: $arrow-in-table-width;
+          height: $arrow-in-table-height;
+          margin-left: 22px;
+          background: url(../pic/sprite/sprite.png) no-repeat -315px -125px;
+        }
+      }
+    }
+    &:nth-child(even) {
+      background: $tourn-cell-bg;
+    }
+  }
+
+
+  thead {
+    font: {
+      family: "Tahoma", sans-serif;
+      size: 12px;
+    }
+    tr {
+      color: $tourn-thead-color !important;
+      background: $tourn-cell-bg;
+    }
+    @include text-shadow(0 1px 0 rgb(0,0,0));
+  }
+  td.qualification {
+    @include border-box;
+    padding-right: 20px;
+    text-align: right;
+    span {
+      position: relative;
+      right: 0;
+      color: $tourn-cell-color;
+    }
+  }
+}
+
+

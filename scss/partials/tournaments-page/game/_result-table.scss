@@ -1,0 +1,87 @@
+$table-row-height: 39px;
+$table-border: #0d0f14;
+$table-login-bg: rgb(57,109,143);
+$table-login-color: rgba(255,255,255,.3);
+$table-main-fields-bg: rgb(21,30,38);
+$table-1-column-width: 85px;
+$table-2-column-width: 172px;
+$table-3-column-width: 168px;
+$table-4-column-width: 114px;
+
+%table-row {
+  display: block;
+  height: $table-row-height;
+  border-bottom: 1px solid $table-border;
+  @include border-box();
+}
+
+%table-cell {
+  text: {
+    align: center;
+  }
+  float: left;
+  display: block;
+  height: $table-row-height;
+  line-height: $table-row-height - 1;
+  border-right: 1px solid $table-border;
+  font: {
+    size: 12px;
+    family: "Tahoma", sans-serif;
+  }
+  @include border-box();
+  &:first-child {
+    width: $table-1-column-width;
+  }
+  &:nth-child(2) {
+    width: $table-2-column-width;
+  }
+  &:nth-child(3) {
+    width: $table-3-column-width;
+  }
+  &:last-child {
+    width: $table-4-column-width;
+    border-right: 0;
+  }
+}
+
+.result-table {
+  display: block;
+  position: relative;
+  float: right;
+  @include box-shadow(0 0 7px 1px rgb(0, 0, 0));
+  @include border-box();
+  thead {
+    tr {
+      @extend %table-row;
+      th {
+        font-weight: 400;
+        color: $table-login-color;
+        @extend %table-cell;
+        @include box-shadow(inset 0 0 2px 0 rgba(255,255,255,.5));
+        background: $table-login-bg;
+        @include linear-gradient(to bottom,
+                rgb(57,109,143) 0%,
+                rgb(51,98,129) 24%,
+                rgb(34,59,81) 78%,
+                rgb(29,49,68) 100%);
+
+      }
+    }
+  }
+  tbody {
+    tr {
+      @extend %table-row;
+      &:last-child {
+        border-bottom: 0;
+      }
+      td {
+        @extend %table-cell;
+        @include box-shadow(0 0 7px 1px rgb(0, 0, 0), inset 0 0 2px 0 rgba(255,255,255,.5));
+        background: $table-main-fields-bg;
+        @include linear-gradient(to bottom,
+                rgb(21,30,38) 0%,
+                rgb(19,21,26) 100%);
+      }
+    }
+  }
+}

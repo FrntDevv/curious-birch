@@ -1,0 +1,230 @@
+.window-overlay {
+  background: url(.././pic/overlay.png) repeat 0 0; }
+
+.more-information .get-more-information {
+  color: #788072; }
+.more-information .all-prizes {
+  color: #788072; }
+
+.shadow {
+  color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=20); }
+
+.popup-game-name a {
+  color: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50); }
+
+.btn-reg .reg {
+  margin-left: 12px; }
+.btn-reg .reg-time {
+  margin-right: 12px;
+  padding-top: 20px; }
+
+.main-menu-list li a {
+  padding-left: 37px;
+  padding-right: 38px; }
+
+.header-grad {
+  background: #121212;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=85); }
+
+.track-popup {
+  background: #0d1116;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=97); }
+
+.social-box .ent-soc {
+  margin-left: 5px;
+  margin-right: 3px; }
+.social-box .select-language {
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .social-box .select-language:hover {
+    background: #858585; }
+
+.cashbox {
+  behavior: url(../css/PIE.htc); }
+  .cashbox:hover {
+    behavior: url(../css/PIE.htc); }
+
+.take-part-btn {
+  behavior: url(../css/PIE.htc); }
+  .take-part-btn:hover {
+    behavior: url(../css/PIE.htc); }
+
+.big-game-list .game-item {
+  margin-right: 22px; }
+
+.main-menu-list li.active a {
+  z-index: 2;
+  background: #2e5e87; }
+.main-menu-list li a:hover {
+  z-index: 2;
+  background: #2e5e87; }
+
+input[type="text"] {
+  padding-top: 10px; }
+
+.desc-arrows {
+  top: 145px; }
+
+.asc-arrows {
+  bottom: 25px; }
+
+.alarm-count {
+  behavior: url(../css/PIE.htc); }
+
+.tournament-box {
+  behavior: url(../css/PIE.htc); }
+
+.tournament-img-container {
+  behavior: url(../css/PIE.htc); }
+
+.tournament-img-box {
+  behavior: url(../css/PIE.htc); }
+
+.tournament-leaders .leader {
+  background: #9e928b;
+  behavior: url(../css/PIE.htc);
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=15); }
+  .tournament-leaders .leader .login {
+    behavior: url(../css/PIE.htc);
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80); }
+  .tournament-leaders .leader.current-user {
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+    background: #265c40 !important; }
+    .tournament-leaders .leader.current-user.current-user-hover {
+      filter: progid:DXImageTransform.Microsoft.Alpha(opacity=80); }
+
+.lead-players-table thead tr th:nth-child(4) {
+  color: white; }
+
+.track a.img-ref:before {
+  behavior: url(../css/PIE.htc); }
+
+.foot-img-shadow:before {
+  behavior: url(../css/PIE.htc); }
+
+.tournament-name-box {
+  behavior: url(../css/PIE.htc); }
+
+.best-players {
+  behavior: url(../css/PIE.htc); }
+
+.game-img-shadow:before {
+  behavior: url(../css/PIE.htc); }
+
+.rules-of-tournament .text-box {
+  behavior: url(../css/PIE.htc);
+  color: white; }
+
+.rules td {
+  behavior: url(../css/PIE.htc); }
+
+.best-players-table thead tr th:nth-child(4) {
+  color: white !important; }
+
+.result-table {
+  behavior: url(../css/PIE.htc); }
+  .result-table thead tr th {
+    color: white; }
+
+.stand {
+  behavior: url(../css/PIE.htc); }
+  .stand .count-of-franks-in-medal .count {
+    display: block; }
+
+.game-footer {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 100px;
+  background: #141319;
+  width: 100%;
+  min-width: 1100px;
+  display: block; }
+
+text {
+  display: none; }
+
+svg {
+  display: none; }
+
+.bonus-cards li {
+  behavior: url(../css/PIE.htc); }
+
+.bonus-header {
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50); }
+
+.bonus-description {
+  color: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70); }
+
+.get-bonus .get-more-information {
+  color: white;
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70); }
+
+.payment-info .payment .background-logo {
+  behavior: url(../css/PIE.htc); }
+
+.payment-box-bg {
+  behavior: url(../css/PIE.htc); }
+
+.bonus-description-box {
+  behavior: url(../css/PIE.htc); }
+
+.tabs-container .tab .shadow {
+  behavior: url(../css/PIE.htc); }
+
+.cabinet .cabinet-section {
+  behavior: url(../css/PIE.htc); }
+
+.phone .background {
+  behavior: url(../css/PIE.htc); }
+
+.mail .background {
+  behavior: url(../css/PIE.htc); }
+
+.profile-info-lines .profile-info-line .text-block {
+  behavior: url(../css/PIE.htc); }
+
+.account-details-list {
+  behavior: url(../css/PIE.htc); }
+
+.user-information {
+  behavior: url(../css/PIE.htc); }
+
+.exchange-course {
+  behavior: url(../css/PIE.htc); }
+
+.auth-form {
+  background: url(../pic/popup/old-ie-form-bg.png) repeat 0 0; }
+
+.enter-social-block .social-list a {
+  background: url(../pic/popup/old-ie-form-bg.png) repeat 0 0; }
+  .enter-social-block .social-list a.select {
+    behavior: url(../css/PIE.htc); }
+
+.popup {
+  background: url(.././pic/overlay.png) repeat 0 0;
+  behavior: url(../css/PIE.htc); }
+
+.popup.activation .enter-phone-number {
+  background: url(../pic/popup/old-ie-form-bg.png) repeat 0 0; }
+
+.multiplier-box {
+  background: url(../pic/popup/old-ie-form-bg.png) repeat 0 0; }
+
+.popup.popup-bonus-description .bonus-description-block .popup-get-bonus-btn .green-light {
+  behavior: url(../css/PIE.htc); }
+
+.popup.registration .presents-bonuses-list li .presents-description .description {
+  filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50); }
+.popup.registration .registration-form .captcha-block .enter-captcha {
+  behavior: url(../css/PIE.htc);
+  background: black; }
+
+.error-page header {
+  behavior: url(../css/PIE.htc); }
+
+.landing-block header {
+  behavior: url(../css/PIE.htc); }

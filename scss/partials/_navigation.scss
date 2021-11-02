@@ -1,0 +1,70 @@
+$main-nav-hover: rgba(46, 94, 135, 0.2);
+$main-nav-bg: #333;
+.main-menu {
+  position: absolute;
+  left: 265px;
+  top: 70px;
+}
+
+.main-menu-list {
+  position: relative;
+  li {
+    display: inline-block;
+    list-style: none;
+    &.active {
+      a {
+        background: $main-nav-hover;
+      }
+    }
+    a {
+      position: relative;
+      @include border-box;
+      text-decoration: none;
+      color: $base-name;
+      border-top: 1px solid $main-nav-bg;
+      display: block;
+      font: {
+        family: "Roboto Condensed", sans-serif;
+        size: 14px;
+        weight: 700;
+      }
+      &:before {
+        position: absolute;
+        display: block;
+        content: "";
+        width: 1px;
+        height: 60px;
+        background: $main-nav-bg;
+        right: 0;
+        top: 0;
+      }
+      text-transform: uppercase;
+      padding-left: 41px;
+      padding-right: 42px;
+      height: $main-menu-list-height;
+      line-height: $main-menu-list-height;
+      text-align: center;
+      &:hover {
+        background: $main-nav-hover;
+      }
+    }
+    &:last-child {
+      position: absolute;
+      white-space: nowrap;
+      a {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+  }
+  &:before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 1px;
+    height: 60px;
+    background: $main-nav-bg;
+    left: 0;
+    top: 0;
+  }
+}

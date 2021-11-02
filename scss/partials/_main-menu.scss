@@ -1,0 +1,237 @@
+$game-category-bg: #101318;
+$game-category-border: #0c0c0c;
+// main menu
+$height-of-main-nav: 97px;
+$main-menu-shadow-height: 94px;
+$cat-game-icon-width: 24px;
+$cat-game-icon-height: 22px;
+$cat-hot-game-width: 42px;
+$cat-hot-game-height: 40px;
+$jackpots-width: 21px;
+$cards-width: 23px;
+$cards-height: 23px;
+$tables-width: 23px;
+$tables-height: 23px;
+$videopokers-height: 21px;
+$others-width: 23px;
+
+.game-category {
+  position: relative;
+  border-top: 2px solid #000;
+  border-bottom: 3px solid $game-category-border;
+  background: $game-category-bg;
+}
+
+.main-menu-shadow {
+  position: absolute;
+  top: 1px;
+  min-width: 100%;
+  height: $main-menu-shadow-height;
+  background: url("../pic/main-menu-shadow.png") no-repeat center 0;
+}
+
+.game-category {
+  width: 100%;
+  height: $height-of-main-nav;
+  @include border-box;
+  &.fixed-at-top {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+  }
+}
+
+.game-category-list {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  @include border-box;
+  font: {
+    family: "futura_condensedplain", sans-serif;
+    size: 24px;
+  }
+  text-transform: uppercase;
+  color: $base-name;
+  li {
+    display: inline-block;
+    list-style: none;
+    position: relative;
+    & .cat-game-icon {
+      background-image: url(../pic/sprite/sprite.png);
+    }
+    &.active {
+      @include linear-gradient(0deg, rgb(18,19,22) 0%, rgb(18,19,22) 100%);
+      &.hot .cat-game-icon {
+        opacity: 1;
+        @include animation-state(paused);
+        background-position: 0 -70px;
+      }
+      &.popular .cat-game-icon {
+        width: $cat-game-icon-width + 1;
+        background-position: -165px -236px;
+      }
+      &.slots .cat-game-icon {
+        background-position: -194px -236px;
+      }
+      &.jackpots .cat-game-icon {
+        background-position: -285px -213px;
+        width: $jackpots-width + 1;
+        height: $cat-game-icon-height + 1;
+        margin-left: -(0.5*($jackpots-width) + 1);
+      }
+      &.cards .cat-game-icon {
+        background-position: -140px -30px;
+      }
+      &.tables .cat-game-icon {
+        background-position: -255px -159px;
+      }
+      &.videopokers .cat-game-icon {
+        background-position: -285px -106px;
+      }
+      &.others .cat-game-icon {
+        background-position: -224px -308px;
+      }
+    }
+    a.cat-name {
+      position: relative;
+      z-index: 6;
+      display: block;
+      @include border-box;
+      text-decoration: none;
+      color: $base-name;
+     padding: 50px 29px 14px 29px;
+    }
+    &:hover {
+      @include linear-gradient(0deg, rgb(18,19,22) 0%, rgb(18,19,22) 100%);
+    }
+    &.select {
+      @include linear-gradient(0deg, rgb(18,19,22) 0%, rgb(18,19,22) 100%);
+    }
+    &:first-child {
+      border-left: 1px solid #333;
+    }
+    &:last-child {
+      border-right: 1px solid #333;
+    }
+   .cat-game-icon {
+     position: absolute;
+      display: block;
+      width: $cat-game-icon-width;
+      height: $cat-game-icon-height;
+      top: 14px;
+     left: 50%;
+     margin-left: -($cat-game-icon-width)/2;
+     z-index: 3;
+    }
+    & .cat-game-icon {
+      background-image: url(../pic/sprite/sprite.png);
+    }
+    &.hot .cat-game-icon {
+      top: 6px;
+      width: $cat-hot-game-width;
+      height: $cat-hot-game-height;
+      background-position: -94px -70px;
+      margin-left: -($cat-hot-game-width)/2;
+      @include animation(fade-in-fade-out,5s,infinite,linear,none);
+    }
+    &.hot:hover .cat-game-icon {
+      @include animation-state(paused);
+      opacity: 1;
+      background-position: 0 -70px;
+    }
+    &.hot.select .cat-game-icon {
+      background-position: -47px -70px;
+    }
+    &.popular .cat-game-icon {
+      background-position: -223px -236px;
+    }
+    &.popular:hover .cat-game-icon {
+      width: $cat-game-icon-width + 1;
+      background-position: -165px -236px;
+    }
+    &.popular.select .cat-game-icon {
+      background-position: -285px 0;
+      width: $cat-game-icon-width + 2;
+      margin-left: -(1 + ($cat-game-icon-width)/2);
+    }
+    &.slots .cat-game-icon {
+      background-position: -252px -236px;
+    }
+    &.slots:hover .cat-game-icon {
+      background-position: -194px -236px;
+    }
+    &.slots.select .cat-game-icon {
+      margin-left: -(1 + ($cat-game-icon-width)/2);
+      background-position: -285px -27px;
+      width: $cat-game-icon-width + 2;
+    }
+    &.jackpots .cat-game-icon {
+      width: $jackpots-width;
+      margin-left: -($jackpots-width)/2;
+      background-position: -185px -166px;
+    }
+    &.jackpots:hover .cat-game-icon {
+      background-position: -285px -213px;
+      width: $jackpots-width + 1;
+      height: $cat-game-icon-height + 1;
+      margin-left: -(0.5*($jackpots-width) + 1);
+    }
+    &.jackpots.select .cat-game-icon {
+      background-position: -285px -240px;
+      width: $cat-game-icon-width + 1;
+      margin-left: -(0.5*($jackpots-width) + 1);
+    }
+    &.cards .cat-game-icon {
+      width: $cards-width;
+      height: $cards-height;
+      margin-left: -($cards-width)/2;
+      background-position: -255px -103px;
+    }
+    &.cards:hover .cat-game-icon {
+      background-position: -140px -30px;
+    }
+    &.cards.select .cat-game-icon {
+      background-position: -141px -70px;
+    }
+    &.tables .cat-game-icon {
+      width: $tables-width;
+      height: $tables-height;
+      margin-left: -($tables-width)/2;
+      background-position: -255px -131px;
+    }
+    &.tables:hover .cat-game-icon {
+      background-position: -255px -159px;
+    }
+    &.tables.select .cat-game-icon {
+      background-position: -255px -187px;
+    }
+    &.videopokers .cat-game-icon {
+      height: $videopokers-height + 1;
+      width: $cat-game-icon-width + 2;
+      background-position: -285px -54px;
+    }
+    &.videopokers:hover .cat-game-icon {
+      background-position: -285px -106px;
+    }
+    &.videopokers.select .cat-game-icon {
+      background-position: -285px -80px;
+    }
+    &.others .cat-game-icon {
+      width: $others-width;
+      margin-left: -(0.5*($others-width) + 1);
+      background-position: -285px -269px;
+    }
+    &.others:hover .cat-game-icon {
+      background-position: -224px -308px;
+    }
+    &.others.select .cat-game-icon {
+      background-position: -255px -308px;
+      margin-left: -0.5*($others-width);
+    }
+  }
+}
+
+
+
+
+

@@ -1,0 +1,13 @@
+$modal-cashier-width: 494px;
+$modal-cashier-height: 325px;
+
+.popup.modal-cashier {
+  @extend %two-columns-popup-layout;
+  .left-part {
+    iframe {
+      width: $modal-cashier-width;
+      height: $modal-cashier-height;
+      background: url(.././pic/popup/cashier.png) no-repeat 0 0;
+    }
+  }
+}

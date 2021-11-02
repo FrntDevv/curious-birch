@@ -1,0 +1,161 @@
+$payment-info-height: 100px;
+$payment-bg: rgb(15,17,25);
+$payment-box-bg: rgb(21, 23, 31);
+$payment-desc-color: rgb(169, 169, 169);
+$open-account-btn-height: 45px;
+$open-account-btn-padding: 21px;
+$open-account-btn-bg: #71bf66;
+$open-account-btn-shadow: #8fcd85;
+$description-list-color: #9d9d9f;
+
+%payment {
+  width: $full-page-wrapper-width + 1;
+  height: $payment-info-height;
+  @include border-top-left-radius(5px);
+  @include border-top-right-radius(5px);
+  @include border-bottom-left-radius(0);
+  @include border-bottom-right-radius(0);
+}
+
+%open-account-btn {
+  display: inline-block;
+  position: relative;
+  padding-left: $open-account-btn-padding;
+  padding-right: $open-account-btn-padding;
+  height: $open-account-btn-height;
+  line-height: $open-account-btn-height;
+  @include border-box;
+  text:
+  {
+    align: center;
+    transform: uppercase;
+  }
+  background: $open-account-btn-bg;
+  @include linear-gradient(to bottom,
+          rgb(121,231,133) 0%,
+          rgb(62,224,102) 2%,
+          rgb(0,219,84) 4%,
+          rgb(0,197,84) 29%,
+          rgb(0,193,88) 49%,
+          rgb(0,191,86) 64%,
+          rgb(0,182,78) 76%,
+          rgb(0,154,57) 96%,
+          rgb(0,160,75) 98%,
+          rgb(0,178,111) 100%);
+
+          //#1fdd5f, #00c158 50%, #00ab57);
+  @include border-radius(3px);
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  @include box-shadow(0 0 7px 1px rgba(0,0,0,.5), inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  &:hover {
+    @include box-shadow(0 0 8px 4px $open-account-btn-shadow, inset 0px -2px 10px 0px rgba(255, 255, 255, .37), inset 0 0 3px rgba(255,255,255,.4));
+  }
+  font: {
+    family: "Roboto", sans-serif;
+    size: 19px;
+    weight: bold;
+  }
+  @extend %base-text-in-ref;
+}
+
+.payment-info {
+  margin-bottom: 3px;
+  .payment {
+    @extend %payment;
+    @include box-shadow(0 0 7px 1px rgb(0, 0, 0),
+            inset 0 0 2px 0 rgba(255, 255, 255, .3));
+    background: $payment-bg;
+    @include linear-gradient(to bottom,
+            rgba(12,16,25,0.95) 0%,
+            rgba(12,16,25,1) 1%,
+            rgba(15,17,25,1) 40%,
+            rgba(35,22,25,1) 100%);
+    .background-logo {
+      @extend %payment;
+    }
+  }
+  h2 {
+      margin-top: 19px;
+  }
+  p {
+    margin: 23px 0;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 12px;
+      weight: 300;
+    }
+    color: $payment-desc-color;
+    line-height: 1.5;
+    text: {
+      align: left;
+    }
+    &:last-child {
+      padding-bottom: 56px;
+    }
+  }
+  h3 {
+    margin-top: 22px;
+    margin-bottom: 22px;
+  }
+}
+
+.payment-box-bg {
+  @include box-shadow(0 0 7px 1px rgb(0, 0, 0),
+          inset 0 0 2px 0 rgba(255, 255, 255, .3));
+  background: $payment-box-bg;
+  @include border-radius(5px);
+}
+
+.conditions-block {
+  padding-bottom: 16px;
+  p {
+    color: $description-list-color;
+    margin-bottom: 8px;
+  }
+}
+
+.open-account-box {
+  background: $payment-bg;
+  text: {
+    align: center;
+  }
+  @include linear-gradient(to bottom,
+          rgba(12,16,25,1) 0%,
+          rgba(15,17,25,1) 40%,
+          rgba(35,22,25,1) 99%,
+          rgba(35,22,25,0.96) 100%);
+  @include box-shadow(0 0 7px 1px rgb(0, 0, 0),
+          inset 0 0 2px 0 rgba(255, 255, 255, .3));
+  @include border-top-left-radius(0);
+  @include border-top-right-radius(0);
+  @include border-bottom-left-radius(5px);
+  @include border-bottom-right-radius(5px);
+  .open-account {
+    padding-top: 25px;
+    font: {
+      family: "Roboto", sans-serif;
+      size: 16px;
+    }
+    color: $base-body-color;
+    text: {
+      transform: uppercase;
+      align: center;
+    }
+  }
+  .open-account-btn {
+    margin: 35px auto 37px;
+    @extend %open-account-btn;
+  }
+}
+
+.advantages-block {
+  h2 {
+    margin: 20px 0;
+    text: {
+      align: left;
+    }
+  }
+  p {
+    margin: 0;
+  }
+}

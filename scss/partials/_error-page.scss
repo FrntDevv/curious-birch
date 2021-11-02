@@ -1,0 +1,156 @@
+$error-page-header-height: 150px;
+$error-page-bg: #1d1e26;
+$error-404-left-width: 201px;
+$error-404-left-height: 150px;
+$error-404-right-width: 199px;
+$error-404-right-height: 146px;
+$error-500-left-width: 190px;
+$error-500-left-height: 136px;
+$error-500-right-width: 190px;
+$error-500-right-height: 137px;
+$content-shadow-width: 400px;
+$content-shadow-height: 287px;
+$to-main-btn-container-width: 1001px;
+$to-main-btn-container-height: 77px;
+$to-main-btn-height: 42px;
+$to-main-btn-width: 200px;
+$to-main-btn-bg-width: 212px;
+$to-main-btn-bg-height: 56px;
+
+%to-main-btn {
+  display: block;
+  @include size($to-main-btn-bg-width,$to-main-btn-bg-height);
+  line-height: $to-main-btn-bg-height;
+  @include border-box();
+  text:
+  {
+    decoration: none;
+    align: center;
+    transform: uppercase;
+  }
+  @include text-shadow(0 $standard-shadow-size 0 $text-shadow-color);
+  font:
+  {
+    size: 18px;
+    weight: bold;
+  }
+  position: relative;
+  color: $base-body-color;
+}
+
+.error-page {
+  width: 100%;
+  min-width: $min-body-width;
+  min-height: auto;
+  background: $error-page-bg;
+  text-align: center;
+  header {
+    height: $error-page-header-height;
+    @include box-shadow(0 0 7px 1px rgb(0,0,0), 0 0 $standard-shadow-size 0 rgba(255,255,255,.34) inset);
+    .logo {
+      @include size ($footer-logo-width,$error-page-header-height);
+      background: url("../pic/logo-footer.png") no-repeat 0 -65px;
+      background-size: 583px 280px;
+      margin: 0 auto;
+    }
+  }
+  .section-content-container {
+    width: 100%;
+    min-width: $min-body-width;
+    position: relative;
+    .shadow-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      z-index: 2;
+      height: $content-shadow-height;
+      background: url("../pic/full-shadow.png") no-repeat 0 0;
+    }
+    .shadow-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      z-index: 2;
+      height: $content-shadow-height;
+      background: url("../pic/full-shadow.png") no-repeat 100% 0;
+    }
+  }
+  .content {
+    width: auto;
+    display: inline-block;
+    z-index: 5;
+  }
+  .error-left {
+    position: relative;
+    float: left;
+    &.error-404 {
+      margin-right: 55px;
+      .error-404-logo {
+        margin-top: 283px;
+        @include size($error-404-left-width, $error-404-left-height);
+        background: url("../pic/404-left.png") no-repeat 0 0;
+      }
+    }
+    &.error-500 {
+      margin-right: 60px;
+      .error-500-logo {
+        margin-top: 283px;
+        @include size($error-500-left-width, $error-500-left-height);
+        background: url("../pic/500-left.png") no-repeat 0 0;
+      }
+    }
+  }
+  .error-right {
+    position: relative;
+    float: left;
+    &.error-404 {
+      margin-left: 55px;
+      .error-404-logo {
+        margin-top: 283px;
+        @include size($error-404-right-width, $error-404-right-height);
+        background: url("../pic/404-right.png") no-repeat 0 0;
+      }
+    }
+    &.error-500 {
+      margin-left: 60px;
+      .error-500-logo {
+        margin-top: 283px;
+        @include size($error-500-right-width, $error-500-right-height);
+        background: url("../pic/500-right.png") no-repeat 0 0;
+      }
+    }
+  }
+  .middle-content {
+    float: left;
+    width: $left-content-width;
+    .content-header {
+      margin-top: 52px;
+    }
+    .content-middle-header {
+      margin: 20px 0 54px;
+    }
+    .small-game-list {
+      margin: 0;
+    }
+  }
+  footer {
+    padding: 0;
+    background: inherit;
+  }
+  .to-main-btn-container {
+    margin: 23px auto 74px;
+    padding-top: 9px;
+    @include size($to-main-btn-container-width,$to-main-btn-container-height);
+    background: url("../pic/btn-lights.png") no-repeat 0 0;
+  }
+  .to-main-btn {
+    margin: 0 auto;
+    @extend %to-main-btn;
+    background: url("../pic/to-main-btn.png") no-repeat 0 0;
+    &:hover {
+      background-position: 0 -56px;
+    }
+  }
+}

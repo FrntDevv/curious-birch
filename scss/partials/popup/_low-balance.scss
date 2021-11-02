@@ -1,0 +1,35 @@
+$low-balance-submit-form-btn-padding: 33px;
+$low-balance-icon-height: 150px;
+$low-balance-icon-width: 232px;
+
+.popup.low-balance {
+  .popup-head {
+    margin-top: 48px;
+  }
+  .popup-middle-head {
+    margin-top: 18px;
+  }
+  .low-balance-icon {
+    margin: 36px auto 0;
+    width: $low-balance-icon-width;
+    height: $low-balance-icon-height;
+    background: url(.././pic/popup/low-balance.png) no-repeat 0 0;
+  }
+  .refill-btn {
+    margin-top: 38px;
+    @extend %default-popup-btn;
+    display: inline-block;
+    padding-left: $low-balance-submit-form-btn-padding;
+    padding-right: $low-balance-submit-form-btn-padding;
+    position: relative;
+  }
+  .refill-btn-container {
+    display: inline-block;
+    a.link {
+      position: relative;
+      top: -3px;
+      margin-left: 14px;
+      display: inline-block;
+    }
+  }
+}
